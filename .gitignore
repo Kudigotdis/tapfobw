@@ -1,0 +1,15 @@
+# Exclude raw media source folders (large files, special characters in names)
+PROMOS/
+MEDIUMS/
+
+# Exclude development/planning folders
+MAKE DATA FROM THIS/
+ORDER THESE/
+
+# IDE files
+.idea/
+*.iml
+
+# OS files
+Thumbs.db
+.DS_Store

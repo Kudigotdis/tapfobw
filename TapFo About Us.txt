@@ -1,0 +1,11 @@
+TapFo About Us
+
+TapFo was built to be your digital companion in the real world. We believe that access to tools, jobs, and community support shouldn't depend on your data balance or signal strength. By prioritizing an "Offline-First" architecture, TapFo ensures that you can search the directory, manage your personal lists, and navigate career resources even when you are completely off the grid.
+
+- Contribute: Answer curated survey topics and polls at your own pace, even while offline.
+
+- Earn: Your participation directly unlocks premium local tools, such as expanded Shopping List Note Spaces.
+
+- Insight: Gain access to the real-time pulse of your community through data-driven insights that help you make better personal and business decisions.
+
+Your data belongs to you. TapFo is designed to store your inputs locally and synchronize them only when you choose to go online, saving both your battery and your data. By participating in TapFo, you are helping to create a "Digital Census" that identifies local needs, price trends, and skill gaps, turning individual voices into a powerful resource for community growth.

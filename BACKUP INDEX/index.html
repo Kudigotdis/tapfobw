@@ -1,0 +1,4885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#123456">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>TapFo.bw</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    /* === FONTS === */
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-Regular.ttf');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-Bold.ttf');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-Italic.ttf');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-BoldItalic.ttf');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    :root {
+      --navy: rgb(26, 82, 118);
+      /* Steel Navy */
+      --deep-navy: rgb(18, 52, 86);
+      /* Deep Navy for Nav Bar */
+      --grey-light: rgb(230, 230, 230);
+      --grey-border: rgb(200, 200, 200);
+      --grey-text: rgb(180, 180, 180);
+      --white: #ffffff;
+      --background: #ffffff;
+      --font: 'PTSans', sans-serif;
+      --transition: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: #e0e0e0;
+      /* Grey surround for desktop centering */
+      font-family: var(--font);
+      overflow: hidden;
+    }
+
+    #app-shell {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: 100dvh;
+      margin: 0 auto;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── APP SHELL ── */
+    #app {
+      width: 100%;
+      height: 100dvh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── PAGES ── */
+    .page {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform var(--transition);
+      background: var(--white);
+      will-change: transform;
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .page.active {
+      transform: translateY(0);
+      z-index: 10;
+    }
+
+    .page.exit-up {
+      transform: translateY(-100%);
+      z-index: 15;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      flex-shrink: 0;
+      padding: 16px 16px 12px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--grey-border);
+      z-index: 10;
+    }
+
+    .top-brand {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .top-brand-grey {
+      color: var(--grey-text);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .tab-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--grey-text);
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+
+    .tab-btn.active {
+      color: var(--dark-text);
+      font-weight: 700;
+    }
+
+    .tab-sep {
+      color: var(--grey-mid);
+      font-size: 12px;
+    }
+
+    /* ── SCROLLABLE BODY ── */
+    .body-scroll {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+
+    /* ── BOTTOM NAV ── */
+    .bottom-nav {
+      flex-shrink: 0;
+      height: 56px;
+      background: var(--deep-navy);
+      display: flex;
+      align-items: center;
+      padding: 0 12px 0 16px;
+      gap: 0;
+      z-index: 20;
+    }
+
+    .bottom-nav .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hamburger-icon {
+      width: 22px;
+      height: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger-icon span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--white);
+      border-radius: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      flex: 1;
+    }
+
+    .nav-link {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      padding: 4px 0;
+      white-space: nowrap;
+      transition: color var(--transition), font-weight var(--transition);
+    }
+
+    .nav-link:active {
+      opacity: 0.7;
+    }
+
+    .nav-link.nav-active {
+      color: rgb(255, 255, 255) !important;
+      font-weight: 700 !important;
+      border-bottom: none;
+    }
+
+    .nav-dot {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      line-height: 1;
+      margin: 0 2px;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    .engage-btn {
+      background: transparent;
+      border: 2px solid #2e6893;
+      color: var(--white);
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background var(--transition);
+    }
+
+    .engage-btn:active {
+      background: rgba(46, 104, 147, 0.2);
+    }
+
+    /* ══════════════════════════════════════
+   HOME PAGE
+══════════════════════════════════════ */
+    #page-home {
+      background: var(--white);
+    }
+
+    .home-top-label {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      color: var(--grey-mid);
+      font-size: 14px;
+      font-weight: 400;
+      z-index: 5;
+    }
+
+    /* The scrollable area fills the page above the nav */
+    #page-home .home-scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Push logo down ~18% from top, then flow naturally */
+      padding-top: 18vh;
+      padding-bottom: 24px;
+    }
+
+    /* Logo: no circle background, centred image only */
+    .logo-circle {
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: static;
+      transform: none;
+      margin-bottom: 16px;
+      background: none;
+    }
+
+    /* Tagline sits directly below circle */
+    .tagline {
+      color: rgb(26, 82, 118);
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
+
+    /* Search section wrapper — full width, correct padding */
+    .search-bar-wrapper {
+      width: 100%;
+      margin-top: 40px;
+      padding: 0 16px;
+    }
+
+    /* Search input — pill shape exactly matching design */
+    .search-bar {
+      width: 100%;
+      height: 52px;
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 0 50px 0 18px;
+      /* right padding leaves room for key icon */
+      font-family: var(--font);
+      font-size: 16px;
+      color: #1e1e1e;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color var(--transition);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .search-bar::placeholder {
+      color: rgb(180, 180, 180);
+      font-size: 16px;
+    }
+
+    .search-bar:focus {
+      border-color: rgb(26, 82, 118);
+    }
+
+    /* Location row — same width as search bar, 8px below it */
+    .location-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      margin-bottom: 0;
+      padding: 0 14px;
+    }
+
+    .loc-btn {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      color: rgb(26, 82, 118);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0;
+    }
+
+    /* Icon row — 5 circles evenly spaced, 20px below location row */
+    .icon-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 16px;
+      margin-top: 20px;
+    }
+
+    .icon-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgb(230, 230, 230);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .icon-btn:active {
+      background: rgb(210, 210, 210);
+    }
+
+    .icon-btn img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    /* Legacy classes kept for other pages */
+    .home-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .home-content-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .search-bar-wrap {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .quick-links {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quick-link-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .quick-link-label {
+      font-size: 11px;
+      color: rgb(100, 100, 100);
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+
+
+    /* ══════════════════════════════════════
+   SEARCH RESULTS PAGE
+══════════════════════════════════════ */
+    #page-search {
+      background: var(--bg);
+    }
+
+    .search-results-top {
+      flex-shrink: 0;
+      background: var(--white);
+      padding: 12px 16px 0;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .search-filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .results-list {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .results-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      margin: 12px 16px;
+      overflow: hidden;
+    }
+
+    .biz-row {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      padding: 0 12px 0 8px;
+      border-bottom: 1px solid rgb(243, 243, 243);
+      cursor: pointer;
+      transition: background var(--transition);
+      position: relative;
+    }
+
+    .biz-row:last-child {
+      border-bottom: none;
+    }
+
+    .biz-row:active {
+      background: #f9f9f9;
+    }
+
+    .trust-bar {
+      width: 10px;
+      height: 30px;
+      border-radius: 5px;
+      background: var(--grey-mid);
+      flex-shrink: 0;
+      margin-right: 10px;
+      transition: background var(--transition);
+    }
+
+    .trust-bar.trusted {
+      background: var(--green-trust);
+    }
+
+    .biz-name {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(50, 50, 50);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.35;
+      margin-right: 8px;
+    }
+
+    .contact-icons {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s;
+      border: none;
+    }
+
+    .contact-icon:active {
+      transform: scale(0.9);
+    }
+
+    .contact-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+    }
+
+    .contact-icon.phone-active {
+      background: none;
+    }
+
+    .contact-icon.fb-active {
+      background: none;
+    }
+
+    .contact-icon.wa-active {
+      background: none;
+    }
+
+    .contact-icon.inactive {
+      background: none;
+    }
+
+    .contact-icon.inactive svg {
+      fill: none;
+    }
+
+    .no-results {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .no-results-face {
+      font-size: 148px;
+      color: var(--grey-mid);
+      margin-bottom: 12px;
+    }
+
+    .no-results-text {
+      color: var(--grey-text);
+      font-size: 18px;
+    }
+
+    /* ══════════════════════════════════════
+   DIRECTORY / QUICK VIEW
+══════════════════════════════════════ */
+    #page-directory {
+      background: var(--bg);
+    }
+
+    .dir-top {
+      flex-shrink: 0;
+      background: var(--white);
+      padding: 4px 22px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dir-title-btn {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .all-trusted-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dir-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .dir-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      margin: 12px 10px;
+      overflow: hidden;
+    }
+
+    .secondary-nav {
+      flex-shrink: 0;
+      height: 46px;
+      background: var(--deep-navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .secondary-nav span {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Category selector overlay */
+    .cat-selector {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      z-index: 50;
+      transform: translateY(-100%);
+      transition: transform var(--transition);
+      box-shadow: var(--shadow-card);
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .cat-selector.open {
+      transform: translateY(0);
+    }
+
+    .cat-selector-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .cat-selector-item:active {
+      background: var(--grey-light);
+    }
+
+    .cat-sel-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgb(230, 230, 230);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cat-sel-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: rgb(130, 130, 130);
+    }
+
+    .cat-sel-label {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* ══════════════════════════════════════
+   BUSINESS PROFILE PAGE
+══════════════════════════════════════ */
+    #page-business {
+      background: var(--white);
+    }
+
+    .biz-profile-top {
+      flex-shrink: 0;
+    }
+
+    .biz-header-card {
+      padding: 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .biz-logo-box {
+      width: 100px;
+      height: 100px;
+      background: var(--grey-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      color: var(--grey-text);
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid var(--grey-border);
+      overflow: hidden;
+    }
+
+    .biz-header-info {
+      flex: 1;
+      position: relative;
+    }
+
+    .biz-header-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 2px;
+      line-height: 1.3;
+      padding-right: 36px;
+    }
+
+    .biz-header-cat {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+
+    .biz-header-type {
+      font-size: 20px;
+      color: var(--grey-text);
+      margin-top: 2px;
+    }
+
+    .biz-favourite-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .biz-verified {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .verified-badge {
+      width: 28px;
+      height: 28px;
+    }
+
+    .biz-tagline {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--body-text);
+      line-height: 1.55;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .biz-profile-tabs {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--grey-border);
+      background: var(--white);
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .biz-tab {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--grey-text);
+      cursor: pointer;
+      padding: 12px 0;
+      margin-right: 16px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .biz-tab.active {
+      color: var(--dark-text);
+      border-bottom-color: var(--navy);
+    }
+
+    .biz-tab-sep {
+      color: var(--grey-mid);
+      font-size: 12px;
+      margin-right: 16px;
+    }
+
+    .biz-profile-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Services accordion */
+    .service-cat-row {
+      display: flex;
+      align-items: center;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .service-cat-row:active {
+      background: var(--grey-light);
+    }
+
+    .service-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--grey-mid);
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .service-cat-name {
+      flex: 1;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+
+    .service-count {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--grey-border);
+    }
+
+    .service-sub-list {
+      display: none;
+      background: var(--grey-light);
+    }
+
+    .service-sub-list.open {
+      display: block;
+    }
+
+    .service-sub-item {
+      padding: 14px 16px 14px 34px;
+      border-bottom: 1px solid var(--grey-border);
+      font-size: 15px;
+      color: var(--body-text);
+      font-weight: 500;
+    }
+
+    /* Contacts pill navigation */
+    .contacts-pill-bar {
+      padding: 12px 16px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--grey-border);
+      flex-shrink: 0;
+    }
+
+    .contact-pill {
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--body-text);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition);
+    }
+
+    .contact-pill.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .contact-entry {
+      padding: 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .contact-entry-info {
+      flex: 1;
+    }
+
+    .contact-entry-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 4px;
+    }
+
+    .contact-entry-desc {
+      font-size: 13px;
+      color: var(--grey-text);
+      line-height: 1.45;
+    }
+
+    .contact-entry-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .contact-entry-icon.phone {
+      background: var(--yellow-phone);
+    }
+
+    .contact-entry-icon.fb {
+      background: var(--blue-fb);
+    }
+
+    .contact-entry-icon.wa {
+      background: var(--green-wa);
+    }
+
+    .contact-entry-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    /* News tab */
+    .news-item {
+      padding: 16px;
+      border-bottom: 1px solid var(--grey-border);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .news-item:active {
+      background: var(--grey-light);
+    }
+
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 4px;
+    }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-bottom: 6px;
+    }
+
+    .news-preview {
+      font-size: 13px;
+      color: var(--body-text);
+      line-height: 1.45;
+    }
+
+    /* Media Notes */
+    .media-type-pills {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .media-note-item {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .media-thumb {
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .media-thumb svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--grey-text);
+    }
+
+    .media-info {
+      flex: 1;
+    }
+
+    .media-type-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .media-title-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark-text);
+      margin: 2px 0;
+    }
+
+    .media-desc-text {
+      font-size: 12px;
+      color: var(--grey-text);
+    }
+
+    /* Online links */
+    .online-item {
+      padding: 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .online-item-info {
+      flex: 1;
+    }
+
+    .online-item-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+
+    .online-item-url {
+      font-size: 12px;
+      color: var(--navy);
+      margin-top: 2px;
+    }
+
+    .online-item-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .online-item-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--grey-text);
+    }
+
+    /* ══════════════════════════════════════
+   MAIN MENU OVERLAY
+══════════════════════════════════════ */
+    #overlay-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #overlay-menu.open {
+      transform: translateY(0);
+    }
+
+    .menu-header {
+      background: var(--navy);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .menu-logo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .menu-logo-circle svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    .menu-header-text {
+      flex: 1;
+    }
+
+    .menu-header-brand {
+      color: var(--white);
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .menu-header-list {
+      list-style: none;
+    }
+
+    .menu-header-list li {
+      color: rgb(15, 50, 80);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .menu-header-list li::before {
+      content: '·';
+      font-size: 20px;
+    }
+
+    .menu-body {
+      background: var(--white);
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .menu-label-row {
+      padding: 18px 24px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .menu-label-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .menu-label-icon span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--grey-text);
+      border-radius: 1px;
+      margin-bottom: 4px;
+    }
+
+    .menu-label-text {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--grey-text);
+    }
+
+    .menu-divider {
+      height: 1px;
+      background: rgb(220, 220, 220);
+      margin: 0 24px;
+    }
+
+    .menu-items {
+      padding: 20px 0;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+      height: 70px;
+      cursor: pointer;
+      transition: background var(--transition);
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .menu-item:active {
+      background: var(--grey-light);
+    }
+
+    .menu-item-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .menu-item-circle svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    .menu-item-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .menu-footer {
+      height: 40px;
+      background: rgb(245, 245, 245);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
+
+    .menu-footer-text {
+      font-size: 13px;
+      color: var(--grey-text);
+    }
+
+    .menu-version-btn {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--grey-text);
+      cursor: pointer;
+    }
+
+    .menu-bottom-nav {
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+   LOCATION FILTER PANEL
+══════════════════════════════════════ */
+    #page-location {
+      background: var(--white);
+    }
+
+    .location-list-item {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid var(--grey-border);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .location-list-item:active {
+      background: var(--grey-light);
+    }
+
+    .loc-indicator {
+      width: 5px;
+      height: 36px;
+      border-radius: 3px;
+      background: var(--grey-mid);
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+
+    .loc-indicator.fav {
+      background: var(--green-trust);
+    }
+
+    .loc-indicator.active {
+      background: var(--navy);
+    }
+
+    .loc-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark-text);
+      flex: 1;
+    }
+
+    .loc-star {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 4px;
+    }
+
+    /* ══════════════════════════════════════
+   PROMOS PAGE
+══════════════════════════════════════ */
+    /* ══════════════════════════════════════
+       PROMOS PAGE
+    ══════════════════════════════════════ */
+    #page-promos {
+      background: rgb(240, 242, 245);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top header bar: TapFo.bw brand left, Weekly · Events · Mediums tabs right */
+    .promos-header-nav {
+      flex-shrink: 0;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      background: rgb(255, 255, 255);
+      border-bottom: 1px solid rgb(230, 230, 230);
+    }
+
+    .promos-header-brand {
+      color: rgb(26, 82, 118);
+      font-size: 16px;
+      font-weight: 700;
+      margin-right: 16px;
+      /* Reduced right margin */
+    }
+
+    .promo-panel-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      /* Right-align tabs */
+      gap: 12px;
+      flex: 1;
+      /* Take up available space to push to right */
+    }
+
+    .promo-panel-tab {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgb(180, 180, 180);
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .promo-panel-tab.active {
+      color: rgb(50, 50, 50);
+      font-weight: 700;
+    }
+
+    /* Breadcrumb shown when inside adverts view */
+    .promo-breadcrumb-bar {
+      flex-shrink: 0;
+      padding: 8px 16px;
+      background: rgb(255, 255, 255);
+      border-bottom: 1px solid rgb(235, 235, 235);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgb(160, 160, 160);
+    }
+
+    .promo-breadcrumb-active {
+      color: rgb(50, 50, 50);
+      font-weight: 700;
+    }
+
+    /* Sliding panels container */
+    .promo-panels-container {
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .promo-panels-wrapper {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    /* Each panel fills 1/3 of wrapper, scrolls independently */
+    .promo-panel {
+      flex-shrink: 0;
+      width: 33.3333%;
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      background: rgb(240, 242, 245);
+      padding: 12px 12px 0 12px;
+    }
+
+    /* The white card that wraps the category list — no bottom border-radius so it appears infinite */
+    .promo-cat-card {
+      background: rgb(255, 255, 255);
+      border-radius: 12px 12px 0 0;
+      flex: 1;
+      padding: 8px 0 100px 0;
+      /* extra bottom padding for spacing */
+      min-height: 100%;
+    }
+
+    /* Each category row inside the white card */
+    .promo-cat-row {
+      display: flex;
+      align-items: center;
+      padding: 22px 16px 22px 0;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .promo-cat-row:active {
+      background: rgb(248, 248, 248);
+    }
+
+    /* Left indicator bar — 4px wide, grey */
+    .promo-cat-bar {
+      width: 4px;
+      min-width: 4px;
+      height: 40px;
+      border-radius: 0 2px 2px 0;
+      background: rgb(210, 210, 210);
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Category name text — large bold dark */
+    .promo-cat-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: rgb(60, 60, 60);
+      line-height: 1.2;
+    }
+
+    /* Secondary location nav row sits above bottom nav */
+    .promo-secondary-nav {
+      position: absolute;
+      bottom: 56px;
+      left: 0;
+      right: 0;
+      height: 44px;
+      padding: 0 12px;
+      z-index: 100;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .promo-secondary-inner {
+      width: 100%;
+      height: 100%;
+      background: rgb(18, 52, 86);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      border-radius: 8px 8px 0 0;
+      pointer-events: auto;
+    }
+
+    .promo-secondary-nav span {
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .promos-header-nav {
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    /* Scroll hiding classes */
+    .nav-hidden-top {
+      transform: translateY(-100%);
+    }
+
+    .nav-hidden-bottom {
+      transform: translateY(100%);
+    }
+
+    /* Advert timeline — full-width tall image cards */
+    .promo-adverts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 24px;
+    }
+
+    .promo-advert-card {
+      width: 100%;
+      background: rgb(220, 220, 220);
+      border-radius: 12px;
+      min-height: 460px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    .promo-advert-card:active {
+      transform: scale(0.98);
+    }
+
+    .promo-advert-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .promo-advert-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgb(50, 50, 50);
+      z-index: 1;
+    }
+
+    .promo-advert-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      z-index: 2;
+    }
+
+    .promo-advert-tagline {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    /* Events Panel specific styles */
+    .pe-month-header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      gap: 12px;
+      background: white;
+    }
+
+    .pe-month-bar {
+      width: 4px;
+      height: 24px;
+      background: var(--grey-mid);
+      border-radius: 2px;
+    }
+
+    .pe-current-bar {
+      background: var(--navy);
+    }
+
+    .pe-month-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .pe-month-now {
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      background: #00d69c;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .pe-event-row {
+      display: flex;
+      padding: 16px;
+      gap: 12px;
+      background: white;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .pe-event-dot {
+      width: 8px;
+      height: 8px;
+      background: #eee;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .pe-featured .pe-event-dot {
+      background: #ffc800;
+    }
+
+    .pe-event-body {
+      flex: 1;
+    }
+
+    .pe-event-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .pe-event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .pe-event-meta span {
+      font-size: 12px;
+      color: #888;
+      background: #f8f8f8;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .pe-event-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .pe-accordion {
+      border-bottom: 1px solid #f0f0f0;
+      background: #fafafa;
+    }
+
+    .pe-acc-header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .pe-acc-bar {
+      width: 4px;
+      height: 20px;
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    .pe-past .pe-acc-bar {
+      background: #eee;
+    }
+
+    .pe-acc-month {
+      font-size: 16px;
+      font-weight: 700;
+      color: #666;
+      flex: 1;
+    }
+
+    .pe-acc-count {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .pe-acc-chevron {
+      font-size: 18px;
+      color: #ccc;
+      transition: transform 0.2s;
+    }
+
+    .pe-acc-body {
+      background: white;
+    }
+
+    .pe-back-btn {
+      padding: 12px 16px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8f9fa;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Events Page */
+    .events-header {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .event-filter-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .event-filter-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .event-card {
+      margin: 12px;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border-left: 4px solid var(--navy);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .event-card.featured {
+      border-left-color: #ffc107;
+    }
+
+    .event-card.soccer {
+      border-left-color: #28a745;
+    }
+
+    .event-card-top {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .event-status {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--grey-light);
+      color: var(--grey-text);
+    }
+
+    .event-status.active {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .event-status.upcoming {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .event-details {
+      padding: 0 16px 16px;
+    }
+
+    .event-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .event-meta {
+      font-size: 13px;
+      color: var(--grey-text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .event-location {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ── PROMOS EVENTS PANEL ── */
+    .pe-month-header {
+      display: flex;
+      align-items: center;
+      padding: 16px 16px 8px 0;
+    }
+
+    .pe-month-bar {
+      width: 4px;
+      min-width: 4px;
+      height: 32px;
+      border-radius: 0 2px 2px 0;
+      background: rgb(210, 210, 210);
+      margin-right: 12px;
+    }
+
+    .pe-current-bar {
+      background: rgb(26, 82, 118);
+    }
+
+    .pe-month-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgb(40, 40, 40);
+      flex: 1;
+    }
+
+    .pe-month-now {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      background: rgb(26, 82, 118);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .pe-event-row {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px 16px 10px 0;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .pe-event-row:active {
+      background: rgb(248, 248, 250);
+    }
+
+    .pe-event-row.pe-featured .pe-event-dot {
+      background: rgb(26, 82, 118);
+    }
+
+    .pe-event-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgb(210, 210, 210);
+      margin: 6px 12px 0 12px;
+      flex-shrink: 0;
+    }
+
+    .pe-event-body {
+      flex: 1;
+    }
+
+    .pe-event-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(40, 40, 40);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .pe-event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: rgb(130, 130, 130);
+      margin-bottom: 3px;
+    }
+
+    .pe-event-desc {
+      font-size: 12px;
+      color: rgb(160, 160, 160);
+      line-height: 1.4;
+    }
+
+    /* Accordion rows */
+    .pe-accordion {
+      border-bottom: 1px solid rgb(240, 240, 240);
+    }
+
+    .pe-acc-header {
+      display: flex;
+      align-items: center;
+      padding: 18px 16px 18px 0;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .pe-acc-header:active {
+      background: rgb(248, 248, 250);
+    }
+
+    .pe-acc-bar {
+      width: 4px;
+      min-width: 4px;
+      height: 32px;
+      border-radius: 0 2px 2px 0;
+      background: rgb(210, 210, 210);
+      margin-right: 12px;
+    }
+
+    .pe-past .pe-acc-bar {
+      background: rgb(200, 200, 200);
+      opacity: 0.5;
+    }
+
+    .pe-acc-month {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgb(60, 60, 60);
+      flex: 1;
+    }
+
+    .pe-past .pe-acc-month {
+      color: rgb(160, 160, 160);
+    }
+
+    .pe-acc-count {
+      font-size: 12px;
+      color: rgb(160, 160, 160);
+      margin-right: 10px;
+    }
+
+    .pe-acc-chevron {
+      font-size: 20px;
+      color: rgb(180, 180, 180);
+      transition: transform 0.2s;
+      font-weight: 300;
+    }
+
+    .pe-acc-body {
+      padding-bottom: 8px;
+    }
+
+    /* ── HIDE-ON-SCROLL for Promos page ── */
+    /* The header nav and secondary nav slide out of view on scroll down, back on scroll up */
+    #page-promos .promos-header-nav,
+    #page-promos .promo-breadcrumb-bar {
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    #page-promos .promo-secondary-nav {
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    #page-promos.nav-hidden .promos-header-nav {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #page-promos.nav-hidden .promo-secondary-nav {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .promo-full-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+    }
+
+    .promo-full-media {
+      flex: 0 0 65%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .promo-full-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .promo-full-info {
+      flex: 1;
+      background: var(--white);
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    .promo-full-biz {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 12px;
+      background: var(--grey-light);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .promo-double-footer {
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+   USER PROFILE PAGE
+══════════════════════════════════════ */
+    #page-profile {
+      background: var(--bg);
+    }
+
+    .profile-header {
+      background: var(--navy);
+      padding: 24px 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .profile-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .profile-avatar svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .profile-name {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .profile-location {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .profile-joined {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .profile-tabs-bar {
+      background: var(--white);
+      display: flex;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--grey-border);
+      flex-shrink: 0;
+    }
+
+    .profile-tab {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--grey-text);
+      padding: 12px 16px;
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition);
+    }
+
+    .profile-tab.active {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+    }
+
+    .profile-body {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .profile-section-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      margin: 12px 16px;
+      overflow: hidden;
+    }
+
+    .profile-section-header {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--grey-text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .add-btn {
+      background: var(--navy);
+      border: none;
+      color: white;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .interest-pills {
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .interest-pill {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .education-item {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .edu-institution {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+
+    .edu-qualification {
+      font-size: 13px;
+      color: var(--body-text);
+      margin-top: 2px;
+    }
+
+    .edu-year {
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-top: 2px;
+    }
+
+    /* ══════════════════════════════════════
+   NOTES PAGE
+══════════════════════════════════════ */
+    #page-notes {
+      background: var(--bg);
+    }
+
+    .note-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      margin: 12px 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow var(--transition);
+    }
+
+    .note-card:active {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .note-card-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .note-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+
+    .note-card-date {
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-top: 2px;
+    }
+
+    .note-card-count {
+      font-size: 13px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .note-add-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px;
+      margin: 12px 16px;
+      background: var(--white);
+      border-radius: var(--radius-card);
+      border: 2px dashed var(--grey-border);
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--grey-text);
+      width: calc(100% - 32px);
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    .note-add-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    /* Note items view levels */
+    .note-level-btn {
+      display: flex;
+      align-items: stretch;
+      margin: 0 16px 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .note-level-top {
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      flex: 1;
+    }
+
+    .note-level-bottom {
+      padding: 10px 16px;
+      font-size: 13px;
+      color: rgb(80, 80, 80);
+      background: rgb(239, 239, 239);
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ══════════════════════════════════════
+   CHANGELOG / UPDATES PAGE
+══════════════════════════════════════ */
+    #page-changelog {
+      background: var(--bg);
+    }
+
+    .update-entry {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      margin: 12px 16px;
+      overflow: hidden;
+    }
+
+    .update-header {
+      padding: 14px 16px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .update-version {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .update-date {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+    }
+
+    .update-body {
+      padding: 14px 16px;
+    }
+
+    .update-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--grey-border);
+      font-size: 14px;
+      color: var(--body-text);
+      line-height: 1.45;
+    }
+
+    .update-feature:last-child {
+      border-bottom: none;
+    }
+
+    .update-badge {
+      background: var(--accent-green);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .update-badge.fix {
+      background: var(--yellow-phone);
+      color: var(--dark-text);
+    }
+
+    .update-badge.upcoming {
+      background: var(--grey-mid);
+    }
+
+    /* ══════════════════════════════════════
+   BACK BUTTON
+══════════════════════════════════════ */
+    .back-btn {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: var(--navy);
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 4px 0;
+    }
+
+    .back-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--navy);
+    }
+
+    /* ══════════════════════════════════════
+   ARTICLE READER
+══════════════════════════════════════ */
+    #page-article {
+      background: var(--white);
+    }
+
+    .article-top {
+      flex-shrink: 0;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .article-body-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 16px;
+    }
+
+    .article-headline {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .article-meta {
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-bottom: 16px;
+    }
+
+    .article-text {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════
+   PROMO VIEWER
+══════════════════════════════════════ */
+    #page-promo-view {
+      background: #000;
+    }
+
+    .promo-view-top {
+      flex-shrink: 0;
+      padding: 14px 16px;
+      background: var(--deep-navy);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .promo-view-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    .promo-image {
+      width: 100%;
+      border-radius: 12px;
+      background: var(--grey-border);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--grey-text);
+    }
+
+    .promo-actions {
+      flex-shrink: 0;
+      padding: 16px;
+      background: var(--deep-navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .promo-action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: var(--font);
+      font-size: 11px;
+    }
+
+    .promo-action-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ══════════════════════════════════════
+   TOAST NOTIFICATION
+══════════════════════════════════════ */
+    .toast {
+      position: fixed;
+      bottom: 72px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--dark-text);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 200;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ══════════════════════════════════════
+   MISC UTILITIES
+══════════════════════════════════════ */
+    .section-header-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--body-text);
+      padding: 16px 16px 8px;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .empty-state-emoji {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .empty-state-text {
+      font-size: 16px;
+      color: var(--grey-text);
+      line-height: 1.5;
+    }
+
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--grey-light);
+      border: 1px solid var(--grey-border);
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--body-text);
+    }
+
+    /* Action bar */
+    .biz-action-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      gap: 16px;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .biz-action-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--grey-text);
+      font-family: var(--font);
+      font-size: 13px;
+      transition: color var(--transition);
+    }
+
+    .biz-action-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--grey-text);
+    }
+
+    .biz-action-icon.starred svg {
+      fill: #f5c518;
+    }
+
+    .biz-action-icon:active {
+      color: var(--navy);
+    }
+
+    /* ── DATA SIZE LABEL ── */
+    .biz-data-row {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    .data-size-text {
+      font-size: 13px;
+      color: var(--grey-text);
+    }
+
+    .delete-link {
+      font-size: 13px;
+      color: var(--grey-text);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .subcats-text {
+      font-size: 12px;
+      color: rgb(120, 120, 120);
+      line-height: 1.6;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--grey-mid);
+      border-radius: 2px;
+    }
+
+    /* Transition for page hide animations */
+    .page-transition-in {
+      animation: slideInRight 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .page-transition-out {
+      animation: slideOutLeft 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideOutLeft {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-30%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app-shell">
+    <div id="top-level"
+      style="position:absolute; top:16px; left:16px; z-index:110; pointer-events:none; display:flex; align-items:center; gap:6px;">
+      <!-- Removed TapFo.bw indicator for v0.5 -->
+    </div>
+
+    <!-- ZONE 2: BODY LEVEL (Scrollable Content area for Pages) -->
+    <div id="body-level" style="flex:1; position:relative; overflow:hidden;">
+      <!-- Page: Home -->
+      <div class="page active" id="page-home">
+        <div class="home-scroll-area">
+
+          <!-- Logo: clean, centered, no circle background -->
+          <div class="logo-circle">
+            <img src="assets/icons/TapFo_Logo.png" alt="TapFo Logo"
+              style="width:176px; height:176px; object-fit:contain;">
+          </div>
+
+          <!-- Tagline: 16px below circle -->
+          <p class="tagline">Tapfo everything.</p>
+
+          <!-- Search & Location: 40px below tagline, full width with 16px side padding -->
+          <div class="search-bar-wrapper">
+            <input class="search-bar" type="text" placeholder="TapFo everything." oninput="handleHomeSearch(this.value)"
+              id="home-search-input">
+
+            <div class="location-row">
+              <span class="loc-btn" onclick="openLocationFilter('city')" id="home-city">Gaborone</span>
+              <span class="loc-btn" onclick="openLocationFilter('area')" id="home-area">All Areas</span>
+            </div>
+          </div>
+
+          <!-- Category Icon Row: 5 grey circles, 20px below location row -->
+          <div class="icon-row">
+            <button class="icon-btn" onclick="openDirectory('Services')">
+              <img src="assets/icons/Icon_Services.png" alt="Services">
+            </button>
+            <button class="icon-btn" onclick="openDirectory('Food')">
+              <img src="assets/icons/icon_food.png" alt="Food">
+            </button>
+            <button class="icon-btn" onclick="openDirectory('Health')">
+              <img src="assets/icons/Icon_health.png" alt="Health">
+            </button>
+            <button class="icon-btn" onclick="openDirectory('Transport')">
+              <img src="assets/icons/icon_Transport.png" alt="Transport">
+            </button>
+            <button class="icon-btn" onclick="openDirectory('Finance')">
+              <img src="assets/icons/icon_finance.png" alt="Finance">
+            </button>
+          </div>
+
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     SEARCH RESULTS PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-search">
+        <div class="search-results-top">
+          <div class="search-filter-row">
+            <div class="tab-row" style="margin-right:auto;">
+              <button class="tab-btn active" onclick="setSearchFilter('All',this)">All</button>
+              <span class="tab-sep">·</span>
+              <button class="tab-btn" onclick="setSearchFilter('Companies',this)">Companies</button>
+              <span class="tab-sep">·</span>
+              <button class="tab-btn" onclick="setSearchFilter('Consultants',this)">Consultants</button>
+            </div>
+          </div>
+          <div style="padding-bottom:12px;">
+            <input type="text" class="search-bar" id="search-input" placeholder="Search Listed Businesses..."
+              oninput="performSearch(this.value)" style="border-color:var(--navy);">
+            <div class="location-row" style="margin-bottom:0;margin-top:8px;">
+              <button class="loc-btn" onclick="openLocationFilter('city')">Gaborone</button>
+              <button class="loc-btn" onclick="openLocationFilter('area')">All Areas</button>
+            </div>
+          </div>
+        </div>
+        <div class="results-list" id="results-list">
+          <div class="results-card" id="results-card">
+            <!-- filled by JS -->
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     DIRECTORY PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-directory">
+        <div class="dir-top">
+          <button class="dir-title-btn" id="dir-title" onclick="toggleCatSelector()">Services</button>
+          <div class="all-trusted-tabs">
+            <button class="tab-btn active" id="dir-tab-all" onclick="setDirTab('all',this)">All</button>
+            <span class="tab-sep">·</span>
+            <button class="tab-btn" id="dir-tab-trusted" onclick="setDirTab('trusted',this)">Trusted</button>
+          </div>
+        </div>
+
+        <!-- Category Selector -->
+        <div class="cat-selector" id="cat-selector">
+          <div class="cat-selector-item" onclick="selectDirCat('Services')">
+            <div class="cat-sel-icon"><img src="assets/icons/Icon_ Services.png" alt="Services"
+                style="width:20px; height:20px;"></div>
+            <span class="cat-sel-label">Services</span>
+          </div>
+          <div class="cat-selector-item" onclick="selectDirCat('Food')">
+            <div class="cat-sel-icon"><img src="assets/icons/icon_food.png" alt="Food" style="width:20px; height:20px;">
+            </div>
+            <span class="cat-sel-label">Food</span>
+          </div>
+          <div class="cat-selector-item" onclick="selectDirCat('Health')">
+            <div class="cat-sel-icon"><img src="assets/icons/icon_health.png" alt="Health"
+                style="width:20px; height:20px;"></div>
+            <span class="cat-sel-label">Health</span>
+          </div>
+          <div class="cat-selector-item" onclick="selectDirCat('Transport')">
+            <div class="cat-sel-icon"><img src="assets/icons/icon_Transport.png" alt="Transport"
+                style="width:20px; height:20px;"></div>
+            <span class="cat-sel-label">Transport</span>
+          </div>
+          <div class="cat-selector-item" onclick="selectDirCat('Finance')">
+            <div class="cat-sel-icon"><img src="assets/icons/icon_finance.png" alt="Finance"
+                style="width:20px; height:20px;"></div>
+            <span class="cat-sel-label">Finance</span>
+          </div>
+        </div>
+
+        <div class="dir-body" id="dir-body">
+          <div class="dir-card" id="dir-card">
+            <!-- filled by JS -->
+          </div>
+        </div>
+        <div class="secondary-nav">
+          <span>Gaborone</span>
+          <span>All Areas</span>
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     BUSINESS PROFILE PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-business">
+        <div class="biz-profile-top">
+          <div style="display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--grey-border);">
+            <button class="back-btn" onclick="goBack()">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+              </svg>
+              <span id="biz-back-label">Directory</span>
+            </button>
+          </div>
+          <div class="biz-header-card" id="biz-header-card">
+            <!-- filled by JS -->
+          </div>
+          <div class="biz-action-bar" id="biz-action-bar"><!-- filled by JS --></div>
+          <div class="biz-tagline" id="biz-tagline"></div>
+          <div class="biz-data-row" id="biz-data-row"></div>
+          <div class="biz-profile-tabs" id="biz-profile-tabs">
+            <button class="biz-tab active" onclick="setBizTab('services',this)">Services</button>
+            <span class="biz-tab-sep">·</span>
+            <button class="biz-tab" onclick="setBizTab('news',this)">News</button>
+            <span class="biz-tab-sep">·</span>
+            <button class="biz-tab" onclick="setBizTab('onlines',this)">Onlines</button>
+            <span class="biz-tab-sep">·</span>
+            <button class="biz-tab" onclick="setBizTab('contacts',this)">Contacts</button>
+            <span class="biz-tab-sep">·</span>
+            <button class="biz-tab" onclick="setBizTab('media',this)">Media</button>
+          </div>
+        </div>
+        <div class="biz-profile-body" id="biz-profile-body">
+          <!-- filled by JS -->
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- Page: Promos -->
+      <div class="page" id="page-promos" style="padding-bottom:100px;">
+
+        <!-- Top bar: Weekly · Events · Mediums tabs only (no brand — brand is homepage only) -->
+        <div class="promos-header-nav" id="promos-header-nav">
+          <div class="promo-panel-tabs">
+            <button class="promo-panel-tab active" id="tab-weekly" onclick="switchPromoPanel(0)">Weekly</button>
+            <span style="color:rgb(200,200,200); font-size:14px;">·</span>
+            <button class="promo-panel-tab" id="tab-events" onclick="switchPromoPanel(1)">Events</button>
+            <span style="color:rgb(200,200,200); font-size:14px;">·</span>
+            <button class="promo-panel-tab" id="tab-mediums" onclick="switchPromoPanel(2)">Mediums</button>
+          </div>
+        </div>
+
+        <!-- Breadcrumb — shown only when inside adverts view -->
+        <div class="promo-breadcrumb-bar" id="promo-breadcrumb" style="display:none;">
+          <span style="cursor:pointer;" onclick="promoGoBack()">Promos</span>
+          <span>·</span>
+          <span id="breadcrumb-main-cat">Category</span>
+          <span>·</span>
+          <span class="promo-breadcrumb-active" id="breadcrumb-sub-cat">All Adverts</span>
+        </div>
+
+        <!-- Sliding panels: Weekly | Events | Mediums -->
+        <div class="promo-panels-container" id="promo-panels-container">
+          <!-- Slide wrapper -->
+          <div class="promo-panels-wrapper" id="promo-panels-wrapper">
+            <div class="promo-panel" id="panel-weekly">
+              <div id="weekly-content"></div>
+            </div>
+            <div class="promo-panel" id="panel-events">
+              <div id="events-content"></div>
+            </div>
+            <div class="promo-panel" id="panel-mediums">
+              <div id="mediums-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-secondary-nav" id="promo-secondary-nav">
+          <div class="promo-secondary-inner">
+            <span>Gaborone</span>
+            <span>All Areas</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════════════════
+     LOCATION FILTER PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-location">
+        <div class="top-bar">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span class="top-brand" id="loc-page-title">Areas & Neighbourhoods</span>
+          <span></span>
+        </div>
+        <div style="padding:12px 16px;background:var(--grey-light);border-bottom:1px solid var(--grey-border);">
+          <span id="loc-subtitle" style="font-size:15px;font-weight:700;color:var(--navy);">Town/City Name</span>
+        </div>
+        <div class="body-scroll" id="location-list">
+          <!-- filled by JS -->
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     USER PROFILE PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-profile">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+            </svg>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name">Your Profile</div>
+            <div class="profile-location"> Gaborone, Botswana</div>
+            <div class="profile-joined">Member since September 2025</div>
+          </div>
+        </div>
+        <div class="profile-tabs-bar">
+          <button class="profile-tab active" onclick="setProfileTab('interests',this)">Interests</button>
+          <button class="profile-tab" onclick="setProfileTab('education',this)">Education</button>
+          <button class="profile-tab" onclick="setProfileTab('notes',this)">Notes</button>
+        </div>
+        <div class="profile-body" id="profile-body">
+          <!-- filled by JS -->
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     NOTES PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-notes">
+        <div class="top-bar">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span class="top-brand">Notes</span>
+          <span></span>
+        </div>
+        <div class="body-scroll" id="notes-body">
+          <!-- filled by JS -->
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     ARTICLE READER PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-article">
+        <div class="article-top">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span style="font-size:14px;color:var(--grey-text);" id="article-source"></span>
+        </div>
+        <div class="article-body-content" id="article-content"></div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     CHANGELOG PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-changelog">
+        <div class="top-bar">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span class="top-brand">App Updates</span>
+          <span></span>
+        </div>
+        <div class="body-scroll" id="changelog-body">
+          <!-- filled by JS -->
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-about">
+        <div class="top-bar">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span class="top-brand">About TapFo</span>
+          <span></span>
+        </div>
+        <div class="body-scroll">
+          <div style="padding:24px 16px;">
+            <div class="logo-circle"
+              style="margin:0 auto 20px;width:120px;height:120px;background:var(--navy);border-radius:50%;">
+              <img src="assets/icons/TapFo_Logo_White.png" alt="TapFo Logo" style="width:80px; height:80px;">
+            </div>
+            <h2 style="text-align:center;color:var(--navy);font-size:24px;margin-bottom:8px;">TapFo.bw</h2>
+            <p style="text-align:center;color:var(--grey-text);font-size:14px;margin-bottom:24px;">Version 1.01.267</p>
+
+            <div class="profile-section-card">
+              <div class="profile-section-header">Our Mission</div>
+              <div style="padding:16px;font-size:15px;color:var(--body-text);line-height:1.7;">
+                TapFo is Botswana's offline-first business directory and community platform. We believe every business —
+                no matter how small — deserves to be found, trusted, and connected to the community it serves. TapFo
+                everything.
+              </div>
+            </div>
+
+            <div class="profile-section-card">
+              <div class="profile-section-header">What We Do</div>
+              <div style="padding:16px;">
+                <div style="margin-bottom:14px;">
+                  <div style="font-size:15px;font-weight:700;color:var(--dark-text);margin-bottom:4px;">📂 Business
+                    Directory</div>
+                  <div style="font-size:14px;color:var(--body-text);">Find businesses in your neighbourhood — works
+                    offline.</div>
+                </div>
+                <div style="margin-bottom:14px;">
+                  <div style="font-size:15px;font-weight:700;color:var(--dark-text);margin-bottom:4px;">📣 Weekly Promos
+                  </div>
+                  <div style="font-size:14px;color:var(--body-text);">Browse promotional content from local businesses.
+                  </div>
+                </div>
+                <div style="margin-bottom:14px;">
+                  <div style="font-size:15px;font-weight:700;color:var(--dark-text);margin-bottom:4px;">⭐ Trusted</div>
+                  <div style="font-size:14px;color:var(--body-text);">Build your personal list of trusted local
+                    businesses.</div>
+                </div>
+                <div>
+                  <div style="font-size:15px;font-weight:700;color:var(--dark-text);margin-bottom:4px;">📝 Notes & Items
+                  </div>
+                  <div style="font-size:14px;color:var(--body-text);">Save and track products, services and price
+                    information.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align:center;margin-top:24px;padding-bottom:24px;">
+              <div style="font-size:14px;color:var(--grey-text);">© 2026 TapFo.bw · All rights reserved</div>
+              <div style="font-size:14px;color:var(--grey-text);margin-top:4px;">Made with ❤️ for Botswana</div>
+            </div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     HOW TO USE PAGE
+══════════════════════════════════════ -->
+      <div class="page" id="page-howto">
+        <div class="top-bar">
+          <button class="back-btn" onclick="goBack()">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </button>
+          <span class="top-brand">How To Use</span>
+          <span></span>
+        </div>
+        <div class="body-scroll">
+          <div style="padding:16px;">
+            <div id="howto-list"></div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <button class="menu-btn" onclick="openMenu()">
+            <img src="assets/icons/Menu_Button_grey.png" alt="Menu" style="width:24px; height:24px;">
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" id="nav-directory" onclick="navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" id="nav-promos" onclick="navigateToPage('promos')">Promos</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="engage-btn" onclick="showToast('Engage feature coming soon!')">Engage</button>
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════
+     MAIN MENU OVERLAY
+══════════════════════════════════════ -->
+      <div id="overlay-menu">
+        <div class="menu-header">
+          <div class="menu-logo-circle">
+            <img src="assets/icons/TapFo_Logo_White.png" alt="TapFo Logo" style="width:80px; height:80px;">
+          </div>
+          <div class="menu-header-text">
+            <div class="menu-header-brand">TapFo.bw</div>
+            <ul class="menu-header-list">
+              <li>Business Directory</li>
+              <li>Weekly Advertiser</li>
+              <li>Job Seeker</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-body">
+          <div class="menu-label-row">
+            <div class="hamburger-icon" style="width:20px;height:14px;">
+              <span style="background:var(--grey-text);"></span>
+              <span style="background:var(--grey-text);"></span>
+              <span style="background:var(--grey-text);"></span>
+            </div>
+            <span class="menu-label-text">Menu</span>
+          </div>
+          <div class="menu-divider"></div>
+
+          <div class="menu-items">
+            <button class="menu-item" onclick="closeMenu();showPage('profile')">
+              <div class="menu-item-circle">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                </svg>
+              </div>
+              <span class="menu-item-label">Profile</span>
+            </button>
+            <button class="menu-item" onclick="closeMenu();showPage('notes')">
+              <div class="menu-item-circle">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2z" />
+                </svg>
+              </div>
+              <span class="menu-item-label">Notes</span>
+            </button>
+            <button class="menu-item" onclick="closeMenu();openDirectory('trusted')">
+              <div class="menu-item-circle">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              </div>
+              <span class="menu-item-label">Trusted</span>
+            </button>
+            <button class="menu-item" onclick="closeMenu();showPage('about')">
+              <div class="menu-item-circle">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+              </div>
+              <span class="menu-item-label">About TapFo</span>
+            </button>
+            <button class="menu-item" onclick="closeMenu();showPage('howto')">
+              <div class="menu-item-circle">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                </svg>
+              </div>
+              <span class="menu-item-label">How To Use</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-footer">
+          <button class="menu-version-btn" onclick="closeMenu();showPage('changelog')">Version 1.01.267</button>
+          <span class="menu-footer-text">© 2026 TapFo.bw</span>
+        </div>
+
+        <nav class="bottom-nav menu-bottom-nav">
+          <button class="menu-btn" onclick="closeMenu()">
+            <div class="hamburger-icon"><span></span><span></span><span></span></div>
+          </button>
+          <div class="nav-links">
+            <button class="nav-link" onclick="closeMenu();navigateToPage('home')">Directory</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" onclick="closeMenu();navigateToPage('promos')">Promos</button>
+            <span class="nav-dot">●</span>
+            <button class="nav-link" onclick="closeMenu();navigateToPage('events')">Events</button>
+          </div>
+          <div class="nav-spacer"></div>
+          <button class="list-biz-btn" onclick="showToast('List Business coming soon!')">List Business</button>
+        </nav>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast" id="toast"></div>
+
+      <!-- Real Data Manifests -->
+      <script src="data/botswana_events_2026.js"></script>
+      <script src="data/promos_manifest.js"></script>
+
+      <script>
+        // ══════════════════════════════════════
+        // DATA — 5 months of seeded content
+        // ══════════════════════════════════════
+
+        const DB = {
+          businesses: [
+            { id: 1, name: "Mosienyane & Partners", category: "Finance", subcategory: "Legal & Financial Services", type: "Company", trusted: true, phone: true, facebook: true, whatsapp: true, desc: "Get flexible SME loans with low interest rates tailored for Batswana entrepreneurs. Apply at any branch today.", size: "15.98MB", verified: true, location: "Main Mall, Gaborone", services: ["Business Loans", "Personal Finance", "Investment Advisory", "Insurance Services", "Tax Consulting"], contacts: { call: [{ title: "Main Office - Block 3", desc: "General enquiries and loan applications. Mon-Fri 8am-5pm." }, { title: "Sales Department", desc: "Speak to our sales team for business accounts." }, { title: "Emergency Line", desc: "After-hours urgent financial matters only." }], facebook: [{ title: "Main Page", desc: "Follow and like our page to get access to all our marketing and offers." }, { title: "Photo Gallery", desc: "Check out our images and videos of our work." }], whatsapp: [{ title: "General Inquiries", desc: "WhatsApp us for quick answers. Response within 2 hours." }, { title: "Loan Applications", desc: "Send documents and get loan status updates." }] }, news: [{ title: "New SME Loan Package Launched", date: "15 Feb 2026", preview: "We have launched a new package tailored for small businesses under P50,000 turnover...", body: "We are thrilled to announce the launch of our newest financial product — the TapFo SME Fast Loan. Designed specifically for small businesses operating under P50,000 monthly turnover, this package offers same-day approval for amounts up to P25,000 with repayment terms flexible from 6 to 36 months. Speak to any of our consultants at the Main Mall branch to learn more." }, { title: "Botswana Finance Expo 2026 — We'll Be There", date: "2 Feb 2026", preview: "Join us at the Botswana Finance Expo happening March 14-16 at BICC...", body: "The annual Botswana Finance Expo is happening at the Botswana International Convention Centre from March 14 to 16. Mosienyane & Partners will be exhibiting at Stand B-14. Come meet our team, learn about our products, and enter our P10,000 savings prize draw. Entry is free for all TapFo users." }], onlines: [{ type: "website", title: "Official Website", url: "www.mosienyane.co.bw", desc: "Visit our website for full product listings and online applications." }, { type: "facebook", title: "Facebook Page", url: "fb.com/MosienyanePartners", desc: "6,200 followers — daily financial tips and offers." }], media: [{ type: "Image", title: "Branch Interior — Main Mall", desc: "Our newly renovated Main Mall branch featuring private consultation rooms." }, { type: "Image", title: "Team Photo 2026", desc: "The Mosienyane & Partners team at our annual kickoff event." }] },
+
+            { id: 2, name: "Tshwaragano Grocery & Butchery", category: "Food", subcategory: "Retail Grocery", type: "Company", trusted: false, phone: true, facebook: true, whatsapp: false, desc: "Your neighbourhood grocery store and butchery. Fresh meat, produce and household goods daily. Serving Gaborone West since 2019.", size: "8.2MB", verified: true, location: "Gaborone West, Plot 4421", services: ["Fresh Produce", "Butchery", "Dry Goods", "Household Items", "Catering Packs"], contacts: { call: [{ title: "Store Line", desc: "Call to check stock or place bulk orders." }, { title: "Butchery Direct", desc: "Speak directly to our butchery team." }], facebook: [{ title: "Main Page", desc: "Daily specials and stock updates posted every morning." }], whatsapp: [] }, news: [{ title: "Weekend Braai Special", date: "20 Feb 2026", preview: "This weekend — bulk lamb chops at P45/kg and free coleslaw with every 2kg purchase...", body: "This weekend only, we're running our biggest braai special of the year. Bulk lamb chops at P45/kg (normal P62/kg), wors at P38/kg, and free coleslaw tub with every purchase of 2kg or more. While stocks last. Come in Friday-Sunday, 7am-7pm." }], onlines: [{ type: "facebook", title: "Facebook Page", url: "fb.com/TshwaraganoGrocery", desc: "Follow for daily specials and in-stock updates." }], media: [{ type: "Image", title: "Fresh Produce Display", desc: "Our daily fresh produce section — restocked every morning at 6am." }, { type: "Image", title: "Butchery Section", desc: "Custom cuts available on request. Speak to our master butcher Kagiso." }] },
+
+            { id: 3, name: "Dr. Boipelo Tlhowe — Physiotherapy", category: "Health", subcategory: "Physiotherapy", type: "Consultant", trusted: false, phone: true, facebook: false, whatsapp: false, desc: "Certified physiotherapist with 9 years experience. Sports injury rehabilitation, post-operative care, and pain management. Home visits available in Gaborone.", size: "4.5MB", verified: true, location: "Gaborone Private Hospital, Suite 12", services: ["Sports Injury Rehab", "Post-Op Recovery", "Chronic Pain Management", "Paediatric Physio", "Home Visits"], contacts: { call: [{ title: "Appointment Line", desc: "Call to book your consultation. Mon-Sat." }, { title: "Emergency Consultations", desc: "Same-day appointments for acute injuries — call first." }], facebook: [], whatsapp: [] }, news: [{ title: "New Paediatric Physiotherapy Service", date: "10 Jan 2026", preview: "Dr. Tlhowe now offers specialist paediatric physiotherapy for children from age 2...", body: "We are pleased to announce that Dr. Boipelo Tlhowe has completed advanced training in paediatric physiotherapy and now offers specialist services for children from age 2 through to teenagers. This includes developmental delay assessments, post-surgery rehabilitation, and sports injury management for young athletes. Appointments available every Saturday." }], onlines: [], media: [{ type: "Image", title: "Consultation Room", desc: "A calm, professional environment designed to make patients comfortable." }] },
+
+            { id: 4, name: "Rapid Transfers Botswana", category: "Transport", subcategory: "Courier & Logistics", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Same-day courier and logistics solutions across Gaborone and Greater Gaborone. Motorbike, sedan and van options available. Parcel tracking on request.", size: "6.1MB", verified: false, location: "Phase 2, Gaborone", services: ["Same-Day Courier", "Parcel Delivery", "Airport Transfers", "Business Logistics", "Van Hire"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 5, name: "Khumo Properties & Developments", category: "Services", subcategory: "Real Estate", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Property sales, rentals and development across Gaborone, Francistown and Maun. Residential and commercial listings updated weekly.", size: "12.3MB", verified: false, location: "CBD, Gaborone", services: ["Property Sales", "Long-Term Rentals", "Property Management", "Valuation", "Commercial Leasing"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 6, name: "Naledi Digital Solutions", category: "Services", subcategory: "IT & Digital", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Website development, app builds, graphic design and social media management. Proudly serving businesses across Botswana since 2021.", size: "9.7MB", verified: true, location: "Gaborone North", services: ["Web Development", "Mobile Apps", "Graphic Design", "Social Media Management", "SEO Services"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [{ title: "We Built TapFo's Brand Identity", date: "5 Jan 2026", preview: "Proud to have partnered with TapFo.bw on their visual identity...", body: "Naledi Digital Solutions is proud to announce our partnership with TapFo.bw, Botswana's newest business directory platform. We worked closely with the TapFo team on their complete brand identity — from logo design to app UI guidelines. If you're a business looking for branding, digital or web services, reach out to our team today." }], onlines: [], media: [] },
+
+            { id: 7, name: "Botswana Bake Studio", category: "Food", subcategory: "Bakery & Confectionery", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Custom cakes, pastries and bread baked fresh daily. Wedding cakes, birthday cakes and corporate orders. Order 48 hours in advance.", size: "5.5MB", verified: false, location: "Riverwalk, Gaborone", services: ["Custom Cakes", "Wedding Cakes", "Corporate Orders", "Daily Pastries", "Bread Baking"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 8, name: "Gaborone Driving Academy", category: "Transport", subcategory: "Driving School", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Professional driving lessons for code 8, code 10 and motorcycle licences. Flexible scheduling including weekend lessons. Vehicles provided.", size: "3.8MB", verified: false, location: "Tlokweng Road, Gaborone", services: ["Code 8 Lessons", "Code 10 Lessons", "Motorcycle Licence", "Learner's Permit Prep", "Refresher Courses"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 9, name: "Setshaba Solar & Electrical", category: "Services", subcategory: "Electrical & Solar", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Solar panel installation, electrical compliance and wiring for residential and commercial properties. Free site assessment available.", size: "7.2MB", verified: true, location: "Block 10, Gaborone", services: ["Solar Installation", "Electrical Wiring", "DB Board Upgrades", "Solar Battery Systems", "COC Certificates"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 10, name: "Precious Mama's Kitchen", category: "Food", subcategory: "Catering", type: "Consultant", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Traditional Setswana catering for weddings, funerals, graduations and corporate events. Seswaa, bogobe, morogo and more. Feeding 50 to 500 guests.", size: "2.9MB", verified: false, location: "Mogoditshane", services: ["Wedding Catering", "Funeral Catering", "Corporate Events", "Traditional Menu", "Equipment Hire"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 11, name: "BW Health Pharmacy", category: "Health", subcategory: "Pharmacy", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Full-service pharmacy offering prescription medications, OTC products, baby care, vitamins and supplements. Pharmacist on duty daily.", size: "4.4MB", verified: true, location: "Game City, Gaborone", services: ["Prescription Dispensing", "OTC Medications", "Vitamins & Supplements", "Baby Care", "Chronic Medication"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] },
+
+            { id: 12, name: "Pan-Africa Insurance Brokers", category: "Finance", subcategory: "Insurance", type: "Company", trusted: false, phone: false, facebook: false, whatsapp: false, desc: "Independent insurance brokers offering life, vehicle, home contents, business and medical aid comparison and placement across all Botswana insurers.", size: "11.1MB", verified: true, location: "Fairgrounds, Gaborone", services: ["Life Insurance", "Vehicle Insurance", "Home Insurance", "Business Insurance", "Medical Aid"], contacts: { call: [], facebook: [], whatsapp: [] }, news: [], onlines: [], media: [] }
+          ],
+
+          categories: {
+            Services: ["Real Estate", "IT & Digital", "Electrical & Solar", "Legal & Financial Services", "Cleaning & Maintenance", "Security Services", "Event Management", "Printing & Publishing", "Photography", "Interior Design"],
+            Food: ["Retail Grocery", "Bakery & Confectionery", "Catering", "Restaurants", "Fast Food", "Butchery", "Organic & Health Foods", "Beverages", "Food Delivery"],
+            Health: ["Physiotherapy", "Pharmacy", "General Practice", "Dental", "Optometry", "Mental Health", "Nutrition", "Gym & Fitness", "Alternative Medicine"],
+            Transport: ["Courier & Logistics", "Driving School", "Car Hire", "Taxi Services", "Airport Transfers", "Trucking", "Vehicle Servicing", "Fuel Stations"],
+            Finance: ["Legal & Financial Services", "Insurance", "Accounting", "Banking", "Investment", "Micro-lending", "Forex", "Tax Consulting"]
+          },
+
+          promoCategories: [
+            { name: "Agriculture", subs: ["Seeds & Seedlings", "Livestock", "Farming Equipment", "Organic Produce", "Irrigation Systems", "Pesticides & Fertilisers"] },
+            { name: "Accommodation & Property", subs: ["Hotels & B&Bs", "Self-Catering", "Long-Term Rentals", "Property Sales", "Commercial Leases", "Holiday Homes"] },
+            { name: "Automotive", subs: ["New Vehicles", "Used Vehicles", "Parts & Accessories", "Tyre Fitment", "Panel Beating", "Car Care"] },
+            { name: "Beauty & Wellness", subs: ["Hair Salons", "Nail Bars", "Skincare", "Spas", "Barbershops", "Makeup Artists"] },
+            { name: "Building & Construction", subs: ["Materials", "Contractors", "Plumbing", "Roofing", "Tiling", "Landscaping"] },
+            { name: "Clothing & Fashion", subs: ["Men's Wear", "Women's Wear", "Children's Wear", "Fabric & Textile", "Accessories", "Footwear"] },
+            { name: "Education & Training", subs: ["Schools", "Colleges", "Tutoring", "Skills Training", "Online Courses", "Workshops"] },
+            { name: "Electronics", subs: ["Smartphones", "Appliances", "Computers", "TV & Audio", "Solar & Power", "Accessories"] },
+            { name: "Food & Beverage", subs: ["Groceries", "Restaurants", "Catering", "Beverages", "Traditional Food", "International Cuisine"] },
+            { name: "Health & Medical", subs: ["Pharmacies", "Clinics", "Dental", "Physiotherapy", "Mental Health", "Vitamins & Supplements"] },
+            { name: "Professional Services", subs: ["Legal", "Accounting", "Consulting", "IT Services", "Insurance", "Financial Planning"] },
+            { name: "Sports & Recreation", subs: ["Sports Gear", "Gym & Fitness", "Outdoor Activities", "Team Sports", "Events", "Coaching"] }
+          ],
+
+          promoMediums: ["Podcasts", "Music", "Radio", "Newspapers", "Magazines", "DSTV", "Gazettes", "Public Notices", "Press Releases"],
+
+          locations: {
+            "Gaborone": ["All Areas", "CBD", "Block 3", "Block 6", "Block 9", "Block 10", "Broadhurst", "Gaborone West", "Gaborone North", "Phakalane", "Main Mall", "Fairgrounds", "Game City", "Tase", "Extension 2", "Extension 12"],
+            "Francistown": ["All Areas", "Blue Jacket", "Donga", "Gerald Estate", "Industrial", "Monarch", "Satellite", "Somerset East", "Tati Town"],
+            "Chobe": ["All Areas", "Kasane", "Kazungula", "Pandamatenga", "Kachikau", "Muchenje"],
+            "Central": ["All Areas", "Serowe", "Palapye", "Mahalapye", "Letlhakane", "Bobonong", "Tonota", "Mmadinare", "Tutume", "Nata", "Rakops", "Lerala", "Sefhare", "Chadibe", "Tsetsebjwe", "Maunatlala"],
+            "Ghanzi": ["All Areas", "Ghanzi Town", "Charles Hill", "Tsootsha", "Karakobis", "Kuke", "Qabo", "Makunda"],
+            "Kgalagadi": ["All Areas", "Tshabong", "Hukuntsi", "Kang", "Werda", "Lehututu", "Lokgwabe", "Khakea", "Bokspits"],
+            "Kgatleng": ["All Areas", "Mochudi", "Oodi", "Bokaa", "Rasesa", "Morwa", "Modipane", "Mokatse", "Malolwane", "Sikwane"],
+            "Kweneng": ["All Areas", "Molepolole", "Mogoditshane", "Mmopane", "Thamaga", "Gabane", "Kopong", "Metsimotlhabe", "Letlhakeng", "Mmankgodi", "Kumakwane", "Lentsweletau"],
+            "North East": ["All Areas", "Masunga", "Tati Siding", "Matshelagabedi", "Jackalas", "Mapoka", "Nlapkhwane", "Ramokgwebana"],
+            "North West": ["All Areas", "Maun", "Gumare", "Shakawe", "Seronga", "Sehithwa", "Toteng", "Nokaneng", "Tsau"],
+            "South East": ["All Areas", "Tlokweng", "Ramotswa", "Otse", "Taung"],
+            "Southern": ["All Areas", "Kanye", "Moshupa", "Molapowabojang", "Sese", "Lotlhakane", "Good Hope", "Mmathethe", "Digawana", "Pitsane"],
+            "Jwaneng": ["All Areas", "Jwaneng Town", "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", "Unit 6", "Unit 7", "Unit 8"],
+            "Lobatse": ["All Areas", "Lobatse Town", "Peleng", "Woodhall", "BCC"],
+            "Selibe Phikwe": ["All Areas", "Town Centre", "Botshabelo", "Phase 1", "Phase 2", "Sesame"],
+            "Orapa": ["All Areas", "Orapa Town"]
+          },
+
+          changelog: [
+            { version: "1.01.267", date: "Sun 22 Feb 2026", features: [{ tag: "NEW", text: "Business Profile Media Notes tab — view images and video from businesses." }, { tag: "NEW", text: "Note-level item creation flow added to Notes panel." }, { tag: "FIX", text: "Location filter now correctly filters businesses by neighbourhood." }, { tag: "FIX", text: "Trusted businesses now correctly persist between app sessions." }, { tag: "UPCOMING", text: "Wonda surveys launching next Sunday — earn Notes for completing polls." }] },
+            { version: "1.01.251", date: "Sun 15 Feb 2026", features: [{ tag: "NEW", text: "Contacts tab in Business Profile — call, Facebook and WhatsApp directories fully functional." }, { tag: "NEW", text: "Business News tab — read articles and updates from businesses." }, { tag: "FIX", text: "Search bar keyboard dismiss on scroll now working correctly on Android." }, { tag: "FIX", text: "Bottom nav bar visibility on scroll fixed for all pages." }, { tag: "UPCOMING", text: "Onlines tab showing live website and social media links — coming next week." }] },
+            { version: "1.01.234", date: "Sun 8 Feb 2026", features: [{ tag: "NEW", text: "Promos — Weekly tab with Main Category pill navigation now live." }, { tag: "NEW", text: "Promos — Mediums tab for browsing Podcasts, Radio, Newspapers and more." }, { tag: "FIX", text: "Business cards now correctly expand and collapse on tap." }, { tag: "UPCOMING", text: "Promo collage timeline view — showing promotional content within sub-categories." }] },
+            { version: "1.01.218", date: "Sun 1 Feb 2026", features: [{ tag: "NEW", text: "Business Directory — infinite scroll working with 50+ businesses loaded." }, { tag: "NEW", text: "Trusted feature — tap the green bar to trust a business and it appears in Trusted tab." }, { tag: "FIX", text: "Main Menu slide animation smoothed out on older Android devices." }, { tag: "UPCOMING", text: "Business News and Media Notes — launching next update." }] },
+            { version: "1.01.201", date: "Sun 25 Jan 2026", features: [{ tag: "NEW", text: "Main Menu overlay with Profile, Notes, Trusted, About and How To Use." }, { tag: "NEW", text: "Location filter panel — select your city and neighbourhood for local results." }, { tag: "FIX", text: "App install shortcut now correctly displays TapFo icon on Android home screen." }, { tag: "UPCOMING", text: "Business Profile full page with Services, Contacts and Media tabs." }] },
+            { version: "1.01.184", date: "Sun 18 Jan 2026", features: [{ tag: "NEW", text: "Initial public release of TapFo.bw web app." }, { tag: "NEW", text: "Home screen with search bar, category quick links and location filter." }, { tag: "NEW", text: "PWA installation — add to home screen for offline access." }, { tag: "UPCOMING", text: "Full business directory with all categories launching next week." }] }
+          ],
+
+          howto: [
+            { title: "🔍 Searching for Businesses", tip: "Type any business name, category or service in the search bar. The app searches your locally saved database first — no data needed.", steps: "1. Tap the search bar on the home screen.\n2. Type a business name or category like 'dentist' or 'grocery'.\n3. Tap any result to view the full Business Profile." },
+            { title: "⭐ Trusting a Business", tip: "Trusted businesses appear in your personal Trusted list for quick access.", steps: "1. Open a business from the Directory.\n2. Tap the green indicator bar on the left of the business name.\n3. The bar turns green — that business is now in your Trusted list.\n4. Access your Trusted list from the bottom nav or Main Menu." },
+            { title: "📣 Browsing Promos", tip: "Promos are categorised into Weekly ads, Events and Media channels.", steps: "1. Tap 'Promos' in the bottom navigation bar.\n2. Tap any Main Category to expand sub-categories.\n3. Tap a sub-category to view promotional content.\n4. Save promos to your device for offline viewing." },
+            { title: "📍 Setting Your Location", tip: "Your location determines which businesses and promos are shown first.", steps: "1. Tap 'Gaborone' or 'All Areas' on any page.\n2. Select your city or town.\n3. Then select your area or neighbourhood.\n4. Results will update immediately." },
+            { title: "📝 Using Notes", tip: "Notes let you save and organise products, services and price information from any business.", steps: "1. Open the Main Menu (≡) and tap Notes.\n2. Tap 'Create a Note' to start a new note.\n3. Add Items to your note from any Business Profile.\n4. Track prices and set your own quantities." }
+          ],
+
+          userProfile: {
+            interests: ["Finance", "Health & Wellness", "Technology", "Real Estate", "Food & Beverage", "Sports", "Music", "Agriculture"],
+            education: [{ institution: "University of Botswana", qualification: "Bachelor of Commerce (Finance)", year: "2018" }, { institution: "Botswana Accountancy College", qualification: "ACCA Level 2", year: "2020" }],
+            notes: [
+              { id: 1, title: "Grocery Price Watch — Gaborone West", date: "20 Feb 2026", items: 8, desc: "Tracking grocery prices across 3 stores." },
+              { id: 2, title: "Home Renovation Quotes", date: "14 Feb 2026", items: 5, desc: "Quotes for tiling, plumbing and electrical work." },
+              { id: 3, title: "Family Medical Contacts", date: "8 Jan 2026", items: 3, desc: "Key medical contacts and service notes." }
+            ]
+          }
+        };
+
+        // ══════════════════════════════════════
+        // STATE MANAGEMENT
+        // ══════════════════════════════════════
+        const state = {
+          currentPage: 'home',
+          pageStack: ['home'],
+          currentBusiness: null,
+          currentDirCat: 'Services',
+          currentDirTab: 'all',
+          currentPromoTab: 'weekly',
+          promoLevel: 1,
+          selectedPromoMainCat: null,
+          selectedPromoSubCat: null,
+          promoData: [], // Loaded from manifest
+          eventData: [], // Loaded from manifest
+          currentEventCat: 'All',
+          currentEventMonth: 'All',
+          trusted: new Set([1]), // business IDs that are trusted
+          currentCity: 'Gaborone',
+          currentArea: 'All Areas',
+          locFilter: 'city', // or 'area'
+          searchQuery: '',
+          searchFilter: 'All',
+          bizFavs: new Set([1])
+        };
+
+        // ══════════════════════════════════════
+        // PAGE NAVIGATION
+        // ══════════════════════════════════════
+        function showPage(pageId, subAction) {
+          const prevPage = state.currentPage;
+          if (prevPage === pageId && !subAction) return;
+
+          // Handle special subActions
+          if (pageId === 'home' && subAction === 'trusted') {
+            openDirectory('trusted');
+            return;
+          }
+
+          const prevEl = document.getElementById('page-' + prevPage);
+          const nextEl = document.getElementById('page-' + pageId);
+
+          if (!nextEl) return;
+
+          // Initialise page content before showing
+          initPage(pageId, subAction);
+
+          // Prep next page (ensure it starts from bottom)
+          nextEl.classList.remove('exit-up'); // Ensure no stale exit class
+
+          // Remove active from any page with the same ID (shouldn't happen but safe)
+          nextEl.classList.add('active');
+
+          // Update Nav states
+          updateNavStates(pageId);
+
+          state.pageStack.push(pageId);
+          state.currentPage = pageId;
+        }
+
+        async function initApp() {
+          console.log('Initialising TapFo...');
+          await Promise.all([
+            loadPromosManifest(),
+            loadEventsManifest()
+          ]);
+          // Set initial screen
+          navigateToPage('home');
+        }
+
+        async function loadPromosManifest() {
+          try {
+            const response = await fetch('campaigns_manifest.json');
+            state.promoData = await response.json();
+            console.log(`Loaded ${state.promoData.length} promos.`);
+          } catch (err) {
+            console.error('Failed to load promos manifest:', err);
+            state.promoData = [];
+          }
+        }
+
+        async function loadEventsManifest() {
+          try {
+            const response = await fetch('events_manifest.json');
+            state.eventData = await response.json();
+            console.log(`Loaded ${state.eventData.length} events.`);
+          } catch (err) {
+            console.error('Failed to load events manifest:', err);
+            state.eventData = [];
+          }
+        }
+
+        function goBack() {
+          if (state.pageStack.length <= 1) {
+            navigateToPage('home');
+            return;
+          }
+
+          const currentPage = state.pageStack.pop();
+          const prevPage = state.pageStack[state.pageStack.length - 1];
+
+          const currentEl = document.getElementById('page-' + currentPage);
+          const prevEl = document.getElementById('page-' + prevPage);
+
+          if (currentEl) {
+            currentEl.classList.add('exit-up');
+            // Wait for transition, then clean up
+            setTimeout(() => {
+              currentEl.classList.remove('active', 'exit-up');
+            }, 320);
+          }
+
+          // Update Nav states
+          updateNavStates(prevPage);
+
+          state.currentPage = prevPage;
+        }
+
+        function navigateToPage(pageId) {
+          if (pageId === 'events') {
+            navigateToPage('promos');
+            if (typeof switchPromoPanel === 'function') switchPromoPanel(1);
+            return;
+          }
+
+          // Toggle online indicator visibility
+          const brandEl = document.getElementById('top-level');
+          if (brandEl) {
+            brandEl.style.display = (pageId === 'home' || pageId === 'directory') ? 'flex' : 'none';
+          }
+
+          // Reset stack and go directly
+          document.querySelectorAll('.page').forEach(p => {
+            p.classList.remove('active', 'exit-up');
+          });
+
+          const el = document.getElementById('page-' + pageId);
+          if (el) {
+            el.classList.add('active');
+            initPage(pageId);
+          }
+
+          updateNavStates(pageId);
+
+          state.pageStack = [pageId];
+          state.currentPage = pageId;
+        }
+
+        function updateNavStates(pageId) {
+          // Handle Bottom Nav active states
+          const isPromos = pageId === 'promos' || pageId === 'events';
+          const isDirectory = pageId === 'home' || pageId === 'directory' || pageId === 'business' || pageId === 'search';
+
+          document.querySelectorAll('.bottom-nav .nav-link').forEach(link => {
+            link.classList.remove('nav-active');
+            if (isDirectory && link.id === 'nav-directory') link.classList.add('nav-active');
+            if (isPromos && link.id === 'nav-promos') link.classList.add('nav-active');
+          });
+        }
+
+        function initPage(pageId, subAction) {
+          switch (pageId) {
+            case 'directory': renderDirectory(); break;
+            case 'business': renderBusinessProfile(state.currentBusiness); break;
+            case 'promos': renderPromos(); break;
+            case 'profile': renderProfile(); break;
+            case 'notes': renderNotes(); break;
+            case 'changelog': renderChangelog(); break;
+            case 'howto': renderHowTo(); break;
+            case 'location': renderLocationList(); break;
+          }
+        }
+
+        // ══════════════════════════════════════
+        // MENU
+        // ══════════════════════════════════════
+        function openMenu() {
+          document.getElementById('overlay-menu').classList.add('open');
+        }
+
+        function closeMenu() {
+          document.getElementById('overlay-menu').classList.remove('open');
+        }
+
+        // ══════════════════════════════════════
+        // SEARCH
+        // ══════════════════════════════════════
+        function openSearch() {
+          const searchEl = document.getElementById('page-search');
+          searchEl.classList.add('active');
+          document.getElementById('page-home').classList.remove('active');
+          document.getElementById('page-home').classList.add('slide-left');
+          state.pageStack.push('search');
+          state.currentPage = 'search';
+          document.getElementById('search-input').value = '';
+          performSearch('');
+          setTimeout(() => document.getElementById('search-input').focus(), 100);
+        }
+
+        function handleHomeSearch(val) {
+          if (val.length > 0) openSearch();
+        }
+
+        function setSearchFilter(filter, btn) {
+          state.searchFilter = filter;
+          document.querySelectorAll('#page-search .tab-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          performSearch(document.getElementById('search-input').value);
+        }
+
+        function performSearch(query) {
+          state.searchQuery = query.toLowerCase();
+          let results = DB.businesses;
+
+          if (state.searchFilter === 'Companies') results = results.filter(b => b.type === 'Company');
+          if (state.searchFilter === 'Consultants') results = results.filter(b => b.type === 'Consultant');
+
+          if (state.searchQuery) {
+            results = results.filter(b =>
+              b.name.toLowerCase().includes(state.searchQuery) ||
+              b.category.toLowerCase().includes(state.searchQuery) ||
+              b.subcategory.toLowerCase().includes(state.searchQuery) ||
+              b.desc.toLowerCase().includes(state.searchQuery)
+            );
+          }
+
+          // Apply Location Filter
+          results = filterByLocation(results);
+
+          renderResultsList(results);
+        }
+
+        function filterByLocation(list) {
+          return list.filter(b => {
+            const bizLoc = b.location || '';
+            const cityMatch = bizLoc.includes(state.currentCity);
+            if (state.currentArea === 'All Areas') return cityMatch;
+            return cityMatch && bizLoc.includes(state.currentArea);
+          });
+        }
+
+        function renderResultsList(results) {
+          const card = document.getElementById('results-card');
+
+          if (results.length === 0) {
+            card.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-face">:(</div>
+        <div class="no-results-text">No Results</div>
+      </div>`;
+            return;
+          }
+
+          card.innerHTML = results.map(b => renderBizRow(b)).join('');
+        }
+
+        function renderBizRow(b) {
+          const trusted = state.trusted.has(b.id);
+          return `
+    <div class="biz-row" onclick="openBusiness(${b.id})">
+      <div class="trust-bar ${trusted ? 'trusted' : ''}" onclick="event.stopPropagation();toggleTrust(${b.id},this)"></div>
+      <div class="biz-name">${b.name}</div>
+      <div class="contact-icons">
+        <button class="contact-icon ${b.phone ? 'phone-active' : 'inactive'}" onclick="event.stopPropagation();handleContact('phone',${b.id})">
+          <img src="assets/icons/phone_icon_on.png" style="width:16px; height:16px;">
+        </button>
+        <button class="contact-icon ${b.facebook ? 'fb-active' : 'inactive'}" onclick="event.stopPropagation();handleContact('facebook',${b.id})">
+          <img src="assets/icons/facebook_icon_on.png" style="width:16px; height:16px;">
+        </button>
+        <button class="contact-icon ${b.whatsapp ? 'wa-active' : 'inactive'}" onclick="event.stopPropagation();handleContact('whatsapp',${b.id})">
+          <img src="assets/icons/whatsApp_icon_on.png" style="width:16px; height:16px;">
+        </button>
+      </div>
+    </div>`;
+        }
+
+        function handleContact(type, bizId) {
+          const b = DB.businesses.find(x => x.id === bizId);
+          if (!b) return;
+          if (type === 'phone' && !b.phone) { showToast('No phone listed'); return; }
+          if (type === 'facebook' && !b.facebook) { showToast('No Facebook listed'); return; }
+          if (type === 'whatsapp' && !b.whatsapp) { showToast('No WhatsApp listed'); return; }
+          showToast(`Opening ${type} for ${b.name}`);
+        }
+
+        // ══════════════════════════════════════
+        // DIRECTORY
+        // ══════════════════════════════════════
+        function openDirectory(cat) {
+          if (cat === 'trusted') {
+            state.currentDirCat = 'All';
+            state.currentDirTab = 'trusted';
+          } else {
+            state.currentDirCat = cat || 'Services';
+            state.currentDirTab = 'all';
+          }
+
+          const prev = document.getElementById('page-' + state.currentPage);
+          if (prev) { prev.classList.remove('active'); prev.classList.add('slide-left'); setTimeout(() => prev.classList.remove('slide-left'), 300); }
+
+          state.pageStack.push('directory');
+          state.currentPage = 'directory';
+
+          document.getElementById('page-directory').classList.add('active');
+          renderDirectory();
+        }
+
+        function renderDirectory() {
+          const titleBtn = document.getElementById('dir-title');
+          const allTab = document.getElementById('dir-tab-all');
+          const trustedTab = document.getElementById('dir-tab-trusted');
+
+          // Update header
+          titleBtn.textContent = state.currentDirTab === 'trusted' ? 'Trusted' : state.currentDirCat;
+          titleBtn.innerHTML += ''; // re-render the ::after
+          titleBtn.style.cssText = ''; // reset
+
+          allTab.classList.toggle('active', state.currentDirTab === 'all');
+          trustedTab.classList.toggle('active', state.currentDirTab === 'trusted');
+
+          let businesses = DB.businesses;
+
+          if (state.currentDirTab === 'trusted') {
+            businesses = businesses.filter(b => state.trusted.has(b.id));
+          } else if (state.currentDirCat !== 'All') {
+            businesses = businesses.filter(b => b.category === state.currentDirCat);
+          }
+
+          // Apply Location Filter
+          businesses = filterByLocation(businesses);
+
+          const card = document.getElementById('dir-card');
+
+          if (businesses.length === 0) {
+            card.innerHTML = `<div class="empty-state"><div class="empty-state-emoji">🔍</div><div class="empty-state-text">${state.currentDirTab === 'trusted' ? 'No trusted businesses yet.\nTap the green bar on any business to trust it.' : 'No businesses in this category yet.'}</div></div>`;
+            return;
+          }
+
+          card.innerHTML = businesses.map(b => renderBizRow(b)).join('');
+
+          // Update dir title text
+          const btn = document.getElementById('dir-title');
+          btn.textContent = state.currentDirTab === 'trusted' ? 'Trusted' : state.currentDirCat;
+        }
+
+        function toggleCatSelector() {
+          document.getElementById('cat-selector').classList.toggle('open');
+        }
+
+        function selectDirCat(cat) {
+          state.currentDirCat = cat;
+          state.currentDirTab = 'all';
+          document.getElementById('cat-selector').classList.remove('open');
+          renderDirectory();
+        }
+
+        function setDirTab(tab, btn) {
+          state.currentDirTab = tab;
+          renderDirectory();
+        }
+
+        // ══════════════════════════════════════
+        // TRUST
+        // ══════════════════════════════════════
+        function toggleTrust(bizId, barEl) {
+          if (state.trusted.has(bizId)) {
+            state.trusted.delete(bizId);
+            barEl.classList.remove('trusted');
+            showToast('Removed from Trusted');
+          } else {
+            state.trusted.add(bizId);
+            barEl.classList.add('trusted');
+            showToast('Added to Trusted ⭐');
+          }
+        }
+
+        // ══════════════════════════════════════
+        // BUSINESS PROFILE
+        // ══════════════════════════════════════
+        function openBusiness(bizId) {
+          const b = DB.businesses.find(x => x.id === bizId);
+          if (!b) return;
+          state.currentBusiness = b;
+          state.currentBizTab = 'services';
+
+          document.getElementById('biz-back-label').textContent = state.currentDirCat || 'Directory';
+
+          showPage('business');
+          renderBusinessProfile(b);
+        }
+
+        function renderBusinessProfile(b) {
+          if (!b) return;
+
+          const isTrusted = state.trusted.has(b.id);
+          const isFav = state.bizFavs.has(b.id);
+
+          // Header
+          document.getElementById('biz-header-card').innerHTML = `
+    <div class="biz-logo-box">Logo</div>
+    <div class="biz-header-info">
+      <button class="biz-favourite-btn" onclick="toggleBizFav(${b.id},this)">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="${isFav ? '#f5c518' : '#d0d0d0'}"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </button>
+      <div class="biz-header-name">${b.name}</div>
+      <div class="biz-header-cat">${b.category}</div>
+      <div class="biz-header-type">${b.type}${b.verified ? '' : ''}</div>
+      ${b.verified ? '<div class="biz-verified"><svg class="verified-badge" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#22c55e"/><path d="M10 16l4 4 8-8" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : ''}
+    </div>`;
+
+          // Action bar
+          document.getElementById('biz-action-bar').innerHTML = `
+    <button class="biz-action-icon ${isFav ? 'starred' : ''}" onclick="toggleBizFav(${b.id},this)">
+      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    </button>
+    <button class="biz-action-icon" onclick="showToast('Share link copied!')">
+      <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="var(--grey-text)" stroke-width="1.5" fill="none"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="var(--grey-text)" stroke-width="1.5" fill="none"/></svg>
+    </button>`;
+
+          document.getElementById('biz-tagline').textContent = b.desc;
+
+          document.getElementById('biz-data-row').innerHTML = `
+    <span class="data-size-text">${b.size}</span>
+    <span style="color:var(--grey-mid)">|</span>
+    <span class="delete-link">Delete</span>
+    <span style="flex:1"></span>
+    <span class="pill-tag">${b.subcategory}</span>`;
+
+          renderBizTab('services');
+        }
+
+        function toggleBizFav(bizId, el) {
+          if (state.bizFavs.has(bizId)) {
+            state.bizFavs.delete(bizId);
+            showToast('Removed from favourites');
+          } else {
+            state.bizFavs.add(bizId);
+            showToast('Added to favourites ⭐');
+          }
+          renderBusinessProfile(state.currentBusiness);
+        }
+
+        function setBizTab(tab, el) {
+          document.querySelectorAll('#page-business .biz-tab').forEach(t => t.classList.remove('active'));
+          el.classList.add('active');
+          state.currentBizTab = tab;
+          renderBizTab(tab);
+        }
+
+        function renderBizTab(tab) {
+          const b = state.currentBusiness;
+          if (!b) return;
+          const body = document.getElementById('biz-profile-body');
+
+          switch (tab) {
+            case 'services': {
+              const items = b.services || [];
+              body.innerHTML = items.map((s, i) => `
+        <div class="service-cat-row" onclick="toggleServiceSub(${i})">
+          <div class="service-dot"></div>
+          <div class="service-cat-name">${s}</div>
+          <div class="service-count">#</div>
+        </div>
+        <div class="service-sub-list" id="svc-sub-${i}">
+          <div class="service-sub-item">View all ${s} listings and enquire directly</div>
+          <div class="service-sub-item">Request a quote for ${s}</div>
+          <div class="service-sub-item" onclick="showToast('WhatsApp enquiry opened')">WhatsApp enquiry for ${s}</div>
+        </div>`).join('');
+              break;
+            }
+
+            case 'news': {
+              const news = b.news || [];
+              if (news.length === 0) {
+                body.innerHTML = '<div class="empty-state"><div class="empty-state-emoji">📰</div><div class="empty-state-text">No news articles yet</div></div>';
+                return;
+              }
+              body.innerHTML = news.map((n, i) => `
+        <div class="news-item" onclick="openArticle(${b.id},${i})">
+          <div class="news-title">${n.title}</div>
+          <div class="news-date">${n.date}</div>
+          <div class="news-preview">${n.preview}</div>
+        </div>`).join('');
+              break;
+            }
+
+            case 'onlines': {
+              const onlines = b.onlines || [];
+              if (onlines.length === 0) {
+                body.innerHTML = '<div class="empty-state"><div class="empty-state-emoji">🌐</div><div class="empty-state-text">No online presence listed yet</div></div>';
+                return;
+              }
+              body.innerHTML = onlines.map(o => `
+        <div class="online-item" onclick="showToast('Opening ${o.url}')">
+          <div class="online-item-info">
+            <div class="online-item-title">${o.title}</div>
+            <div class="online-item-url">${o.url}</div>
+            <div style="font-size:12px;color:var(--grey-text);margin-top:4px;">${o.desc}</div>
+          </div>
+          <div class="online-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </div>
+        </div>`).join('');
+              break;
+            }
+
+            case 'contacts': {
+              const ctypes = ['call', 'facebook', 'whatsapp'];
+              const labels = { call: 'Call Directory', facebook: 'Facebook', whatsapp: 'WhatsApp' };
+              const icons = {
+                call: `<img src="assets/icons/phone_icon_on.png" style="width:16px; height:16px;">`,
+                facebook: `<img src="assets/icons/facebook_icon_on.png" style="width:16px; height:16px;">`,
+                whatsapp: `<img src="assets/icons/whatsApp_icon_on.png" style="width:16px; height:16px;">`
+              };
+              const iconClass = { call: 'phone', facebook: 'fb', whatsapp: 'wa' };
+
+              let activeType = 'call';
+
+              const pillsHTML = ctypes.map(t => `<button class="contact-pill ${t === activeType ? 'active' : ''}" onclick="setContactType('${t}',this)">${labels[t]}</button>`).join('');
+
+              const contacts = b.contacts || {};
+              const entries = contacts[activeType] || [];
+
+              body.innerHTML = `
+        <div class="contacts-pill-bar" id="contact-pills">${pillsHTML}</div>
+        <div id="contact-entries">${renderContactEntries(entries, icons[activeType], iconClass[activeType])}</div>`;
+
+              // Store for re-use
+              body._contacts = b.contacts;
+              body._icons = icons;
+              body._iconClass = iconClass;
+              break;
+            }
+
+            case 'media': {
+              const media = b.media || [];
+              if (media.length === 0) {
+                body.innerHTML = '<div class="empty-state"><div class="empty-state-emoji">🎬</div><div class="empty-state-text">No media notes yet</div></div>';
+                return;
+              }
+
+              const typeIcons = {
+                Image: `<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`,
+                Video: `<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+                Audio: `<svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/></svg>`
+              };
+
+              const typePills = ['All', 'Image', 'Video', 'Audio'];
+              const pillsHTML = typePills.map(t => `<button class="contact-pill ${t === 'All' ? 'active' : ''}" onclick="filterMediaType('${t}',this)">${t}</button>`).join('');
+
+              body.innerHTML = `
+        <div class="media-type-pills" id="media-pills">${pillsHTML}</div>
+        <div id="media-entries">${media.map(m => `
+          <div class="media-note-item">
+            <div class="media-thumb">${typeIcons[m.type] || typeIcons.Image}</div>
+            <div class="media-info">
+              <div class="media-type-label">${m.type}</div>
+              <div class="media-title-text">${m.title}</div>
+              <div class="media-desc-text">${m.desc}</div>
+            </div>
+          </div>`).join('')}</div>`;
+              break;
+            }
+          }
+        }
+
+        function renderContactEntries(entries, iconSVG, iconClass) {
+          if (!entries || entries.length === 0) {
+            return '<div class="empty-state"><div class="empty-state-emoji">📭</div><div class="empty-state-text">No contacts listed in this category</div></div>';
+          }
+          return entries.map(e => `
+    <div class="contact-entry" onclick="showToast('Opening ${iconClass} contact...')">
+      <div class="contact-entry-info">
+        <div class="contact-entry-title">${e.title}</div>
+        <div class="contact-entry-desc">${e.desc}</div>
+      </div>
+      <div class="contact-entry-icon ${iconClass}">${iconSVG}</div>
+    </div>`).join('');
+        }
+
+        function setContactType(type, btn) {
+          const body = document.getElementById('biz-profile-body');
+          document.querySelectorAll('#contact-pills .contact-pill').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+
+          const icons = { call: `<img src="assets/icons/phone_icon_on.png" style="width:16px; height:16px;">`, facebook: `<img src="assets/icons/facebook_icon_on.png" style="width:16px; height:16px;">`, whatsapp: `<img src="assets/icons/whatsApp_icon_on.png" style="width:16px; height:16px;">` };
+          const iconClass = { call: 'phone', facebook: 'fb', whatsapp: 'wa' };
+          const contacts = state.currentBusiness?.contacts || {};
+          const entries = contacts[type] || [];
+          document.getElementById('contact-entries').innerHTML = renderContactEntries(entries, icons[type], iconClass[type]);
+        }
+
+        function filterMediaType(type, btn) {
+          document.querySelectorAll('#media-pills .contact-pill').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          // In full implementation would filter media entries
+        }
+
+        function toggleServiceSub(idx) {
+          const el = document.getElementById('svc-sub-' + idx);
+          if (el) el.classList.toggle('open');
+        }
+
+        // ══════════════════════════════════════
+        // ARTICLE READER
+        // ══════════════════════════════════════
+        function openArticle(bizId, newsIdx) {
+          const b = DB.businesses.find(x => x.id === bizId);
+          if (!b || !b.news[newsIdx]) return;
+          const article = b.news[newsIdx];
+
+          document.getElementById('article-source').textContent = b.name;
+          document.getElementById('article-content').innerHTML = `
+    <div class="article-headline">${article.title}</div>
+    <div class="article-meta">Published by ${b.name} · ${article.date}</div>
+    <div class="article-text">${article.body}</div>`;
+
+          showPage('article');
+        }
+
+        // ══════════════════════════════════════
+        // PROMOS (Phase 8 REBUILD)
+        // ══════════════════════════════════════
+        function renderPromos() {
+          if (state.promoPanelIdx === undefined) state.promoPanelIdx = 0;
+          if (state.promoFlowLevel === undefined) state.promoFlowLevel = 1;
+          switchPromoPanel(state.promoPanelIdx);
+        }
+
+        function switchPromoPanel(idx) {
+          state.promoPanelIdx = idx;
+          state.promoFlowLevel = 1;
+
+          // Slide wrapper
+          const wrapper = document.getElementById('promo-panels-wrapper');
+          if (wrapper) wrapper.style.transform = `translateX(-${idx * 33.3333}%)`;
+
+          // Update tab active states
+          ['tab-weekly', 'tab-events', 'tab-mediums'].forEach((id, i) => {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('active', i === idx);
+          });
+
+          // Hide breadcrumb on category level
+          const bc = document.getElementById('promo-breadcrumb');
+          if (bc) bc.style.display = 'none';
+
+          renderCurrentPromoLevel();
+        }
+
+        let promoLastScrollTop = 0;
+        function initPromosScroll() {
+          const panels = document.querySelectorAll('.promo-panel');
+          panels.forEach(panel => {
+            if (panel.dataset.scrollInit) return;
+            panel.dataset.scrollInit = 'true';
+            panel.addEventListener('scroll', () => {
+              const st = panel.scrollTop;
+              const header = document.getElementById('promos-header-nav');
+              const secondary = document.getElementById('promo-secondary-nav');
+              const bottomNav = document.querySelector('#page-promos .bottom-nav');
+
+              if (st > promoLastScrollTop && st > 50) {
+                // Scroll Down
+                if (header) header.classList.add('nav-hidden-top');
+                if (secondary) secondary.classList.add('nav-hidden-bottom');
+                if (bottomNav) bottomNav.classList.add('nav-hidden-bottom');
+              } else {
+                // Scroll Up
+                if (header) header.classList.remove('nav-hidden-top');
+                if (secondary) secondary.classList.remove('nav-hidden-bottom');
+                if (bottomNav) bottomNav.classList.remove('nav-hidden-bottom');
+              }
+              promoLastScrollTop = st <= 0 ? 0 : st;
+            }, { passive: true });
+          });
+        }
+
+        async function renderPromoEventsPanel(container) {
+          if (!state.allEvents2026) {
+            if (window.BOTSWANA_EVENTS_2026) {
+              state.allEvents2026 = window.BOTSWANA_EVENTS_2026.events_by_month || {};
+            } else {
+              try {
+                const res = await fetch('data/botswana_events_2026.json');
+                const data = await res.json();
+                state.allEvents2026 = data.events_by_month || {};
+              } catch (e) {
+                console.error('Failed to load events:', e);
+                state.allEvents2026 = {};
+              }
+            }
+          }
+
+          const now = new Date();
+          const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          const currentMonth = months[now.getMonth()];
+
+          function fmtDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+          }
+
+          function catIcon(cat) {
+            if (!cat) return '📅';
+            const categories = Array.isArray(cat) ? cat : [cat];
+            for (const category of categories) {
+              const c = category.toLowerCase();
+              if (c.includes('soccer') || c.includes('footbal')) return '⚽';
+              if (c.includes('sport')) return '🏃';
+              if (c.includes('music')) return '🎵';
+              if (c.includes('art') || c.includes('cultur')) return '🎭';
+              if (c.includes('nation')) return '🏛️';
+              if (c.includes('busines')) return '💼';
+              if (c.includes('lifestyle') || c.includes('entert')) return '🎉';
+              if (c.includes('food') || c.includes('agro')) return '🍽️';
+            }
+            return '📅';
+          }
+
+          function renderEventRows(events) {
+            if (!events || events.length === 0) return '<div style="padding:16px; color:var(--grey-text); font-size:13px;">No events scheduled</div>';
+            return events.map(e => `
+            <div class="pe-event-row ${e.featured ? 'pe-featured' : ''}">
+              <div class="pe-event-dot"></div>
+              <div class="pe-event-body">
+                <div class="pe-event-name">${e.name}</div>
+                <div class="pe-event-meta">
+                  <span>${catIcon(e.category)} ${e.category || 'Event'}</span>
+                  <span>📅 ${fmtDate(e.date)}</span>
+                  ${e.venue ? `<span>📍 ${e.venue}</span>` : ''}
+                </div>
+                ${e.description ? `<div class="pe-event-desc">${e.description}</div>` : ''}
+              </div>
+            </div>`).join('');
+          }
+
+          function getEventsForMonth(monthName) {
+            const mKey = monthName.toLowerCase();
+            const monthData = state.allEvents2026[mKey];
+            return (monthData && monthData.events) ? monthData.events : [];
+          }
+
+          function renderMonthSection(m, isCurrent = false) {
+            const evs = getEventsForMonth(m);
+            const mKey = m.toLowerCase();
+            return `
+            <div class="pe-month-section ${isCurrent ? 'pe-current-section' : ''}" id="sec-${mKey}">
+              <div class="pe-acc-header" onclick="togglePromoAccordion('${mKey}')">
+                <div class="pe-acc-bar ${isCurrent ? 'pe-current-bar' : ''}"></div>
+                <span class="pe-acc-month">${m}</span>
+                ${isCurrent ? '<span class="pe-month-now">Now</span>' : ''}
+                <span class="pe-acc-count">${evs.length} event${evs.length !== 1 ? 's' : ''}</span>
+                <span class="pe-acc-chevron" id="chev-${mKey}">›</span>
+              </div>
+              <div class="pe-acc-body" id="body-${mKey}" style="display:none;">
+                ${renderEventRows(evs)}
+              </div>
+            </div>`;
+          }
+
+          const sectionsHtml = months.map(m => renderMonthSection(m, m === currentMonth)).join('');
+
+          container.innerHTML = `
+          <div class="promo-cat-card" style="padding-bottom:120px;">
+            ${sectionsHtml}
+          </div>`;
+        }
+
+        function togglePromoAccordion(mKey) {
+          const body = document.getElementById('body-' + mKey);
+          const chev = document.getElementById('chev-' + mKey);
+          if (!body) return;
+          const isOpening = body.style.display === 'none';
+
+          const allSections = document.querySelectorAll('.pe-month-section');
+
+          if (isOpening) {
+            allSections.forEach(sec => {
+              if (sec.id !== 'sec-' + mKey) {
+                sec.style.display = 'none';
+              }
+            });
+            body.style.display = 'block';
+            if (chev) chev.style.transform = 'rotate(90deg)';
+
+            if (!body.querySelector('.pe-back-btn')) {
+              const backBtn = document.createElement('div');
+              backBtn.className = 'pe-back-btn';
+              backBtn.innerHTML = '← Back to All Months';
+              backBtn.onclick = (e) => {
+                e.stopPropagation();
+                togglePromoAccordion(mKey);
+              };
+              body.prepend(backBtn);
+            }
+            // Scroll to top of panel
+            const panel = body.closest('.promo-panel');
+            if (panel) panel.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            allSections.forEach(sec => sec.style.display = 'block');
+            body.style.display = 'none';
+            if (chev) {
+              chev.style.transform = 'rotate(0deg)';
+            }
+          }
+        }
+        function renderCurrentPromoLevel() {
+          const panelIds = ['weekly-content', 'events-content', 'mediums-content'];
+          const container = document.getElementById(panelIds[state.promoPanelIdx]);
+          if (!container) return;
+
+          // Initialize scroll listeners for Promos page once
+          initPromosScroll();
+
+          // Events panel (idx 1) has its own renderer
+          if (state.promoPanelIdx === 1) {
+            renderPromoEventsPanel(container);
+            return;
+          }
+
+          if (state.promoFlowLevel === 2) {
+            renderPromoAdverts(container);
+          } else {
+            renderPromoMainCats(container);
+          }
+        }
+
+        // Categories from Promos_Categories_v1.json — formatted for display
+        const PROMO_CATEGORIES = [
+          "Accommodation & Property", "Agriculture", "Automotive", "Babies & Kids",
+          "Beauty & Grooming", "Beverage & Liquor", "Books & Publishing",
+          "Building & Construction", "Business & Office", "Cargo & Delivery",
+          "Clothing", "Clubs & Groups", "Crafts", "Cultural",
+          "Education & School", "Electronics", "Embassy", "Events",
+          "Fabric & Textile", "Fashion", "Fast Food", "Film", "Finance",
+          "Fuel & Transport", "Gaborone", "Gaming", "Groceries",
+          "Health & Medical", "Home Decor", "Jobs", "Mobile & Network",
+          "Music", "Podcasts & TV", "Restaurant", "Security",
+          "Sports", "Tourism", "Transport"
+        ];
+
+        // Mediums categories (fixed list)
+        const MEDIUM_CATEGORIES = [
+          "Podcasts", "Music", "Radio", "Newspapers", "Magazines",
+          "DSTV", "Gazettes", "Public Notices", "Press Releases"
+        ];
+
+        function renderPromoMainCats(container) {
+          // Use categories based on which panel is active
+          const isMediums = state.promoPanelIdx === 2;
+          const cats = isMediums ? MEDIUM_CATEGORIES : PROMO_CATEGORIES;
+
+          container.innerHTML = `
+          <div class="promo-cat-card">
+            ${cats.map(cat => `
+              <div class="promo-cat-row" onclick="selectPromoMainCat('${cat.replace(/'/g, "\\'")}')">
+                <div class="promo-cat-bar"></div>
+                <div class="promo-cat-name">${cat}</div>
+              </div>
+            `).join('')}
+          </div>`;
+        }
+
+        function selectPromoMainCat(cat) {
+          state.selectedPromoMainCat = cat;
+          state.promoFlowLevel = 2;
+
+          // Show breadcrumb
+          const bc = document.getElementById('promo-breadcrumb');
+          if (bc) {
+            bc.style.display = 'flex';
+            document.getElementById('breadcrumb-main-cat').textContent = cat;
+            document.getElementById('breadcrumb-sub-cat').textContent = 'All Adverts';
+          }
+
+          renderCurrentPromoLevel();
+        }
+
+        async function renderPromoAdverts(container) {
+          const cat = state.selectedPromoMainCat;
+          // Normalize category for manifest lookup (spaces to underscores, handle &)
+          const manifestKey = cat.replace(/ /g, '_').replace(/&/g, '').replace(/__/g, '_');
+
+          if (!state.promosManifest) {
+            // First check if global data loaded via script tag (e.g. for file:// prototcol)
+            if (window.PROMOS_MANIFEST) {
+              state.promosManifest = window.PROMOS_MANIFEST;
+            } else {
+              try {
+                const res = await fetch('data/promos_manifest.json');
+                state.promosManifest = await res.json();
+              } catch (e) {
+                console.error('Failed to load promos manifest:', e);
+                state.promosManifest = {};
+              }
+            }
+          }
+
+          // Try various key variants just in case
+          const promoPaths = state.promosManifest[manifestKey] ||
+            state.promosManifest[cat.replace(/ & /g, '_').replace(/ /g, '_')] ||
+            [];
+
+          let cardsHtml = '';
+
+          if (promoPaths.length > 0) {
+            cardsHtml = promoPaths.map((path, i) => `
+            <div class="promo-advert-card" onclick="showToast('Opening Advert ${i + 1}')">
+              <img src="${path}" alt="Advert ${i + 1}" onerror="this.parentElement.style.display='none'">
+              <div class="promo-advert-overlay">
+                <div class="promo-advert-tagline">${cat}</div>
+                <div style="font-size:12px;opacity:0.8;margin-top:2px;">Advert ${i + 1}</div>
+              </div>
+            </div>`).join('');
+          } else {
+            // Fallback placeholder
+            cardsHtml = `
+            <div class="empty-state">
+              <div class="empty-state-emoji">🖼️</div>
+              <div class="empty-state-text">No images found in ${cat} folder</div>
+            </div>`;
+          }
+
+          container.innerHTML = `
+          <div class="promo-adverts-list">
+            ${cardsHtml}
+          </div>`;
+        }
+
+        function promoGoBack() {
+          state.promoFlowLevel = 1;
+          const bc = document.getElementById('promo-breadcrumb');
+          if (bc) bc.style.display = 'none';
+          renderCurrentPromoLevel();
+        }
+
+        // ══════════════════════════════════════
+        // EVENTS
+        // ══════════════════════════════════════
+        function renderEvents() {
+          renderEventFilters();
+          renderEventMonthFilters();
+          renderEventsList();
+        }
+
+        function renderEventFilters() {
+          const container = document.getElementById('event-cat-filters');
+          if (!container) return;
+
+          const cats = ['All', ...new Set(state.eventData.map(e => e.category))].sort();
+          container.innerHTML = cats.map(cat => `
+          <button class="promo-pill ${state.currentEventCat === cat ? 'active' : ''}" onclick="setEventCat('${cat}')">${cat}</button>
+        `).join('');
+        }
+
+        function renderEventMonthFilters() {
+          const container = document.getElementById('event-month-filters');
+          if (!container) return;
+
+          const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          const months = new Set();
+          state.eventData.forEach(e => {
+            if (e.date) {
+              const d = new Date(e.date);
+              if (!isNaN(d)) months.add(monthNames[d.getMonth()] + ' ' + d.getFullYear());
+            }
+          });
+          const sortedMonths = Array.from(months).sort((a, b) => {
+            const da = new Date('1 ' + a);
+            const db = new Date('1 ' + b);
+            return da - db;
+          });
+          container.innerHTML = ['All', ...sortedMonths].map(m => `
+          <button class="promo-pill ${state.currentEventMonth === m ? 'active' : ''}" onclick="setEventMonth('${m}')">${m}</button>
+        `).join('');
+        }
+
+        function renderEventsList() {
+          const container = document.getElementById('events-list');
+          if (!container) return;
+
+          let filtered = state.eventData;
+          if (state.currentEventCat !== 'All') {
+            filtered = filtered.filter(e => e.category === state.currentEventCat);
+          }
+          if (state.currentEventMonth !== 'All') {
+            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            filtered = filtered.filter(e => {
+              if (!e.date) return false;
+              const d = new Date(e.date);
+              if (isNaN(d)) return false;
+              return (monthNames[d.getMonth()] + ' ' + d.getFullYear()) === state.currentEventMonth;
+            });
+          }
+
+          if (filtered.length === 0) {
+            container.innerHTML = '<div class="empty-state"><div class="empty-state-emoji">📅</div><div class="empty-state-text">No events found</div></div>';
+            return;
+          }
+
+          container.innerHTML = filtered.map(e => `
+          <div class="event-card ${e.featured ? 'featured' : ''} ${e.type === 'soccer' ? 'soccer' : ''}" onclick="showToast('Event details coming soon')">
+            <div class="event-card-top">
+              <div class="event-status ${getEventStatusClass(e.date)}">${getEventStatusLabel(e.date)}</div>
+              <div style="font-size:12px; color:var(--grey-text); font-weight:600;">${e.category}</div>
+            </div>
+            <div class="event-details">
+              <div class="event-name">${e.name}</div>
+              <div class="event-meta">
+                <span>📅 ${formatEventDate(e.date)}</span>
+                ${e.venue ? `<span>📍 ${e.venue}</span>` : ''}
+              </div>
+              <div class="event-location">${e.location}</div>
+            </div>
+          </div>
+        `).join('');
+        }
+
+        function setEventCat(cat) {
+          state.currentEventCat = cat;
+          renderEvents();
+        }
+
+        function setEventMonth(month) {
+          state.currentEventMonth = month;
+          renderEvents();
+        }
+
+        function getEventStatusClass(dateStr) {
+          if (!dateStr) return '';
+          const now = new Date();
+          const eventDate = new Date(dateStr);
+          if (eventDate < now) return '';
+          if (eventDate.toDateString() === now.toDateString()) return 'active';
+          return 'upcoming';
+        }
+
+        function getEventStatusLabel(dateStr) {
+          if (!dateStr) return 'TBA';
+          const now = new Date();
+          const eventDate = new Date(dateStr);
+          if (eventDate < now) return 'Finished';
+          if (eventDate.toDateString() === now.toDateString()) return 'Ongoing';
+          return 'Upcoming';
+        }
+
+        function formatEventDate(dateStr) {
+          if (!dateStr) return 'Date TBA';
+          const d = new Date(dateStr);
+          return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // ══════════════════════════════════════
+        // PROFILE
+        // ══════════════════════════════════════
+        function renderProfile() {
+          renderProfileTab('interests');
+        }
+
+        function setProfileTab(tab, btn) {
+          document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+          btn.classList.add('active');
+          renderProfileTab(tab);
+        }
+
+        function renderProfileTab(tab) {
+          const body = document.getElementById('profile-body');
+          const p = DB.userProfile;
+
+          if (tab === 'interests') {
+            body.innerHTML = `
+      <div class="profile-section-card">
+        <div class="profile-section-header">Interests <button class="add-btn" onclick="showToast('Add interest coming soon')">+ Add</button></div>
+        <div class="interest-pills">${p.interests.map(i => `<span class="interest-pill">${i}</span>`).join('')}</div>
+      </div>`;
+          } else if (tab === 'education') {
+            body.innerHTML = `
+      <div class="profile-section-card">
+        <div class="profile-section-header">Education <button class="add-btn" onclick="showToast('Add institution coming soon')">+ Add</button></div>
+        ${p.education.map(e => `
+          <div class="education-item">
+            <div class="edu-institution">${e.institution}</div>
+            <div class="edu-qualification">${e.qualification}</div>
+            <div class="edu-year">${e.year}</div>
+          </div>`).join('')}
+      </div>`;
+          } else if (tab === 'notes') {
+            body.innerHTML = `
+      <div class="profile-section-card">
+        <div class="profile-section-header">Your Notes</div>
+        ${p.notes.map(n => `
+          <div class="note-card" style="margin:0;border-radius:0;box-shadow:none;" onclick="showPage('notes')">
+            <div class="note-card-header">
+              <div>
+                <div class="note-card-title">${n.title}</div>
+                <div class="note-card-date">${n.date}</div>
+              </div>
+              <div class="note-card-count">${n.items} items</div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+          }
+        }
+
+        // ══════════════════════════════════════
+        // NOTES
+        // ══════════════════════════════════════
+        function renderNotes() {
+          const body = document.getElementById('notes-body');
+          const p = DB.userProfile;
+
+          body.innerHTML = `
+    <div style="padding:12px 16px 0;">
+      <button class="note-add-btn" onclick="showToast('Create Note coming soon')">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--grey-text)"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        Create a Note
+      </button>
+    </div>
+    
+    ${p.notes.map(n => `
+      <div class="note-card" onclick="showToast('Opening note: ${n.title}')">
+        <div class="note-card-header">
+          <div>
+            <div class="note-card-title">${n.title}</div>
+            <div class="note-card-date">${n.date}</div>
+          </div>
+          <div class="note-card-count">${n.items} items</div>
+        </div>
+        <div style="padding:12px 16px 14px;">
+          <div style="font-size:13px;color:var(--body-text);">${n.desc}</div>
+        </div>
+      </div>`).join('')}
+    
+    <div style="padding:8px 16px 16px;">
+      <div class="note-level-btn" onclick="showToast('Create Item coming soon')">
+        <div style="flex-direction:column;display:flex;">
+          <div class="note-level-top" style="background:#00d69c;">Create Item</div>
+          <div class="note-level-bottom">Create an Item to add to your Note</div>
+        </div>
+      </div>
+      <div class="note-level-btn" onclick="showToast('View Items coming soon')">
+        <div style="flex-direction:column;display:flex;">
+          <div class="note-level-top" style="background:#04b484;">View Items</div>
+          <div class="note-level-bottom">View Items listed on TapFo</div>
+        </div>
+      </div>
+      <div class="note-level-btn" onclick="showToast('Create Note coming soon')">
+        <div style="flex-direction:column;display:flex;">
+          <div class="note-level-top" style="background:#097f5f;">Create A Note</div>
+          <div class="note-level-bottom">Create a Note to add Items to</div>
+        </div>
+      </div>
+    </div>`;
+        }
+
+        // ══════════════════════════════════════
+        // CHANGELOG
+        // ══════════════════════════════════════
+        function renderChangelog() {
+          const body = document.getElementById('changelog-body');
+          const tagColors = { NEW: '#00d69c', FIX: '#ffc800', UPCOMING: '#b0b0b0' };
+          const tagTextColors = { NEW: 'white', FIX: '#333', UPCOMING: 'white' };
+
+          body.innerHTML = DB.changelog.map(entry => `
+    <div class="update-entry">
+      <div class="update-header">
+        <span class="update-version">${entry.version}</span>
+        <span class="update-date">${entry.date}</span>
+      </div>
+      <div class="update-body">
+        ${entry.features.map(f => `
+          <div class="update-feature">
+            <span class="update-badge" style="background:${tagColors[f.tag]};color:${tagTextColors[f.tag]}">${f.tag}</span>
+            <span>${f.text}</span>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+        }
+
+        // ══════════════════════════════════════
+        // HOW TO USE
+        // ══════════════════════════════════════
+        function renderHowTo() {
+          const list = document.getElementById('howto-list');
+          list.innerHTML = DB.howto.map((item, i) => `
+    <div class="update-entry" style="margin-bottom:12px;">
+      <div class="update-header" style="cursor:pointer;" onclick="toggleHowTo(${i})">
+        <span class="update-version">${item.title}</span>
+        <span style="color:rgba(255,255,255,0.7);font-size:14px;">▾</span>
+      </div>
+      <div class="update-body" id="howto-${i}" style="display:none;">
+        <div style="padding:4px 0 10px;font-size:13px;color:var(--navy);font-weight:600;">💡 ${item.tip}</div>
+        <div style="font-size:14px;color:var(--body-text);white-space:pre-line;line-height:1.7;">${item.steps}</div>
+      </div>
+    </div>`).join('');
+        }
+
+        function toggleHowTo(idx) {
+          const el = document.getElementById('howto-' + idx);
+          if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // ══════════════════════════════════════
+        // LOCATION FILTER
+        // ══════════════════════════════════════
+        function openLocationFilter(type) {
+          state.locFilter = type;
+
+          const titleEl = document.getElementById('loc-page-title');
+          const subtitleEl = document.getElementById('loc-subtitle');
+
+          if (type === 'city') {
+            titleEl.textContent = 'Cities & Towns';
+            subtitleEl.textContent = 'Select your city or town';
+          } else {
+            titleEl.textContent = 'Areas & Neighbourhoods';
+            subtitleEl.textContent = state.currentCity;
+          }
+
+          renderLocationList();
+          showPage('location');
+        }
+
+        function renderLocationList() {
+          const list = document.getElementById('location-list');
+          const type = state.locFilter;
+
+          let items = [];
+          if (type === 'city') {
+            items = Object.keys(DB.locations).map(city => ({ name: city, active: city === state.currentCity, fav: city === 'Gaborone' || city === 'Francistown' }));
+          } else {
+            items = (DB.locations[state.currentCity] || []).map(area => ({ name: area, active: area === state.currentArea, fav: area === 'CBD' || area === 'Main Mall' }));
+          }
+
+          list.innerHTML = items.map(item => `
+    <div class="location-list-item" onclick="selectLocation('${item.name}')">
+      <div class="loc-indicator ${item.active ? 'active' : item.fav ? 'fav' : ''}"></div>
+      <span class="loc-name">${item.name}</span>
+      ${type === 'area' && item.fav ? '<span class="loc-star">⭐</span>' : ''}
+    </div>`).join('');
+        }
+
+        function selectLocation(name) {
+          if (state.locFilter === 'city') {
+            state.currentCity = name;
+            state.currentArea = 'All Areas';
+            document.getElementById('home-city').textContent = name;
+            document.getElementById('home-area').textContent = 'All Areas';
+          } else {
+            state.currentArea = name;
+            document.getElementById('home-area').textContent = name;
+          }
+
+          // Trigger re-renders
+          if (state.currentPage === 'directory') renderDirectory();
+          if (state.currentPage === 'search') performSearch(document.getElementById('search-input').value);
+
+          showToast('Location set to ' + name);
+          goBack();
+        }
+
+        // ══════════════════════════════════════
+        // TOAST
+        // ══════════════════════════════════════
+        let toastTimer;
+        function showToast(msg) {
+          const t = document.getElementById('toast');
+          t.textContent = msg;
+          t.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        // ══════════════════════════════════════
+        // ANDROID BACK BUTTON & BROWSER BACK
+        // ══════════════════════════════════════
+        window.addEventListener('popstate', () => {
+          if (document.getElementById('overlay-menu').classList.contains('open')) {
+            closeMenu();
+            return;
+          }
+          goBack();
+        });
+
+        // Push initial state
+        window.history.pushState({ page: 'home' }, '', '#home');
+
+        // Close menu on backdrop click
+        document.getElementById('overlay-menu').addEventListener('click', function (e) {
+          if (e.target === this) closeMenu();
+        });
+
+        // ══════════════════════════════════════
+        // PWA SERVICE WORKER REGISTRATION
+        // ══════════════════════════════════════
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').catch(() => { });
+          });
+        }
+
+        // Online/offline indicator
+        // ── PROMOS HIDE-ON-SCROLL ──
+        // Hides top nav + secondary nav on scroll down, reveals on scroll up
+        (function initPromoScroll() {
+          let lastScrollY = 0;
+          let ticking = false;
+
+          function onPromoScroll(e) {
+            const el = e.target;
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                const currentY = el.scrollTop;
+                const page = document.getElementById('page-promos');
+                if (!page) { ticking = false; return; }
+                if (currentY > lastScrollY && currentY > 40) {
+                  page.classList.add('nav-hidden');
+                } else {
+                  page.classList.remove('nav-hidden');
+                }
+                lastScrollY = currentY;
+                ticking = false;
+              });
+              ticking = true;
+            }
+          }
+
+          // Attach to each promo panel on first render
+          function attachPromoScrollListeners() {
+            ['panel-weekly', 'panel-events', 'panel-mediums'].forEach(id => {
+              const panel = document.getElementById(id);
+              if (panel && !panel._scrollBound) {
+                panel.addEventListener('scroll', onPromoScroll, { passive: true });
+                panel._scrollBound = true;
+              }
+            });
+          }
+
+          // Re-attach after each renderPromos call
+          const origRenderPromos = window.renderPromos;
+          document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(attachPromoScrollListeners, 300);
+          });
+
+          // Also attach whenever the promos page becomes active
+          const observer = new MutationObserver(() => {
+            const page = document.getElementById('page-promos');
+            if (page && page.classList.contains('active')) {
+              setTimeout(attachPromoScrollListeners, 100);
+            }
+          });
+          const bodyLevel = document.getElementById('body-level');
+          if (bodyLevel) observer.observe(bodyLevel, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+        })();
+
+        function updateOnlineStatus() {
+          const el = document.getElementById('search-online-status');
+          if (el) {
+            el.textContent = navigator.onLine ? 'TapFo.bw ● Online' : 'TapFo.bw ● Offline';
+            el.style.color = navigator.onLine ? 'var(--green-trust)' : 'var(--grey-text)';
+          }
+          const homeText = document.getElementById('home-status-text');
+          if (homeText) {
+            homeText.style.color = navigator.onLine ? 'var(--navy)' : 'var(--grey-text)';
+          }
+        }
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
+
+        // Initialise App
+        // Homepage scroll interaction
+        let touchStartY = 0;
+        const homePage = document.getElementById('page-home');
+        if (homePage) {
+          homePage.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+          homePage.addEventListener('touchend', e => {
+            const touchEndY = e.changedTouches[0].clientY;
+            // Detection for substantial swipe up (finger moving UP)
+            if (touchStartY - touchEndY > 100) {
+              openMenu();
+            }
+          }, { passive: true });
+        }
+
+        initApp();
+
+      </script>
+    </div><!-- end #body-level -->
+
+  </div><!-- end #app-shell -->
+</body>
+
+</html>

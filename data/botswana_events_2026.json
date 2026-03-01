@@ -1,0 +1,1653 @@
+{
+  "database_meta": {
+    "version": "1.1",
+    "name": "Merged Botswana 2026 Events",
+    "description": "Unified events database with duplicates removed",
+    "last_updated": "2026-02-25T01:30:00Z"
+  },
+  "events_by_month": {
+    "january": {
+      "events": [
+        {
+          "event_id": "BW-2026-JAN-001",
+          "source": "botswana_tourism",
+          "event_name": "December Summer Cup",
+          "categories": [
+            "sports_horse_racing",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Southern District",
+          "primary_venue": "Charleshill",
+          "village_town": "Charleshill",
+          "district": "Southern District",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-01",
+          "entry_fee": null,
+          "prize_pool": null,
+          "activity_state": "finished",
+          "estimated_attendance": 500,
+          "description": "Annual horse racing event to welcome the new year",
+          "featured": false,
+          "national_significance": false,
+          "name": "December Summer Cup",
+          "date": "2026-01-01"
+        },
+        {
+          "event_id": "BW-2026-JAN-002",
+          "source": "botswana_tourism",
+          "event_name": "The Day Club",
+          "categories": [
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "South-East District",
+          "primary_venue": "University of Botswana",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "gps_coordinates": {
+            "latitude": -24.6581,
+            "longitude": 25.9122
+          },
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-01",
+          "entry_fee": 0,
+          "activity_state": "finished",
+          "description": "New Year's Day club event at UB",
+          "age_restriction": "18_plus",
+          "featured": false,
+          "national_significance": false,
+          "name": "The Day Club",
+          "date": "2026-01-01"
+        },
+        {
+          "event_id": "MAS-KC-2026",
+          "source": "mizano",
+          "event_name": "Mascom Kickoff Cup",
+          "tagline": "Kicking Off the New Year with Connectivity",
+          "categories": [
+            "sports_soccer",
+            "community_charity",
+            "youth_development"
+          ],
+          "sponsor": "Mascom",
+          "sponsor_industry": "Telecommunications",
+          "format": "single_elimination",
+          "region": "Greater Gaborone",
+          "region_code": "SE",
+          "primary_venue": "SSKB Stadium",
+          "additional_venues": [
+            "Prisons Ground",
+            "Lobatse Stadium",
+            "Mogoditshane Ground"
+          ],
+          "start_date": "2026-01-10",
+          "end_date": "2026-01-25",
+          "registration_deadline": "2026-01-05",
+          "entry_fee": 0,
+          "prize_pool": 30000,
+          "prize_breakdown": {
+            "champion": 20000,
+            "runner_up": 7000,
+            "third_place": 3000
+          },
+          "prize_extras": "Mascom smartphones for each starting XI player (champion)",
+          "total_teams": 32,
+          "village_waiver": true,
+          "activity_state": "finished",
+          "card_border_color": "#505050",
+          "card_type": "standard_match_card",
+          "allow_fan_streams": true,
+          "equipment_borrowing": true,
+          "offline_enabled": true,
+          "national_significance": false,
+          "featured": true,
+          "name": "Mascom Kickoff Cup",
+          "date": "2026-01-10"
+        }
+      ]
+    },
+    "february": {
+      "events": [
+        {
+          "event_id": "BW-2026-FEB-001",
+          "source": "botswana_tourism",
+          "event_name": "Unscripted Vision Board Affair",
+          "categories": [
+            "lifestyle_entertainment",
+            "business_expo"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "South-East District",
+          "primary_venue": "Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-02-02",
+          "activity_state": "finished",
+          "description": "Vision board creation workshop and networking event",
+          "featured": false,
+          "national_significance": false,
+          "name": "Unscripted Vision Board Affair",
+          "date": "2026-02-02"
+        },
+        {
+          "event_id": "FNB-CSF-2026",
+          "source": "mizano",
+          "event_name": "FNB Community Shield Festival",
+          "tagline": "Banking on Community Football",
+          "categories": [
+            "sports_soccer",
+            "community_charity",
+            "youth_development"
+          ],
+          "sponsor": "FNB Botswana",
+          "sponsor_industry": "Banking",
+          "format": "festival",
+          "region": "National",
+          "region_code": "NAT",
+          "primary_venue": "Multi-hub",
+          "hubs": [
+            "Gaborone (SSKB Complex)",
+            "Francistown (Francistown Stadium)",
+            "Maun (Maun Sports Complex)",
+            "Palapye (Morupule Stadium)"
+          ],
+          "start_date": "2026-02-07",
+          "end_date": "2026-02-08",
+          "registration_deadline": "2026-02-01",
+          "entry_fee": 0,
+          "prize_pool": 20000,
+          "prize_extras": "FNB school savings accounts for all youth players",
+          "total_teams": 40,
+          "village_waiver": true,
+          "activity_state": "finished",
+          "card_border_color": "#FFD700",
+          "card_type": "registration_state_card",
+          "allow_fan_streams": true,
+          "special_features": [
+            "financial_literacy_workshops",
+            "community_banking"
+          ],
+          "featured": false,
+          "national_significance": false,
+          "name": "FNB Community Shield Festival",
+          "date": "2026-02-07"
+        },
+        {
+          "event_id": "ORG-DWC-2026",
+          "source": "mizano",
+          "event_name": "Orange Digital Warriors Cup",
+          "tagline": "Connect. Compete. Conquer.",
+          "categories": [
+            "sports_soccer",
+            "youth_development"
+          ],
+          "sponsor": "Orange Botswana",
+          "sponsor_industry": "Telecommunications",
+          "format": "swiss_system",
+          "region": "Francistown & North-East",
+          "region_code": "NE",
+          "start_date": "2026-02-14",
+          "end_date": "2026-02-28",
+          "entry_fee": 100,
+          "entry_fee_waived": "Village teams",
+          "prize_pool": 25000,
+          "prize_extras": "Orange smartphones + 12 months free data for champion team",
+          "total_teams": 16,
+          "activity_state": "finished",
+          "card_border_color": "#4472C4",
+          "card_type": "standard_match_card",
+          "special_features": [
+            "digital_skills_training",
+            "zero_rated_streaming",
+            "data_packages"
+          ],
+          "featured": false,
+          "national_significance": false,
+          "name": "Orange Digital Warriors Cup",
+          "date": "2026-02-14"
+        },
+        {
+          "event_id": "BW-2026-FEB-002",
+          "source": "botswana_tourism",
+          "event_name": "Senkgamorodi Cycle Classic",
+          "categories": [
+            "sports_cycling"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Bobirwa District",
+          "primary_venue": "Bobonong",
+          "village_town": "Bobonong",
+          "district": "Bobirwa District",
+          "start_date": "2026-02-21",
+          "end_date": "2026-02-22",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Two-day cycling classic through Bobonong",
+          "featured": false,
+          "national_significance": false,
+          "name": "Senkgamorodi Cycle Classic",
+          "date": "2026-02-21"
+        },
+        {
+          "event_id": "BW-2026-FEB-003",
+          "source": "botswana_tourism",
+          "event_name": "FNB Kazungula Marathon",
+          "categories": [
+            "sports_athletics",
+            "community_charity"
+          ],
+          "sponsor": "FNB",
+          "format": "individual_performance",
+          "region": "Chobe District",
+          "primary_venue": "Kasane",
+          "village_town": "Kasane",
+          "district": "Chobe District",
+          "start_date": "2026-02-28",
+          "activity_state": "finished",
+          "description": "FNB-sponsored marathon in Kasane",
+          "featured": true,
+          "national_significance": true,
+          "name": "FNB Kazungula Marathon",
+          "date": "2026-02-28"
+        },
+        {
+          "event_id": "BW-2026-FEB-004",
+          "source": "botswana_tourism",
+          "event_name": "Letsekela Music and Arts Festival",
+          "categories": [
+            "music_festival",
+            "arts_culture"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "South-East District",
+          "primary_venue": "Otse Village, Ramotswa",
+          "village_town": "Ramotswa",
+          "district": "South-East District",
+          "start_date": "2026-02-28",
+          "activity_state": "finished",
+          "description": "Music and arts celebration in Otse Village",
+          "featured": false,
+          "national_significance": false,
+          "name": "Letsekela Music and Arts Festival",
+          "date": "2026-02-28"
+        }
+      ]
+    },
+    "march": {
+      "events": [
+        {
+          "event_id": "BW-2026-MAR-001",
+          "source": "botswana_tourism",
+          "event_name": "Herero Mbanderu Annual Cultural Festival",
+          "categories": [
+            "arts_culture",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Kgatleng District",
+          "primary_venue": "Kopong",
+          "village_town": "Kopong",
+          "district": "Kgatleng District",
+          "start_date": "2026-03-06",
+          "activity_state": "finished",
+          "description": "Annual celebration of Herero and Mbanderu culture",
+          "cultural_significance": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Herero Mbanderu Annual Cultural Festival",
+          "date": "2026-03-06"
+        },
+        {
+          "event_id": "BW-2026-MAR-002",
+          "source": "botswana_tourism",
+          "event_name": "Francistown Motorshow",
+          "categories": [
+            "lifestyle_entertainment",
+            "business_expo"
+          ],
+          "sponsor": null,
+          "format": "business_event",
+          "region": "North-East District",
+          "primary_venue": "Toro Junction Mall",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "gps_coordinates": {
+            "latitude": -21.1699,
+            "longitude": 27.5084
+          },
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-07",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Two-day automotive exhibition and motorshow",
+          "featured": false,
+          "national_significance": false,
+          "name": "Francistown Motorshow",
+          "date": "2026-03-06"
+        },
+        {
+          "event_id": "CHO-VKT-2026",
+          "source": "mizano",
+          "event_name": "Choppies Village Kitchen Tournament",
+          "tagline": "Feeding Dreams, Building Communities",
+          "categories": [
+            "sports_soccer",
+            "community_charity",
+            "gastronomy_agrotourism"
+          ],
+          "sponsor": "Choppies Enterprises",
+          "sponsor_industry": "Retail",
+          "format": "round_robin",
+          "region": "Kweneng District",
+          "region_code": "KW",
+          "start_date": "2026-03-07",
+          "end_date": "2026-03-22",
+          "entry_fee": 0,
+          "entry_requirement": "Each team brings traditional food for opening ceremony",
+          "prize_pool": 15000,
+          "prize_extras": "P5,000 Choppies voucher + food hampers for all players",
+          "total_teams": 12,
+          "activity_state": "finished",
+          "card_border_color": "#70AD47",
+          "card_type": "standard_match_card",
+          "cultural_elements": {
+            "village_kitchen": true,
+            "traditional_foods": [
+              "Seswaa",
+              "Bogobe",
+              "Morogo",
+              "Vetkoek"
+            ],
+            "post_match_meals": true
+          },
+          "featured": false,
+          "national_significance": false,
+          "name": "Choppies Village Kitchen Tournament",
+          "date": "2026-03-07"
+        },
+        {
+          "event_id": "BW-2026-MAR-003",
+          "source": "botswana_tourism",
+          "event_name": "Jumpstart 3 Hours Burnout-Fitness Bootcamp",
+          "categories": [
+            "sports_fitness",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "training_course",
+          "region": "South-East District",
+          "primary_venue": "Baisago University",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-03-07",
+          "activity_state": "finished",
+          "description": "Intensive 3-hour fitness bootcamp session",
+          "duration_hours": 3,
+          "featured": false,
+          "national_significance": false,
+          "name": "Jumpstart 3 Hours Burnout-Fitness Bootcamp",
+          "date": "2026-03-07"
+        },
+        {
+          "event_id": "BTC-CC-2026",
+          "source": "mizano",
+          "event_name": "BTC Connected Cup",
+          "tagline": "Bringing Communities Together",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Botswana Telecommunications Corporation",
+          "sponsor_industry": "Telecommunications",
+          "format": "group_knockout",
+          "region": "Gaborone (all neighborhoods)",
+          "region_code": "SE",
+          "primary_venue": "National Stadium (Final)",
+          "start_date": "2026-03-14",
+          "end_date": "2026-03-29",
+          "entry_fee": 50,
+          "entry_includes": "BTC SIM card with 5GB data",
+          "prize_pool": 40000,
+          "prize_extras": "BTC Wi-Fi hotspots for team clubhouses",
+          "total_teams": 24,
+          "activity_state": "finished",
+          "card_border_color": "#FFD700",
+          "card_type": "standard_match_card",
+          "special_features": [
+            "free_wifi_at_venues",
+            "fan_checkin_rewards",
+            "real_time_streaming"
+          ],
+          "featured": false,
+          "national_significance": false,
+          "name": "BTC Connected Cup",
+          "date": "2026-03-14"
+        },
+        {
+          "event_id": "BW-2026-MAR-004",
+          "source": "botswana_tourism",
+          "event_name": "Ghetto Classic",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": null,
+          "format": "tournament",
+          "region": "North-East District",
+          "primary_venue": "Francistown",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "start_date": "2026-03-14",
+          "activity_state": "finished",
+          "description": "Annual Francistown football classic",
+          "featured": false,
+          "national_significance": false,
+          "name": "Ghetto Classic",
+          "date": "2026-03-14"
+        },
+        {
+          "event_id": "BW-2026-MAR-005",
+          "source": "botswana_tourism",
+          "event_name": "FEARLESS 10K Run Series",
+          "categories": [
+            "sports_athletics"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Central District",
+          "primary_venue": "Palapye",
+          "village_town": "Palapye",
+          "district": "Central District",
+          "start_date": "2026-03-14",
+          "activity_state": "finished",
+          "description": "10km run part of the FEARLESS series",
+          "series_name": "FEARLESS 10K Run Series",
+          "featured": false,
+          "national_significance": false,
+          "name": "FEARLESS 10K Run Series",
+          "date": "2026-03-14"
+        },
+        {
+          "event_id": "BW-2026-MAR-006",
+          "source": "botswana_tourism",
+          "event_name": "Gabs Half Marathon 2026",
+          "categories": [
+            "sports_athletics",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "South-East District",
+          "primary_venue": "Airport Junction, Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-03-15",
+          "distance_km": 21.0975,
+          "activity_state": "finished",
+          "description": "Gaborone's annual half marathon event",
+          "featured": true,
+          "national_significance": false,
+          "name": "Gabs Half Marathon 2026",
+          "date": "2026-03-15"
+        },
+        {
+          "event_id": "BW-2026-MAR-007",
+          "source": "botswana_tourism",
+          "event_name": "Phuduhuhdu Cultural Festival",
+          "categories": [
+            "arts_culture",
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "South-East District",
+          "primary_venue": "University of Botswana",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Two-day cultural celebration at UB",
+          "featured": false,
+          "national_significance": false,
+          "name": "Phuduhuhdu Cultural Festival",
+          "date": "2026-03-20"
+        },
+        {
+          "event_id": "BW-2026-MAR-008",
+          "source": "botswana_tourism",
+          "event_name": "Jwaneng Netball Extravaganza",
+          "categories": [
+            "sports_netball",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "tournament",
+          "region": "Southern District",
+          "primary_venue": "Jwaneng Netball Court",
+          "village_town": "Jwaneng",
+          "district": "Southern District",
+          "start_date": "2026-03-21",
+          "end_date": "2026-03-22",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Weekend netball tournament in Jwaneng",
+          "featured": false,
+          "national_significance": false,
+          "name": "Jwaneng Netball Extravaganza",
+          "date": "2026-03-21"
+        },
+        {
+          "event_id": "BW-2026-MAR-009",
+          "source": "botswana_tourism",
+          "event_name": "BORRC Round 1",
+          "categories": [
+            "sports_motor_racing",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "TBC",
+          "primary_venue": "TBC",
+          "start_date": "2026-03-28",
+          "activity_state": "finished",
+          "description": "Botswana Off-Road Racing Championship Round 1",
+          "series_name": "BORRC 2026",
+          "featured": false,
+          "national_significance": false,
+          "name": "BORRC Round 1",
+          "date": "2026-03-28"
+        },
+        {
+          "event_id": "BW-2026-MAR-010",
+          "source": "botswana_tourism",
+          "event_name": "Mother of All Vintage Lifestyle 90s & 70s",
+          "categories": [
+            "music_festival",
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "North-East District",
+          "primary_venue": "Francistown",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "start_date": "2026-03-28",
+          "activity_state": "finished",
+          "description": "Vintage-themed lifestyle event celebrating 70s and 90s culture",
+          "featured": false,
+          "national_significance": false,
+          "name": "Mother of All Vintage Lifestyle 90s & 70s",
+          "date": "2026-03-28"
+        },
+        {
+          "event_id": "BW-2026-MAR-011",
+          "source": "botswana_tourism",
+          "event_name": "Black And White Party",
+          "categories": [
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "North-East District",
+          "primary_venue": "Cresta Thapama, Francistown",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "start_date": "2026-03-28",
+          "activity_state": "finished",
+          "description": "Black and white themed party at Cresta Thapama",
+          "featured": false,
+          "national_significance": false,
+          "name": "Black And White Party",
+          "date": "2026-03-28"
+        },
+        {
+          "event_id": "BW-2026-MAR-012",
+          "source": "botswana_tourism",
+          "event_name": "Yecho Cultural Music Fest",
+          "categories": [
+            "arts_culture",
+            "music_festival"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Ghanzi District",
+          "primary_venue": "Gantsi",
+          "village_town": "Gantsi",
+          "district": "Ghanzi District",
+          "start_date": "2026-03-28",
+          "activity_state": "finished",
+          "description": "Cultural music festival in Gantsi",
+          "cultural_significance": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Yecho Cultural Music Fest",
+          "date": "2026-03-28"
+        },
+        {
+          "event_id": "BW-2026-MAR-013",
+          "source": "botswana_tourism",
+          "event_name": "Madikwe Cultural Festival",
+          "categories": [
+            "arts_culture"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Kgatleng District",
+          "primary_venue": "Newville Garden-Bannabotlhe Road, Sikwane",
+          "village_town": "Sikwane",
+          "start_date": "2026-03-28",
+          "activity_state": "finished",
+          "description": "Madikwe community cultural celebration",
+          "featured": false,
+          "national_significance": false,
+          "name": "Madikwe Cultural Festival",
+          "date": "2026-03-28"
+        }
+      ]
+    },
+    "april": {
+      "events": [
+        {
+          "event_id": "BW-2026-APR-001",
+          "source": "botswana_tourism",
+          "event_name": "Easter Eve Bash",
+          "categories": [
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "North-East District",
+          "primary_venue": "Molapo Leisure Gardens, Francistown",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "start_date": "2026-04-02",
+          "activity_state": "finished",
+          "description": "Easter weekend celebration event",
+          "featured": false,
+          "national_significance": false,
+          "name": "Easter Eve Bash",
+          "date": "2026-04-02"
+        },
+        {
+          "event_id": "BW-2026-APR-002",
+          "source": "botswana_tourism",
+          "event_name": "Phill's Apparel Annual Football Tournament",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Phill's Apparel",
+          "format": "tournament",
+          "region": "Kgatleng District",
+          "primary_venue": "Mochudi",
+          "village_town": "Mochudi",
+          "district": "Kgatleng District",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-06",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "5-day Easter football tournament sponsored by Phill's Apparel",
+          "featured": false,
+          "national_significance": false,
+          "name": "Phill's Apparel Annual Football Tournament",
+          "date": "2026-04-02"
+        },
+        {
+          "event_id": "BW-2026-APR-003",
+          "source": "botswana_tourism",
+          "event_name": "Jwaneng Easter Softball Tournament",
+          "categories": [
+            "sports_softball",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "tournament",
+          "region": "Southern District",
+          "primary_venue": "Jwaneng Softball Grounds",
+          "village_town": "Jwaneng",
+          "district": "Southern District",
+          "start_date": "2026-04-03",
+          "end_date": "2026-04-05",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Easter weekend softball competition",
+          "featured": false,
+          "national_significance": false,
+          "name": "Jwaneng Easter Softball Tournament",
+          "date": "2026-04-03"
+        },
+        {
+          "event_id": "DEB-DC-2026",
+          "source": "mizano",
+          "event_name": "Debswana Diamond Cup",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Debswana",
+          "sponsor_industry": "Mining",
+          "format": "double_elimination",
+          "region": "Orapa / Jwaneng / Letlhakane",
+          "start_date": "2026-04-04",
+          "end_date": "2026-04-19",
+          "prize_pool": 50000,
+          "prize_extras": "Diamond-studded medals + job apprenticeships",
+          "total_teams": 16,
+          "activity_state": "finished",
+          "card_border_color": "#505050",
+          "featured": false,
+          "national_significance": false,
+          "name": "Debswana Diamond Cup",
+          "date": "2026-04-04"
+        },
+        {
+          "event_id": "BW-2026-APR-004",
+          "source": "botswana_tourism",
+          "event_name": "MA-SA Easter Cup Horse Racing 2026",
+          "categories": [
+            "sports_horse_racing",
+            "sports_other"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "North-West District",
+          "primary_venue": "Maun",
+          "village_town": "Maun",
+          "district": "North-West District",
+          "start_date": "2026-04-04",
+          "activity_state": "finished",
+          "description": "Easter horse racing event in Maun",
+          "featured": false,
+          "national_significance": false,
+          "name": "MA-SA Easter Cup Horse Racing 2026",
+          "date": "2026-04-04"
+        },
+        {
+          "event_id": "BW-2026-APR-005",
+          "source": "botswana_tourism",
+          "event_name": "Shashemooke Motofest",
+          "categories": [
+            "sports_motor_racing",
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Central District",
+          "primary_venue": "Shashe Mooke",
+          "village_town": "Shashe Mooke",
+          "district": "Central District",
+          "start_date": "2026-04-04",
+          "activity_state": "finished",
+          "description": "Motorcycle and motorsport festival",
+          "featured": false,
+          "national_significance": false,
+          "name": "Shashemooke Motofest",
+          "date": "2026-04-04"
+        },
+        {
+          "event_id": "BW-2026-APR-006",
+          "source": "botswana_tourism",
+          "event_name": "SADC King of Drags",
+          "categories": [
+            "sports_motor_racing"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Central District",
+          "primary_venue": "Selibe Phikwe",
+          "village_town": "Selibe Phikwe",
+          "district": "Central District",
+          "start_date": "2026-04-05",
+          "activity_state": "finished",
+          "description": "Regional drag racing championship",
+          "regional_event": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "SADC King of Drags",
+          "date": "2026-04-05"
+        },
+        {
+          "event_id": "BW-2026-APR-007",
+          "source": "botswana_tourism",
+          "event_name": "International Tennis Federation Under 18 J30",
+          "categories": [
+            "sports_tennis",
+            "youth_development"
+          ],
+          "sponsor": "ITF",
+          "format": "tournament",
+          "region": "South-East District",
+          "primary_venue": "National Tennis Centre, Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-11",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "ITF Junior tennis tournament (J30 level)",
+          "international_event": true,
+          "age_category": "u18",
+          "featured": false,
+          "national_significance": false,
+          "name": "International Tennis Federation Under 18 J30",
+          "date": "2026-04-06"
+        },
+        {
+          "event_id": "BW-2026-APR-008",
+          "source": "botswana_tourism",
+          "event_name": "Road to Golden Grand Prix",
+          "categories": [
+            "sports_athletics"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "South-East District",
+          "primary_venue": "Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-04-11",
+          "activity_state": "finished",
+          "description": "Qualifying event for Gaborone Golden Grand Prix",
+          "featured": false,
+          "national_significance": false,
+          "name": "Road to Golden Grand Prix",
+          "date": "2026-04-11"
+        },
+        {
+          "event_id": "BW-2026-APR-009",
+          "source": "botswana_tourism",
+          "event_name": "International Tennis Federation Under 18 J60",
+          "categories": [
+            "sports_tennis",
+            "youth_development"
+          ],
+          "sponsor": "ITF",
+          "format": "tournament",
+          "region": "South-East District",
+          "primary_venue": "National Tennis Centre, Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-18",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "ITF Junior tennis tournament (J60 level)",
+          "international_event": true,
+          "age_category": "u18",
+          "featured": false,
+          "national_significance": false,
+          "name": "International Tennis Federation Under 18 J60",
+          "date": "2026-04-13"
+        },
+        {
+          "event_id": "BW-2026-APR-010",
+          "source": "botswana_tourism",
+          "event_name": "Motse Wa Setso Cultural Festival",
+          "categories": [
+            "arts_culture",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "North-East District",
+          "primary_venue": "Cresta Thapama, Francistown",
+          "village_town": "Francistown",
+          "district": "North-East District",
+          "start_date": "2026-04-18",
+          "activity_state": "finished",
+          "description": "Traditional cultural festival celebrating Setswana heritage",
+          "cultural_significance": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Motse Wa Setso Cultural Festival",
+          "date": "2026-04-18"
+        },
+        {
+          "event_id": "BW-2026-APR-011",
+          "source": "botswana_tourism",
+          "event_name": "Jwaneng Mine GM's Charity Cycling Race",
+          "categories": [
+            "sports_cycling",
+            "community_charity"
+          ],
+          "sponsor": "Jwaneng Mine",
+          "format": "individual_performance",
+          "region": "Kgatleng District",
+          "primary_venue": "Farm camp Legakwa, Kgatleng District",
+          "district": "Kgatleng District",
+          "start_date": "2026-04-19",
+          "activity_state": "finished",
+          "description": "Charity cycling race organized by Jwaneng Mine GM",
+          "charity_event": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Jwaneng Mine GM's Charity Cycling Race",
+          "date": "2026-04-19"
+        },
+        {
+          "name": "Jwaneng Mine General Manager's Charity Cycling Race",
+          "date": "2026-04-19",
+          "venue": "Farm camp Legakwa, Kgatleng district",
+          "category": "Sports",
+          "description": "Charity cycling race organized by Jwaneng Mine GM",
+          "featured": false,
+          "event_name": "Jwaneng Mine General Manager's Charity Cycling Race",
+          "start_date": "2026-04-19"
+        },
+        {
+          "event_id": "BW-2026-APR-012",
+          "source": "botswana_tourism",
+          "event_name": "Agro-Tour Botswana Expo 2026",
+          "categories": [
+            "gastronomy_agrotourism",
+            "business_expo"
+          ],
+          "sponsor": null,
+          "format": "business_event",
+          "region": "Kgatleng District",
+          "primary_venue": "Farm camp Legakwa, Kgatleng District",
+          "district": "Kgatleng District",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-26",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Agricultural tourism exposition showcasing farming practices",
+          "featured": false,
+          "national_significance": false,
+          "name": "Agro-Tour Botswana Expo 2026",
+          "date": "2026-04-23"
+        },
+        {
+          "event_id": "BW-2026-APR-013",
+          "source": "botswana_tourism",
+          "event_name": "Sandveld Ranchers Association Field Day",
+          "categories": [
+            "gastronomy_agrotourism",
+            "business_expo"
+          ],
+          "sponsor": null,
+          "format": "business_event",
+          "region": "Western Sandveld",
+          "primary_venue": "Kagotsii Ranch, Western Sandveld",
+          "start_date": "2026-04-24",
+          "activity_state": "finished",
+          "description": "Ranching field day for livestock farmers",
+          "featured": false,
+          "national_significance": false,
+          "name": "Sandveld Ranchers Association Field Day",
+          "date": "2026-04-24"
+        },
+        {
+          "event_id": "BW-2026-APR-014",
+          "source": "botswana_tourism",
+          "event_name": "Stanbic Bank Music N Lifestyle Festival",
+          "categories": [
+            "music_festival",
+            "lifestyle_entertainment"
+          ],
+          "sponsor": "Stanbic Bank",
+          "format": "business_event",
+          "region": "South-East District",
+          "primary_venue": "Royal Aria, Tlokweng",
+          "village_town": "Tlokweng",
+          "district": "South-East District",
+          "start_date": "2026-04-25",
+          "activity_state": "finished",
+          "description": "Music and lifestyle festival sponsored by Stanbic Bank",
+          "featured": true,
+          "national_significance": false,
+          "name": "Stanbic Bank Music N Lifestyle Festival",
+          "date": "2026-04-25"
+        },
+        {
+          "event_id": "BW-2026-APR-015",
+          "source": "botswana_tourism",
+          "event_name": "Babirwa Cultural & Conservation Experience",
+          "categories": [
+            "arts_culture",
+            "gastronomy_agrotourism"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Bobirwa District",
+          "primary_venue": "Romane, Bobirwa District",
+          "district": "Bobirwa District",
+          "start_date": "2026-04-25",
+          "activity_state": "finished",
+          "description": "Cultural conservation experience combining nature rides and heritage",
+          "eco_tourism": true,
+          "cultural_significance": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Babirwa Cultural & Conservation Experience",
+          "date": "2026-04-25"
+        },
+        {
+          "event_id": "BW-2026-APR-016",
+          "source": "botswana_tourism",
+          "event_name": "Tropic of Capricorn International Marathon",
+          "categories": [
+            "sports_athletics",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "Central District",
+          "primary_venue": "Palapye corridor",
+          "village_town": "Palapye",
+          "district": "Central District",
+          "start_date": "2026-04-25",
+          "distance_km": 42.195,
+          "activity_state": "finished",
+          "description": "International marathon along the Tropic of Capricorn",
+          "international_event": true,
+          "featured": true,
+          "national_significance": false,
+          "name": "Tropic of Capricorn International Marathon",
+          "date": "2026-04-25"
+        },
+        {
+          "event_id": "BW-2026-APR-017",
+          "source": "botswana_tourism",
+          "event_name": "Family Fun Day",
+          "categories": [
+            "lifestyle_entertainment",
+            "community_charity"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Central District",
+          "primary_venue": "Mahalapye",
+          "village_town": "Mahalapye",
+          "district": "Central District",
+          "start_date": "2026-04-25",
+          "activity_state": "finished",
+          "description": "Family-friendly community fun day with activities",
+          "family_friendly": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Family Fun Day",
+          "date": "2026-04-25"
+        },
+        {
+          "event_id": "BW-2026-APR-018",
+          "source": "botswana_tourism",
+          "event_name": "Manyana 4x4 Meet & Camping",
+          "categories": [
+            "sports_other",
+            "lifestyle_entertainment"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Kweneng District",
+          "primary_venue": "Manyana riverbed",
+          "village_town": "Manyana",
+          "start_date": "2026-04-25",
+          "activity_state": "finished",
+          "description": "4x4 enthusiasts meetup with camping",
+          "overnight_event": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Manyana 4x4 Meet & Camping",
+          "date": "2026-04-25"
+        },
+        {
+          "name": "Babirwa Cultural & Conservation Experience 'Ride with Nature'",
+          "date": "2026-04-25",
+          "venue": "Romane, Bobirwa District",
+          "category": "Gastronomy & Agrotourism",
+          "description": "Cultural conservation experience combining nature rides and heritage",
+          "featured": false,
+          "event_name": "Babirwa Cultural & Conservation Experience 'Ride with Nature'",
+          "start_date": "2026-04-25"
+        },
+        {
+          "event_id": "BW-2026-APR-019",
+          "source": "botswana_tourism",
+          "event_name": "Gaborone Golden Grand Prix",
+          "categories": [
+            "sports_athletics",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "individual_performance",
+          "region": "South-East District",
+          "primary_venue": "Gaborone",
+          "village_town": "Gaborone",
+          "district": "South-East District",
+          "gps_coordinates": {
+            "latitude": -24.6282,
+            "longitude": 25.9231
+          },
+          "start_date": "2026-04-26",
+          "activity_state": "finished",
+          "description": "Premier athletics grand prix event in Gaborone",
+          "international_event": true,
+          "featured": true,
+          "national_significance": true,
+          "name": "Gaborone Golden Grand Prix",
+          "date": "2026-04-26"
+        },
+        {
+          "event_id": "BW-2026-APR-020",
+          "source": "botswana_tourism",
+          "event_name": "Wayeyi Cultural Festival",
+          "categories": [
+            "arts_culture",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "North-West District",
+          "primary_venue": "Wayeyi Cultural Village, Gumare",
+          "village_town": "Gumare",
+          "district": "North-West District",
+          "start_date": "2026-04-26",
+          "activity_state": "finished",
+          "description": "Wayeyi cultural heritage celebration",
+          "cultural_significance": true,
+          "featured": false,
+          "national_significance": false,
+          "name": "Wayeyi Cultural Festival",
+          "date": "2026-04-26"
+        },
+        {
+          "event_id": "BW-2026-APR-021",
+          "source": "botswana_tourism",
+          "event_name": "Khama The Great Trek (KTGT) 2026",
+          "categories": [
+            "sports_hiking",
+            "arts_culture",
+            "national_events"
+          ],
+          "sponsor": null,
+          "format": "social_gathering",
+          "region": "Central District",
+          "primary_venue": "Shoshong to Serowe",
+          "village_town": "Shoshong to Serowe",
+          "district": "Central District",
+          "start_date": "2026-04-26",
+          "end_date": "2026-05-01",
+          "is_multi_day": true,
+          "activity_state": "finished",
+          "description": "Multi-day historical trek from Shoshong to Serowe",
+          "historical_significance": true,
+          "overnight_event": true,
+          "featured": false,
+          "national_significance": true,
+          "name": "Khama The Great Trek (KTGT) 2026",
+          "date": "2026-04-26"
+        }
+      ]
+    },
+    "may": {
+      "events": [
+        {
+          "event_id": "KAL-DC-2026",
+          "source": "mizano",
+          "event_name": "Kgalagadi Desert Challenge",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "KALAFI",
+          "format": "aggregate",
+          "region": "Kgalagadi District",
+          "start_date": "2026-04-18",
+          "end_date": "2026-04-26",
+          "prize_pool": 20000,
+          "prize_extras": "Livestock (goats/cattle) + water tanks",
+          "total_teams": 8,
+          "offline_critical": true,
+          "bluetooth_enabled": true,
+          "activity_state": "finished",
+          "card_border_color": "#70AD47",
+          "featured": false,
+          "national_significance": false,
+          "name": "Kgalagadi Desert Challenge",
+          "date": "2026-04-18"
+        },
+        {
+          "event_id": "GUA-SH-U16-2026",
+          "source": "mizano",
+          "event_name": "Guardian Shield U16",
+          "categories": [
+            "sports_soccer",
+            "youth_development"
+          ],
+          "sponsor": "UNICEF / Mizano",
+          "format": "funino",
+          "region": "National (8 regional centers)",
+          "start_date": "2026-05-02",
+          "end_date": "2026-05-10",
+          "entry_fee": 0,
+          "prize_pool": null,
+          "prize_extras": "Educational scholarships",
+          "total_teams": 64,
+          "age_group": "U16",
+          "guardian_required": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": false,
+          "name": "Guardian Shield U16",
+          "date": "2026-05-02"
+        },
+        {
+          "event_id": "FNB-SSF-2026",
+          "source": "mizano",
+          "event_name": "FNB School Sports Festival",
+          "categories": [
+            "sports_soccer",
+            "youth_development",
+            "community_charity"
+          ],
+          "sponsor": "FNB",
+          "sponsor_industry": "Banking",
+          "format": "festival",
+          "region": "National",
+          "start_date": "2026-05-15",
+          "end_date": "2026-05-24",
+          "entry_fee": 0,
+          "prize_pool": 100000,
+          "prize_extras": "FNB bursaries for top students",
+          "total_teams": 40,
+          "school_teams": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": true,
+          "national_significance": false,
+          "name": "FNB School Sports Festival",
+          "date": "2026-05-15"
+        }
+      ]
+    },
+    "june": {
+      "events": [
+        {
+          "event_id": "PRES-CC-2026",
+          "source": "mizano",
+          "event_name": "President's Charity Cup",
+          "categories": [
+            "sports_soccer",
+            "community_charity",
+            "national_events"
+          ],
+          "sponsor": "Office of the President",
+          "format": "single_elimination",
+          "region": "National",
+          "start_date": "2026-06-06",
+          "end_date": "2026-06-07",
+          "prize_pool": 100000,
+          "charity_donation": true,
+          "total_teams": 8,
+          "team_types": [
+            "Amateur All-Stars",
+            "Celebrities XI",
+            "Veterans United",
+            "Women's Select",
+            "Diplomatic Corps",
+            "Business Executives",
+            "Media XI",
+            "President's XI"
+          ],
+          "activity_state": "upcoming",
+          "card_border_color": "#87CEEB",
+          "featured": true,
+          "national_significance": true,
+          "name": "President's Charity Cup",
+          "date": "2026-06-06"
+        },
+        {
+          "event_id": "MAS-TOP8-2026",
+          "source": "mizano",
+          "event_name": "Mascom Top 8 Challenge",
+          "categories": [
+            "sports_soccer"
+          ],
+          "sponsor": "Mascom",
+          "sponsor_industry": "Telecommunications",
+          "format": "single_elimination",
+          "region": "National",
+          "start_date": "2026-06-13",
+          "end_date": "2026-06-28",
+          "prize_pool": 80000,
+          "prize_extras": "Mascom sponsorships for 2027 season",
+          "total_teams": 8,
+          "invite_only": true,
+          "ranking_based": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#FFA500",
+          "featured": true,
+          "national_significance": false,
+          "name": "Mascom Top 8 Challenge",
+          "date": "2026-06-13"
+        }
+      ]
+    },
+    "july": {
+      "events": [
+        {
+          "event_id": "ORG-FS-U13-2026",
+          "source": "mizano",
+          "event_name": "Orange Future Stars U13",
+          "categories": [
+            "sports_soccer",
+            "youth_development"
+          ],
+          "sponsor": "Orange Botswana",
+          "sponsor_industry": "Telecommunications",
+          "format": "festival",
+          "region": "National (8 regional centers)",
+          "start_date": "2026-07-04",
+          "end_date": "2026-07-12",
+          "entry_fee": 0,
+          "prize_extras": "Full scholarships to Orange Football Academy",
+          "total_teams": 32,
+          "age_group": "U13",
+          "talent_identification": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": false,
+          "name": "Orange Future Stars U13",
+          "date": "2026-07-04"
+        },
+        {
+          "event_id": "BFL-RZQ-2026",
+          "source": "mizano",
+          "event_name": "BFL Regional Zone Qualifiers",
+          "categories": [
+            "sports_soccer",
+            "national_events"
+          ],
+          "sponsor": "Botswana Football League",
+          "format": "league_system",
+          "region": "All 8 BFL regions",
+          "start_date": "2026-07-18",
+          "end_date": "2026-09-06",
+          "prize_pool": 30000,
+          "promotion": "BFL Division One (2027)",
+          "total_teams": 64,
+          "official_referees": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": true,
+          "name": "BFL Regional Zone Qualifiers",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    "august": {
+      "events": [
+        {
+          "event_id": "IND-CUP-2026",
+          "source": "mizano",
+          "event_name": "Independence Cup",
+          "tagline": "60 Years of Independence",
+          "categories": [
+            "sports_soccer",
+            "national_events"
+          ],
+          "sponsor": "BTC / Ministry of Sport",
+          "format": "group_knockout",
+          "region": "National",
+          "start_date": "2026-08-01",
+          "end_date": "2026-09-26",
+          "prize_pool": 100000,
+          "prize_extras": "Independence Trophy + BTC connectivity",
+          "total_teams": 60,
+          "commemorates": "60 years of independence",
+          "activity_state": "upcoming",
+          "card_border_color": "#FFD700",
+          "featured": true,
+          "national_significance": true,
+          "name": "Independence Cup",
+          "date": "2026-08-01"
+        },
+        {
+          "event_id": "CHO-FRT-2026",
+          "source": "mizano",
+          "event_name": "Choppies Food Relief Tournament",
+          "categories": [
+            "sports_soccer",
+            "community_charity",
+            "gastronomy_agrotourism"
+          ],
+          "sponsor": "Choppies Enterprises",
+          "sponsor_industry": "Retail",
+          "format": "round_robin",
+          "region": "Central District",
+          "start_date": "2026-08-15",
+          "end_date": "2026-08-23",
+          "entry_fee": 0,
+          "entry_requirement": "50kg non-perishable food donation",
+          "prize_pool": 25000,
+          "prize_extras": "1 ton of food for winner's village",
+          "total_teams": 16,
+          "activity_state": "upcoming",
+          "card_border_color": "#70AD47",
+          "featured": false,
+          "national_significance": false,
+          "name": "Choppies Food Relief Tournament",
+          "date": "2026-08-15"
+        }
+      ]
+    },
+    "september": {
+      "events": [
+        {
+          "event_id": "BSB-CUP-2026",
+          "source": "mizano",
+          "event_name": "Botswana Savings Bank Cup",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Botswana Savings Bank",
+          "format": "single_elimination",
+          "region": "National",
+          "start_date": "2026-09-05",
+          "end_date": "2026-09-20",
+          "prize_pool": 40000,
+          "prize_extras": "BSB savings accounts with P1,000 seed funding",
+          "total_teams": 32,
+          "entry_requirement": "Financial literacy workshop",
+          "financial_inclusion": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": false,
+          "name": "Botswana Savings Bank Cup",
+          "date": "2026-09-05"
+        },
+        {
+          "event_id": "MAS-WC-2026",
+          "source": "mizano",
+          "event_name": "Mascom Wireless Challenge",
+          "categories": [
+            "sports_soccer"
+          ],
+          "sponsor": "Mascom",
+          "sponsor_industry": "Telecommunications",
+          "format": "swiss_system",
+          "region": "Cities: Gaborone, Francistown, Palapye",
+          "start_date": "2026-09-12",
+          "end_date": "2026-09-27",
+          "prize_pool": 35000,
+          "prize_extras": "Mascom 5G routers + 24 months unlimited data",
+          "total_teams": 24,
+          "rounds": 7,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": false,
+          "name": "Mascom Wireless Challenge",
+          "date": "2026-09-12"
+        }
+      ]
+    },
+    "october": {
+      "events": [
+        {
+          "event_id": "ORG-MCS-2026",
+          "source": "mizano",
+          "event_name": "Orange Money Charity Shield",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Orange Money",
+          "sponsor_industry": "Fintech / Telecommunications",
+          "format": "festival",
+          "region": "National (4 hubs)",
+          "start_date": "2026-10-03",
+          "end_date": "2026-10-04",
+          "prize_pool": 50000,
+          "charity_distribution": "Winner chooses charity",
+          "total_teams": 16,
+          "charity_teams": true,
+          "orange_money_integration": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#FF69B4",
+          "featured": false,
+          "national_significance": false,
+          "name": "Orange Money Charity Shield",
+          "date": "2026-10-03"
+        },
+        {
+          "event_id": "FNB-CSL-2026",
+          "source": "mizano",
+          "event_name": "FNB Corporate Social League",
+          "categories": [
+            "sports_soccer",
+            "business_expo",
+            "community_charity"
+          ],
+          "sponsor": "FNB Botswana",
+          "sponsor_industry": "Banking",
+          "format": "ladder_system",
+          "region": "Gaborone",
+          "start_date": "2026-10-10",
+          "end_date": "2026-11-21",
+          "entry_fee": 2000,
+          "entry_donated_to": "Charity",
+          "prize_pool": 30000,
+          "total_teams": 16,
+          "corporate_teams": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#4472C4",
+          "featured": false,
+          "national_significance": false,
+          "name": "FNB Corporate Social League",
+          "date": "2026-10-10"
+        }
+      ]
+    },
+    "november": {
+      "events": [
+        {
+          "event_id": "BTC-ESC-2026",
+          "source": "mizano",
+          "event_name": "BTC End of Season Classic",
+          "categories": [
+            "sports_soccer",
+            "national_events"
+          ],
+          "sponsor": "Botswana Telecommunications Corporation",
+          "sponsor_industry": "Telecommunications",
+          "format": "league_playoff",
+          "region": "National",
+          "start_date": "2026-11-07",
+          "end_date": "2026-11-29",
+          "prize_pool": 100000,
+          "prize_extras": "BTC Team of the Year package + 2027 sponsorship",
+          "total_teams": 16,
+          "invite_only": true,
+          "year_end_rankings": true,
+          "awards": [
+            "MVP",
+            "Top Scorer",
+            "Best GK",
+            "Community Team"
+          ],
+          "activity_state": "upcoming",
+          "card_border_color": "#FFA500",
+          "featured": true,
+          "national_significance": false,
+          "name": "BTC End of Season Classic",
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    "december": {
+      "events": [
+        {
+          "event_id": "CHO-CC-2026",
+          "source": "mizano",
+          "event_name": "Choppies Christmas Cracker",
+          "categories": [
+            "sports_soccer",
+            "community_charity"
+          ],
+          "sponsor": "Choppies Enterprises",
+          "sponsor_industry": "Retail",
+          "format": "festival",
+          "region": "All regions (decentralized)",
+          "start_date": "2026-12-05",
+          "end_date": "2026-12-20",
+          "entry_fee": 0,
+          "prize_pool": 5000,
+          "prize_extras": "Christmas hampers per regional winner",
+          "total_teams": "unlimited",
+          "community_registration": true,
+          "create_your_tournament": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#FFD700",
+          "featured": false,
+          "national_significance": false,
+          "name": "Choppies Christmas Cracker",
+          "date": "2026-12-05"
+        },
+        {
+          "event_id": "MIZ-NCL-2026",
+          "source": "mizano",
+          "event_name": "Mizano National Champions League",
+          "categories": [
+            "sports_soccer",
+            "national_events",
+            "youth_development"
+          ],
+          "sponsor": "Mizano / FNB",
+          "sponsor_industry": "Platform / Banking",
+          "format": "group_knockout",
+          "region": "National",
+          "start_date": "2026-12-27",
+          "end_date": "2027-01-03",
+          "prize_pool": 150000,
+          "prize_extras": "Mizano Champions trophy + professional trials",
+          "total_teams": 32,
+          "qualification_criteria": "2026 event winners + rankings + wildcards",
+          "grand_finale": true,
+          "scout_attendance": true,
+          "activity_state": "upcoming",
+          "card_border_color": "#FFA500",
+          "featured": true,
+          "national_significance": true,
+          "name": "Mizano National Champions League",
+          "date": "2026-12-27"
+        }
+      ]
+    }
+  }
+}

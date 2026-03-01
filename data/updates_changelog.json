@@ -1,0 +1,84 @@
+[
+  {
+    "version": "1.01.267",
+    "date": "Sun 22 Feb 2026",
+    "title": "Media Notes & Note Items",
+    "features": [
+      {"tag": "NEW", "text": "Business Profile Media Notes tab — view images and video content shared by businesses."},
+      {"tag": "NEW", "text": "Note-level item creation flow added to Notes panel with 3-level action buttons."},
+      {"tag": "NEW", "text": "How To Use section in Main Menu — 5 illustrated guides for core features."},
+      {"tag": "FIX", "text": "Location filter now correctly filters businesses by neighbourhood in real time."},
+      {"tag": "FIX", "text": "Trusted businesses correctly persist between app sessions using local storage."},
+      {"tag": "FIX", "text": "Business profile back button now correctly returns to previous directory view."},
+      {"tag": "UPCOMING", "text": "Wonda surveys launching next Sunday — earn Notes for completing community polls."},
+      {"tag": "UPCOMING", "text": "Price Watch Notes — confirm and submit prices for community consensus tracking."}
+    ]
+  },
+  {
+    "version": "1.01.251",
+    "date": "Sun 15 Feb 2026",
+    "title": "Contacts Tab & Business News",
+    "features": [
+      {"tag": "NEW", "text": "Contacts tab in Business Profile — Call, Facebook and WhatsApp directories fully functional."},
+      {"tag": "NEW", "text": "Business News tab — read articles and updates directly from businesses."},
+      {"tag": "NEW", "text": "Onlines tab — view all of a business's website and social media links in one place."},
+      {"tag": "FIX", "text": "Search bar keyboard dismiss on scroll now working correctly on Android 13+."},
+      {"tag": "FIX", "text": "Bottom nav bar visibility on scroll fixed for all pages including Promos."},
+      {"tag": "FIX", "text": "Service worker cache invalidation corrected — stale data issue resolved."},
+      {"tag": "UPCOMING", "text": "Media Notes tab for businesses — images, videos and audio from business profiles."}
+    ]
+  },
+  {
+    "version": "1.01.234",
+    "date": "Sun 8 Feb 2026",
+    "title": "Promos — Weekly & Mediums",
+    "features": [
+      {"tag": "NEW", "text": "Promos — Weekly tab with Main Category accordion navigation now live with 12 categories."},
+      {"tag": "NEW", "text": "Promos — Sub-category pill navigation with collage timeline view of promotional content."},
+      {"tag": "NEW", "text": "Promos — Mediums tab for browsing Podcasts, Radio, Newspapers, DSTV and more."},
+      {"tag": "NEW", "text": "Promos — Events tab with upcoming event listings and descriptions."},
+      {"tag": "FIX", "text": "Business cards now correctly expand and collapse on tap with smooth animation."},
+      {"tag": "FIX", "text": "Category selector dropdown in Directory now closes on outside tap."},
+      {"tag": "UPCOMING", "text": "Promo collage timeline — showing actual WebP promotional files from verified businesses."}
+    ]
+  },
+  {
+    "version": "1.01.218",
+    "date": "Sun 1 Feb 2026",
+    "title": "Directory & Trust Feature",
+    "features": [
+      {"tag": "NEW", "text": "Business Directory — infinite scroll with 50+ seeded businesses across all 5 categories."},
+      {"tag": "NEW", "text": "Trusted feature — tap the green bar on any business to add it to your Trusted list."},
+      {"tag": "NEW", "text": "Trusted tab in Directory — quickly browse only your trusted businesses."},
+      {"tag": "NEW", "text": "Contact icons (Phone, Facebook, WhatsApp) on every business card — colour-coded by availability."},
+      {"tag": "FIX", "text": "Main Menu slide animation smoothed out on older Android devices using cubic-bezier easing."},
+      {"tag": "UPCOMING", "text": "Business News and Media Notes tabs — launching next update."}
+    ]
+  },
+  {
+    "version": "1.01.201",
+    "date": "Sun 25 Jan 2026",
+    "title": "Main Menu & Location Filter",
+    "features": [
+      {"tag": "NEW", "text": "Main Menu overlay — Profile, Notes, Trusted, About TapFo and How To Use."},
+      {"tag": "NEW", "text": "Location filter panel — select your city and area/neighbourhood for local business results."},
+      {"tag": "NEW", "text": "App version and changelog accessible from Main Menu footer."},
+      {"tag": "FIX", "text": "App install shortcut now correctly displays TapFo icon on Android home screen."},
+      {"tag": "FIX", "text": "Page transition animations now consistent across all page-to-page navigation."},
+      {"tag": "UPCOMING", "text": "Full Business Profile with Services, Contacts and Media tabs."}
+    ]
+  },
+  {
+    "version": "1.01.184",
+    "date": "Sun 18 Jan 2026",
+    "title": "Initial Release",
+    "features": [
+      {"tag": "NEW", "text": "TapFo.bw web app — initial public release for Android and desktop browsers."},
+      {"tag": "NEW", "text": "Home screen with search bar, 5 category quick links and city/area location filters."},
+      {"tag": "NEW", "text": "PWA installation — add to home screen for offline access and app-like experience."},
+      {"tag": "NEW", "text": "Offline-first architecture — app works fully without an internet connection."},
+      {"tag": "NEW", "text": "Service worker installed — background sync and cache management active."},
+      {"tag": "UPCOMING", "text": "Full business directory with all categories launching next week — 50+ businesses ready."}
+    ]
+  }
+]

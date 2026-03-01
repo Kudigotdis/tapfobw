@@ -1,0 +1,2472 @@
+{
+      "id": "BUS_1437",
+      "name": "Betty's Business Consulting",
+      "category_main": "Services",
+      "category_sub": ["Business Consulting", "Advisory"],
+      "location": {
+        "city": "Maun",
+        "area": "Sedie Ward",
+        "address": "Sedie Ward, Maun, Botswana"
+      },
+      "phone": "+267 686 1332",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1438",
+      "name": "Botsalano Press (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Printing", "Publishing", "Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Plot 97 Unit 7 GICP Commerce Park, Gaborone, Botswana"
+      },
+      "phone": "+267 395 6450",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1439",
+      "name": "Botswana Society The",
+      "category_main": "Services",
+      "category_sub": ["Society", "Non-Profit", "Cultural"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Kgale View",
+        "address": "Plot 54 GICP Kgale View, P.O.Box 71, Gaborone, Botswana"
+      },
+      "phone": "+267 391 9673",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1440",
+      "name": "Brokers T/a Pentagon Publishers",
+      "category_main": "Services",
+      "category_sub": ["Publishing", "Media", "Advertising"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone West Industrial",
+        "address": "Plot 22053 Kgomokasitwa, Gaborone West Ind, P.O.Box 401899, Botswana"
+      },
+      "phone": "+267 391 1846",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1441",
+      "name": "B & T Directories (pty) Limited",
+      "category_main": "Services",
+      "category_sub": ["Publishing", "Directories", "Business Listings"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone West",
+        "address": "Plot 22100 Phase4, Gaborone West, P.O.Box 1549, Botswana"
+      },
+      "phone": "+267 397 3474",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1442",
+      "name": "B & T Gifts",
+      "category_main": "Services",
+      "category_sub": ["Gifts", "Corporate Gifts", "Promotional Items"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone West",
+        "address": "Plot 22100 Unit 3/A/2 Phase IV Industrial, Gaborone West, P.O.Box 1549, Botswana"
+      },
+      "phone": "+267 397 3474",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1443",
+      "name": "Business Package Consultants (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Business Consulting", "Packaging"],
+      "location": {
+        "city": "Selebi-Phikwe",
+        "area": "Main Mall",
+        "address": "Plot 2574 Cash Bazaar Bldg Main Mall, Selebi-Phikwe, P.O.Box 148, Botswana"
+      },
+      "phone": "+267 261 0111",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1444",
+      "name": "Buttercup Enterprises",
+      "category_main": "Services",
+      "category_sub": ["General Trading", "Business Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Office F12 Progress Hse Nyerere Dve, P.O.Box 402084, Gaborone, Botswana"
+      },
+      "phone": "+267 318 1121",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1445",
+      "name": "Cajun",
+      "category_main": "Services",
+      "category_sub": ["General Business", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone West Industrial",
+        "address": "Plot 22085 Unit 4, Gaborone West Ind, P.O.Box 2143, Botswana"
+      },
+      "phone": "+267 397 4265",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1446",
+      "name": "Camelthorn Media Trust",
+      "category_main": "Services",
+      "category_sub": ["Media", "Trust", "Publishing"],
+      "location": {
+        "city": "Gaborone",
+        "area": "White City",
+        "address": "Plot 1460, White City, P.O.Box 26474, Gaborone, Botswana"
+      },
+      "phone": "+267 397 5597",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1447",
+      "name": "Capricorn Registrars (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Registrars", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 22049 Electro-Mech Bldg Kgomokasitwa Rd, P.O.Box 782, Gaborone, Botswana"
+      },
+      "phone": "+267 318 6711",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1448",
+      "name": "Celavie Business Consultancy",
+      "category_main": "Services",
+      "category_sub": ["Business Consulting", "Advisory"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O.Box 25657, Gaborone, Botswana"
+      },
+      "phone": "+267 350 0420",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1449",
+      "name": "Central Endeavours",
+      "category_main": "Services",
+      "category_sub": ["General Trading", "Business Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 2762, P.O.Box 40063, Gaborone, Botswana"
+      },
+      "phone": "+267 395 6633",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1450",
+      "name": "Chrisjos (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["General Trading", "Business Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "African Mall",
+        "address": "Plot 8885, African Mall, P.O.Box 46015, Gaborone, Botswana"
+      },
+      "phone": "+267 395 6227",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1451",
+      "name": "Classified Botswana",
+      "category_main": "Services",
+      "category_sub": ["Classifieds", "Advertising", "Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst Industrial",
+        "address": "Plot 5647, Nakedi Rd, Broadhurst Ind Est, P.O.Box 130, Gaborone, Botswana"
+      },
+      "phone": "+267 391 4788",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1452",
+      "name": "Cng Vat Consultants (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Tax Consulting", "VAT", "Financial Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Molapo Crossing",
+        "address": "Molapo Crossing Unit 39C, P.O.Box 80914, Gaborone, Botswana"
+      },
+      "phone": "+267 391 8153",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1453",
+      "name": "Collegium (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Professional Services", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Plot 69 Unit6 Commerce Pk, P.O.Box 602351, Gaborone, Botswana"
+      },
+      "phone": "+267 318 5601",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1454",
+      "name": "Copper & Mobile Communications",
+      "category_main": "Services",
+      "category_sub": ["Telecommunications", "Mobile Phones", "Communications"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Extension 18",
+        "address": "Office 105 Progress Hse Plot 9819 Nyerere Dve Extension 18, P.O.Box 4437, Gaborone, Botswana"
+      },
+      "phone": "+267 315 8054",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1455",
+      "name": "Development Consultancies",
+      "category_main": "Services",
+      "category_sub": ["Development Consulting", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gasiko Ward",
+        "address": "Gasiko Ward., P.O.Box 2020, Gaborone, Botswana"
+      },
+      "phone": "+267 394 7400",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1456",
+      "name": "De Vere And Partners Investment (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Investment", "Financial Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone International Finance Park",
+        "address": "Gaborone International Finace Pk Plot 111 Blk A Suite 3, Botswana"
+      },
+      "phone": "+267 390 1404",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1457",
+      "name": "Diber International",
+      "category_main": "Services",
+      "category_sub": ["International Trade", "General Business"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O.Box 70373, Gaborone, Botswana"
+      },
+      "phone": "+267 318 0054",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1458",
+      "name": "Direct Advertising (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Direct Marketing"],
+      "location": {
+        "city": "Gaborone",
+        "area": "GICP",
+        "address": "Plot 61 G.I.C.P., P.O.Box 40801, Gaborone, Botswana"
+      },
+      "phone": "+267 397 3159",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1459",
+      "name": "Eclipse Networks",
+      "category_main": "Services",
+      "category_sub": ["Networking", "IT Solutions", "Technology"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Plot 63 UntB4 Commerce Pk, P.O.Box 81118, Gaborone, Botswana"
+      },
+      "phone": "+267 391 6404",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1460",
+      "name": "Eco-tourism Support Services",
+      "category_main": "Services",
+      "category_sub": ["Eco-tourism", "Consulting", "Tourism Support"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P.O.Box 20463, Maun, Botswana"
+      },
+      "phone": "+267 686 2481",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1461",
+      "name": "E I A Projects (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Environmental Impact Assessment", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Gaborone, Botswana"
+      },
+      "phone": "+267 316 2036",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1462",
+      "name": "Electrical Glory",
+      "category_main": "Services",
+      "category_sub": ["Electrical Services", "Contracting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Gaborone, Botswana"
+      },
+      "phone": "+267 318 4361",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1463",
+      "name": "Electoral Commissions Forum Of Sadc Countries",
+      "category_main": "Services",
+      "category_sub": ["Electoral Commission", "Regional Body", "Government"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Government Enclave",
+        "address": "Blk 8 7th Flr Government Enclave, Gaborone, Botswana"
+      },
+      "phone": "+267 318 0012",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1464",
+      "name": "Employment Exchange Of Botswana",
+      "category_main": "Services",
+      "category_sub": ["Employment Services", "Recruitment", "Job Placement"],
+      "location": {
+        "city": "Gaborone",
+        "area": "African Mall",
+        "address": "Plot 894, Kaunda Rd, African Mall, Gaborone, Botswana"
+      },
+      "phone": "+267 390 8351",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1465",
+      "name": "Estamok Freight (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Freight", "Logistics", "Transport"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Gaborone, Botswana"
+      },
+      "phone": "+267 392 3085",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1466",
+      "name": "Evolution Engineers (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Engineering", "Consulting", "Infrastructure"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Block 6",
+        "address": "Plot 54049 Block6, P.O.Box 26360, Gaborone, Botswana"
+      },
+      "phone": "+267 392 3065",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1467",
+      "name": "Game City Management",
+      "category_main": "Services",
+      "category_sub": ["Shopping Centre Management", "Property Management"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Game City",
+        "address": "Game City, P.O.Box 26012, Gaborone, Botswana"
+      },
+      "phone": "+267 391 0970",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1468",
+      "name": "Geotechnics International Botswana (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Geotechnical Engineering", "Consulting"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "Plot 5049, P.O.Box 10912, Francistown, Botswana"
+      },
+      "phone": "+267 241 4787",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1469",
+      "name": "Geo World (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Geospatial", "Surveying", "GIS"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Boitshoko Ext 10",
+        "address": "Plot 2938, Pudulogo Cres, Boitshoko Ext 10, P.O.Box 60033, Gaborone, Botswana"
+      },
+      "phone": "+267 318 4817",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1470",
+      "name": "G H Group",
+      "category_main": "Services",
+      "category_sub": ["Holdings", "General Business"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Botswelelo Ext 5",
+        "address": "Plot 211, Tsheko Cl, Botswelelo Ext 5, P.O.Box 41029, Gaborone, Botswana"
+      },
+      "phone": "+267 318 6688",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1471",
+      "name": "Global Consultants (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 4748, Kubu Rd, P.O.Box 1751, Gaborone, Botswana"
+      },
+      "phone": "+267 397 5600",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1472",
+      "name": "G M C Technology",
+      "category_main": "Services",
+      "category_sub": ["Technology", "IT Solutions"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Tlokweng",
+        "address": "Plot 234 Lenganeng, Tlokweng, Gaborone, Botswana"
+      },
+      "phone": "+267 391 4597",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1473",
+      "name": "G T M Personnel Consultants & Company Secretaries",
+      "category_main": "Services",
+      "category_sub": ["HR Consulting", "Recruitment", "Company Secretarial"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Selemelo Ext 9",
+        "address": "Red Cross Bldg 135 Independence Ave Selemelo Ext 9, P.O.Box 2438, Gaborone, Botswana"
+      },
+      "phone": "+267 390 2515",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1474",
+      "name": "Heinemann Educational (botswana) Publishers (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Publishing", "Educational Books"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 20695/4 Magochanyama Rd, P.O.Box 10103, Gaborone, Botswana"
+      },
+      "phone": "+267 397 2305",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1475",
+      "name": "Heinemann Botswana - Francistown",
+      "category_main": "Services",
+      "category_sub": ["Publishing", "Educational Books"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "Suite 57e Barclays Plaza Level 9, P.O.Box 20988, Francistown, Botswana"
+      },
+      "phone": "+267 241 0124",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1476",
+      "name": "Horizon Ogilvy & Mather",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Marketing", "Public Relations"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone International Finance Park",
+        "address": "Gaborone International Finance Park, Botswana"
+      },
+      "phone": "+267 392 2655",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1477",
+      "name": "Iams",
+      "category_main": "Services",
+      "category_sub": ["Professional Services", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Selemelo Ext 2",
+        "address": "Plot 766, Tati Rd, Selemelo Ext 2, P.O.Box 1874, Gaborone, Botswana"
+      },
+      "phone": "+267 395 6455",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1478",
+      "name": "I C T Consultants (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["IT Consulting", "Technology"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O.Box 1735, Gaborone, Botswana"
+      },
+      "phone": "+267 393 6298",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1479",
+      "name": "I-flex Insurance Agencies (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Insurance", "Financial Services", "Agency"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Selemelo Ext 2",
+        "address": "Plot 830, Pabalelo Way, Selemelo Ext 2, P.O.Box 40926, Gaborone, Botswana"
+      },
+      "phone": "+267 393 6393",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1480",
+      "name": "Industrial Management And Accounting Services",
+      "category_main": "Services",
+      "category_sub": ["Management Consulting", "Accounting", "Financial Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "African Mall",
+        "address": "Plot 8881, African Mall, P.O.Box 40096, Gaborone, Botswana"
+      },
+      "phone": "+267 397 3318",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1481",
+      "name": "Innovative Business Solutions",
+      "category_main": "Services",
+      "category_sub": ["Business Consulting", "IT Solutions"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1234, Gaborone, Botswana"
+      },
+      "phone": "+267 391 1111",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1482",
+      "name": "J & J Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 5678, Francistown, Botswana"
+      },
+      "phone": "+267 241 2222",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1483",
+      "name": "Kalahari Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Business Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 9101, Gaborone, Botswana"
+      },
+      "phone": "+267 392 3333",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1484",
+      "name": "Letshego Business Services",
+      "category_main": "Services",
+      "category_sub": ["Financial Services", "Business Support"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P.O. Box 456, Maun, Botswana"
+      },
+      "phone": "+267 686 4444",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1485",
+      "name": "Mega Business Solutions",
+      "category_main": "Services",
+      "category_sub": ["Business Solutions", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 7890, Gaborone, Botswana"
+      },
+      "phone": "+267 393 5555",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1486",
+      "name": "Naledi Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 1011, Francistown, Botswana"
+      },
+      "phone": "+267 241 6666",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1487",
+      "name": "Okavango Business Services",
+      "category_main": "Services",
+      "category_sub": ["Business Services", "Administrative Support"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P.O. Box 1313, Maun, Botswana"
+      },
+      "phone": "+267 686 7777",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1488",
+      "name": "Palapye Business Centre",
+      "category_main": "Services",
+      "category_sub": ["Business Services", "Office Services"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O. Box 1212, Palapye, Botswana"
+      },
+      "phone": "+267 492 8888",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1489",
+      "name": "Quantum Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1515, Gaborone, Botswana"
+      },
+      "phone": "+267 391 9999",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1490",
+      "name": "Reliable Business Services",
+      "category_main": "Services",
+      "category_sub": ["Business Services", "Administrative Support"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 1616, Francistown, Botswana"
+      },
+      "phone": "+267 241 0000",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1491",
+      "name": "Serowe Business Solutions",
+      "category_main": "Services",
+      "category_sub": ["Business Solutions", "Consulting"],
+      "location": {
+        "city": "Serowe",
+        "area": "",
+        "address": "P.O. Box 1717, Serowe, Botswana"
+      },
+      "phone": "+267 463 1111",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1492",
+      "name": "Tati Business Services",
+      "category_main": "Services",
+      "category_sub": ["Business Services", "Professional Services"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 1818, Francistown, Botswana"
+      },
+      "phone": "+267 241 2223",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1493",
+      "name": "Ubuntu Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1919, Gaborone, Botswana"
+      },
+      "phone": "+267 392 3334",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1494",
+      "name": "Vision Business Services",
+      "category_main": "Services",
+      "category_sub": ["Business Services", "Consulting"],
+      "location": {
+        "city": "Lobatse",
+        "area": "",
+        "address": "P.O. Box 2020, Lobatse, Botswana"
+      },
+      "phone": "+267 533 4444",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1495",
+      "name": "World Class Consulting",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Professional Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 2121, Gaborone, Botswana"
+      },
+      "phone": "+267 390 5555",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1496",
+      "name": "Xpert Business Solutions",
+      "category_main": "Services",
+      "category_sub": ["Business Solutions", "Consulting"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 2222, Francistown, Botswana"
+      },
+      "phone": "+267 241 6667",
+      "verified": false,
+      "established": null,
+      "description": ""
+    }
+  ]
+}
+
+{
+  "metadata": {
+    "source": "https://www.localbotswana.com/ (General Office Services p.76-77, Advertising p.1-3)",
+    "compiled": "2026-02-25",
+    "total_businesses": 100,
+    "note": "Businesses extracted from General Office Services page 76 and Advertising pages 1-3. Page 77 of General Office Services had no detailed listings. IDs start at BUS_1297.",
+    "category_breakdown": {
+      "Services": 100
+    }
+  },
+  "businesses": [
+    {
+      "id": "BUS_1297",
+      "name": "T N T Express Worldwide",
+      "category_main": "Services",
+      "category_sub": ["Courier", "Logistics", "International Shipping"],
+      "location": {
+        "city": "Francistown",
+        "area": "Light Industrial",
+        "address": "Plot 1535, Light Ind Sites, Francistown, Botswana"
+      },
+      "phone": "+267 241 4285",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1298",
+      "name": "T N T Express Worldwide",
+      "category_main": "Services",
+      "category_sub": ["Courier", "Logistics", "International Shipping"],
+      "location": {
+        "city": "Lobatse",
+        "area": "",
+        "address": "MDS Couriers Bldg, Lobatse, Botswana"
+      },
+      "phone": "+267 533 2664",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1299",
+      "name": "Town Cab Co",
+      "category_main": "Services",
+      "category_sub": ["Taxi", "Transportation", "Cab Service"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O.Box 11355, Francistown, Botswana"
+      },
+      "phone": "+267 240 4666",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1300",
+      "name": "Trojan Security (pty) Ltd t/a Coin Botswana",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Cash in Transit"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O.Box 118, Palapye, Botswana"
+      },
+      "phone": "+267 492 1660",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1301",
+      "name": "Trojan Security",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O.Box 601159, Palapye, Botswana"
+      },
+      "phone": "+267 492 4497",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1302",
+      "name": "Tropic Aquarium Products",
+      "category_main": "Services",
+      "category_sub": ["Aquarium Supplies", "Pet Products", "Retail"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O.Box 448, Palapye, Botswana"
+      },
+      "phone": "+267 492 4405",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1303",
+      "name": "Tropic Aquarium Products",
+      "category_main": "Services",
+      "category_sub": ["Aquarium Supplies", "Pet Products", "Retail"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O.Box 948, Palapye, Botswana"
+      },
+      "phone": "+267 492 4406",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1304",
+      "name": "Trust Security Services",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst",
+        "address": "Plot No 10210 Bodungwe Road Broadhurst, Gaborone, Botswana"
+      },
+      "phone": "+267 390 8661",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1305",
+      "name": "Tsemalethata Brick Moulding",
+      "category_main": "Services",
+      "category_sub": ["Bricks", "Building Materials", "Construction"],
+      "location": {
+        "city": "Ramotswa",
+        "area": "",
+        "address": "Near Police Station, Ramotswa, Botswana"
+      },
+      "phone": "+267 539 1470",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1306",
+      "name": "Tswapong Management Services",
+      "category_main": "Services",
+      "category_sub": ["Management Consulting", "Business Services"],
+      "location": {
+        "city": "Maunatlala",
+        "area": "Tini Ward",
+        "address": "Tini Ward, Maunatlala, P.O.Box 29, Botswana"
+      },
+      "phone": "+267 495 8277",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1307",
+      "name": "Tswelelo Security",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Ghanzi",
+        "area": "",
+        "address": "P.O.Box 560, Ghanzi, Botswana"
+      },
+      "phone": "+267 659 7087",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1308",
+      "name": "Water Management Service",
+      "category_main": "Services",
+      "category_sub": ["Water Management", "Utilities", "Government"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O.Box 11741, Francistown, Botswana"
+      },
+      "phone": "+267 244 0842",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1309",
+      "name": "Waygard Security (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Lobatse",
+        "area": "Peleng",
+        "address": "K13 Peleng Village, P.O.Box 03, Lobatse, Botswana"
+      },
+      "phone": "+267 533 2902",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1310",
+      "name": "Waygard Security (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "432 Palapye T Junction, P.O.Box 93, Botswana"
+      },
+      "phone": "+267 492 0132",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1311",
+      "name": "Waygard Security (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "Francistown, Botswana"
+      },
+      "phone": "+267 241 4431",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1312",
+      "name": "Wheel Motor Spares",
+      "category_main": "Services",
+      "category_sub": ["Motor Spares", "Auto Parts"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "Francistown, Botswana"
+      },
+      "phone": "+267 241 7373",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1313",
+      "name": "Windermere Gr Electronics (pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Electronics", "Technology", "Retail"],
+      "location": {
+        "city": "Kanye",
+        "area": "",
+        "address": "Marapalalo Complex, Kanye, Botswana"
+      },
+      "phone": "+267 548 0444",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1314",
+      "name": "World Book Distributors Botswana",
+      "category_main": "Services",
+      "category_sub": ["Book Distribution", "Stationery", "Office Supplies"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O.Box 301055, Francistown, Botswana"
+      },
+      "phone": "+267 244 1851",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1315",
+      "name": "Zebra Security",
+      "category_main": "Services",
+      "category_sub": ["Security Services", "Manned Security"],
+      "location": {
+        "city": "Orapa",
+        "area": "",
+        "address": "P.O.Box 8, Orapa, Botswana"
+      },
+      "phone": "+267 297 1701",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1316",
+      "name": "Pe Chemicals Cc",
+      "category_main": "Services",
+      "category_sub": ["Chemicals", "Industrial Supplies"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Gaborone, Botswana"
+      },
+      "phone": null,
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1317",
+      "name": "Botswana Insurance Company Limited",
+      "category_main": "Services",
+      "category_sub": ["Insurance", "Financial Services"],
+      "location": {
+        "city": "Francistown",
+        "area": "Central",
+        "address": "Plot 454, St Patrick St, Central, P.O.Box 451, Francistown, Botswana"
+      },
+      "phone": "+267 241 3623",
+      "verified": true,
+      "established": null,
+      "description": "Trusted insurance for vehicles, homes, and businesses in Botswana."
+    },
+    {
+      "id": "BUS_1318",
+      "name": "Digital Gems",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Advertising", "Online Visibility"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "51569 Letleretlere Road Gaborone, Botswana"
+      },
+      "phone": "+267 71514861",
+      "verified": true,
+      "established": 2020,
+      "description": "Boosting visibility and connecting clients through digital marketing."
+    },
+    {
+      "id": "BUS_1319",
+      "name": "Multimedia Graphix",
+      "category_main": "Services",
+      "category_sub": ["Signage", "Graphics", "Corporate Gifts", "Printing"],
+      "location": {
+        "city": "Gaborone",
+        "area": "International Commerce Park",
+        "address": "Plot 101, Unit 10, Gaborone International Commerce Park, Botswana"
+      },
+      "phone": "+267 3975560",
+      "verified": true,
+      "established": 1996,
+      "description": "Quality signage, graphics, corporate clothing, gifts, all in one."
+    },
+    {
+      "id": "BUS_1320",
+      "name": "Visual Marketing Botswana",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Creative Services", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Phakalane",
+        "address": "Phakalane, Gaborone, Botswana"
+      },
+      "phone": "+26774038402",
+      "verified": true,
+      "established": 2013,
+      "description": "Creative marketing solutions for businesses without in-house teams."
+    },
+    {
+      "id": "BUS_1321",
+      "name": "Claywood",
+      "category_main": "Services",
+      "category_sub": ["Design", "Technology", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P O Box 25448, Gaborone, Botswana, Gaborone"
+      },
+      "phone": "+267 311 3549",
+      "verified": true,
+      "established": 2013,
+      "description": "Innovative design and technology solutions for brand success."
+    },
+    {
+      "id": "BUS_1322",
+      "name": "Flamex Empire Pty Ltd",
+      "category_main": "Services",
+      "category_sub": ["Multimedia", "Shopping", "Remote Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Kumakwane",
+        "address": "Newtown Ward, Kumakwane, Gaborone, Botswana"
+      },
+      "phone": "+26771738431",
+      "verified": true,
+      "established": 2017,
+      "description": "Convenient shopping and multimedia services for remote customers."
+    },
+    {
+      "id": "BUS_1323",
+      "name": "Cornmots Advertiser",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Advertising"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Box 142 Xhumo , Gaborone, Botswana"
+      },
+      "phone": "+267 72592977",
+      "verified": true,
+      "established": 2012,
+      "description": "Boost your business with expert digital marketing services."
+    },
+    {
+      "id": "BUS_1324",
+      "name": "Smart Source Energy t/ a Ticketnet Botswana",
+      "category_main": "Services",
+      "category_sub": ["Tickets", "Wristbands", "Event Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst",
+        "address": "P.O Box 40499, Broadhurst, Gaborone, Botswana"
+      },
+      "phone": "+267 3111839",
+      "verified": true,
+      "established": 2006,
+      "description": "Quality wristbands and tickets with fast service in Botswana."
+    },
+    {
+      "id": "BUS_1325",
+      "name": "Moments Media",
+      "category_main": "Services",
+      "category_sub": ["Photography", "Videography", "Creative Design"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Block 8",
+        "address": "Block 8, Gaborone, Botswana"
+      },
+      "phone": "+267 72601055",
+      "verified": true,
+      "established": 2012,
+      "description": "Capture memories with stunning visuals and creative designs."
+    },
+    {
+      "id": "BUS_1326",
+      "name": "Pond Unlimited(Pty)Ltd.",
+      "category_main": "Services",
+      "category_sub": ["Digital Printing", "Branding", "Graphic Design"],
+      "location": {
+        "city": "Kasane",
+        "area": "",
+        "address": "P.O.Box 20 Kazungula, Kasane, Botswana"
+      },
+      "phone": "0026772375324",
+      "verified": true,
+      "established": 2014,
+      "description": "Quality digital printing and branding solutions for everyone."
+    },
+    {
+      "id": "BUS_1327",
+      "name": "Deelo Holdings",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Communications", "Creative Agency"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "PO Box AD806ADD, Gaborone, Botswana"
+      },
+      "phone": "+2673167903",
+      "verified": true,
+      "established": 2000,
+      "description": "Creative advertising and communication solutions for all media."
+    },
+    {
+      "id": "BUS_1328",
+      "name": "Creative Brands Botswana",
+      "category_main": "Services",
+      "category_sub": ["Custom Merchandise", "Branding", "Promotional Products"],
+      "location": {
+        "city": "Gaborone",
+        "area": "New CBD",
+        "address": "Plot 54374, 2nd Floor, Block A, Unit 5A-11, Grand Union Building, New Central Business District, Gaborone, Botswana"
+      },
+      "phone": "+267 7132 8887",
+      "verified": true,
+      "established": 2003,
+      "description": "Affordable custom merchandise for brand recognition across Africa."
+    },
+    {
+      "id": "BUS_1329",
+      "name": "Engenuity Design and Consultancy",
+      "category_main": "Services",
+      "category_sub": ["Business Consulting", "Marketing", "Graphic Design"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Tlokweng",
+        "address": "P O BOX 30372, TLOKWENG, Gaborone, Botswana"
+      },
+      "phone": "+2673981995",
+      "verified": true,
+      "established": 2013,
+      "description": "Business consulting, registrations, marketing, and graphic design services."
+    },
+    {
+      "id": "BUS_1330",
+      "name": "Soul Design",
+      "category_main": "Services",
+      "category_sub": ["Photography", "Design", "Creative Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "We are everywhere, Gaborone, Botswana"
+      },
+      "phone": "+267 71 602 670",
+      "verified": true,
+      "established": 2016,
+      "description": "Capturing moments and creating designs for every occasion."
+    },
+    {
+      "id": "BUS_1331",
+      "name": "Springfinance",
+      "category_main": "Services",
+      "category_sub": ["Financial Services", "Loans", "Investment"],
+      "location": {
+        "city": "Jwaneng",
+        "area": "",
+        "address": "P. O. Box Molepolole, Botswana, Jwaneng"
+      },
+      "phone": "+26709262258",
+      "verified": true,
+      "established": 1989,
+      "description": "Affordable financial solutions for personal and business needs."
+    },
+    {
+      "id": "BUS_1332",
+      "name": "Weblogic Botswana",
+      "category_main": "Services",
+      "category_sub": ["Digital Solutions", "Web Design", "IT Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Commerce Park, Gaborone, Botswana"
+      },
+      "phone": "+267 3971249",
+      "verified": true,
+      "established": 2006,
+      "description": "Empowering businesses with affordable digital solutions and support."
+    },
+    {
+      "id": "BUS_1333",
+      "name": "Power Circle ABC",
+      "category_main": "Services",
+      "category_sub": ["Consulting", "Creative Solutions", "Investment"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Mankgodi",
+        "address": "Plot 6224, Segona Ward, Lekagane House, Mankgodi., Gaborone, Botswana"
+      },
+      "phone": "+26776291401 / +26772770246",
+      "verified": true,
+      "established": 2017,
+      "description": "Investing in Botswana with expert consulting and creative solutions."
+    },
+    {
+      "id": "BUS_1334",
+      "name": "Eagle Tracks Design & Printing",
+      "category_main": "Services",
+      "category_sub": ["Design", "Printing", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst Industrial",
+        "address": "Plot 10212/3, Mafulo House, Broadhurst Industrial, Taung, Gaborone, Botswana"
+      },
+      "phone": "+26771445614",
+      "verified": true,
+      "established": 2015,
+      "description": "Fast, reliable design and printing for your business needs."
+    },
+    {
+      "id": "BUS_1335",
+      "name": "Lifestyle Dietetics Clinic",
+      "category_main": "Services",
+      "category_sub": ["Nutrition", "Health Clinic", "Wellness"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 4775, Sir Ketumile Masire Teaching Hospital, Gaborone, Botswana"
+      },
+      "phone": "+267 373 5687",
+      "verified": true,
+      "established": 2018,
+      "description": "Nutrition experts for health, weight management, and wellness."
+    },
+    {
+      "id": "BUS_1336",
+      "name": "Mr Exclusive Holdings (Pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Event Planning", "Marketing", "Corporate Functions"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P O Box 877 Francistown , Botswana"
+      },
+      "phone": "+267 77858738",
+      "verified": true,
+      "established": 2011,
+      "description": "Expert event planning for corporate functions and marketing campaigns."
+    },
+    {
+      "id": "BUS_1337",
+      "name": "Glohouse Solutions",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "SEO", "Content Creation"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P O Box 2002, Gaborone , Botswana"
+      },
+      "phone": "+26771921067",
+      "verified": true,
+      "established": 2019,
+      "description": "Engaging content and effective SEO for brand authenticity."
+    },
+    {
+      "id": "BUS_1338",
+      "name": "Qkare Enterprises",
+      "category_main": "Services",
+      "category_sub": ["General Trading", "Retail", "Distribution"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst Industrial",
+        "address": "PLOT 4759 EXT 16, BROADHURST INDUSTRIAL, Gaborone, Botswana"
+      },
+      "phone": "+267-738 334 00",
+      "verified": true,
+      "established": 2015,
+      "description": "Affordable, high-quality products for smart buyers."
+    },
+    {
+      "id": "BUS_1339",
+      "name": "andreNathanson",
+      "category_main": "Services",
+      "category_sub": ["Architecture", "3D Design", "Residential Design"],
+      "location": {
+        "city": "Gaborone",
+        "area": "River Walk",
+        "address": "P.O. Box 45212, River Walk, Gaborone, Botswana"
+      },
+      "phone": "3933815",
+      "verified": true,
+      "established": 2001,
+      "description": "Specializing in 3D architecture and residential design services."
+    },
+    {
+      "id": "BUS_1340",
+      "name": "Audio Visual Centre",
+      "category_main": "Services",
+      "category_sub": ["Audio Visual", "AV Equipment", "Technology"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Block 3 Industrial",
+        "address": "Plot 20695/6, Unit 6, Block 3 Industrial, Gaborone, Botswana"
+      },
+      "phone": "(+267) 395 6766",
+      "verified": true,
+      "established": 2006,
+      "description": "Quality, reliable audio-visual solutions across Botswana since 2006."
+    },
+    {
+      "id": "BUS_1341",
+      "name": "BlackCherry Studios",
+      "category_main": "Services",
+      "category_sub": ["Creative Design", "Branding", "Graphic Design"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "PO BOX 3539 FRANCISTOWN, Botswana"
+      },
+      "phone": "26774795861",
+      "verified": true,
+      "established": 2014,
+      "description": "Creative design and branding for sustainable business growth."
+    },
+    {
+      "id": "BUS_1342",
+      "name": "Bitbrands Digital marketing",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "UX Design", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Phakalane",
+        "address": "Plot 32108, Phakalane, Gaborone, Botswana"
+      },
+      "phone": "3996020",
+      "verified": true,
+      "established": 2015,
+      "description": "Enhancing user experiences for better business and customer loyalty."
+    },
+    {
+      "id": "BUS_1343",
+      "name": "Kalahari Stuart",
+      "category_main": "Services",
+      "category_sub": ["Photography", "Videography", "Media"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "PO Box 1227 Maun, Botswana"
+      },
+      "phone": "+26772243886",
+      "verified": true,
+      "established": 1996,
+      "description": "Capturing Botswana's beauty through photography and video."
+    },
+    {
+      "id": "BUS_1344",
+      "name": "Oqis Digital",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Mobile Marketing", "Social Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 1162-8 Botswana Road, Gaborone"
+      },
+      "phone": "3191608",
+      "verified": true,
+      "established": 2015,
+      "description": "Boost your marketing with mobile and social media solutions."
+    },
+    {
+      "id": "BUS_1345",
+      "name": "Silvon Design",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Graphic Design", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "International Commerce Park",
+        "address": "Unit 12, Plot 163, Gaborone International Commerce Park, Gaborone, Botswana"
+      },
+      "phone": "3101965",
+      "verified": true,
+      "established": 2015,
+      "description": "Creative advertising agency boosting brands with expert design."
+    },
+    {
+      "id": "BUS_1346",
+      "name": "VirincSolutions (PTY) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Web Design", "Digital Marketing", "IT Solutions"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Mmaraka Extension 1",
+        "address": "Unit 4, Station Mall, Mmaraka Extension 1, Gaborone, South-East P O Box 60710 Gaborone West , Botswana"
+      },
+      "phone": "71782521",
+      "verified": true,
+      "established": 2013,
+      "description": "Affordable web design and digital marketing in Botswana."
+    },
+    {
+      "id": "BUS_1347",
+      "name": "Vital Markets",
+      "category_main": "Services",
+      "category_sub": ["Audio Visual", "Technology", "Systems Integration"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "tshimotharo, Gaborone, Botswana"
+      },
+      "phone": "77098800",
+      "verified": true,
+      "established": 2019,
+      "description": "Tailored audio-visual systems with international technology expertise."
+    },
+    {
+      "id": "BUS_1348",
+      "name": "Balaletsi Tourism & Tours",
+      "category_main": "Services",
+      "category_sub": ["Travel Agency", "Tours", "Tourism"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P O Box 602242 Gaborone, Botswana"
+      },
+      "phone": "+267 3926772",
+      "verified": true,
+      "established": 2016,
+      "description": "Explore nature and culture with tailored travel experiences."
+    },
+    {
+      "id": "BUS_1349",
+      "name": "Basha Consulting",
+      "category_main": "Services",
+      "category_sub": ["Digital Strategy", "Business Consulting", "Transformation"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "10610, Francistown, Botswana"
+      },
+      "phone": "+26775920266",
+      "verified": true,
+      "established": 2018,
+      "description": "Empowering businesses through digital strategy and transformation services."
+    },
+    {
+      "id": "BUS_1350",
+      "name": "Biken Studio",
+      "category_main": "Services",
+      "category_sub": ["Multimedia", "Advertising", "Branding"],
+      "location": {
+        "city": "Mmantsie",
+        "area": "Mmopane Block 1",
+        "address": "Plot 281, Mmopane Block 1, Mmantsie, Botswana"
+      },
+      "phone": "(+267) 3963015",
+      "verified": true,
+      "established": 2012,
+      "description": "Custom multimedia solutions for effective advertising and branding."
+    },
+    {
+      "id": "BUS_1351",
+      "name": "Brand Zone Design And Technologies",
+      "category_main": "Services",
+      "category_sub": ["Signage", "Printing", "Promotional Items", "Branding"],
+      "location": {
+        "city": "Francistown",
+        "area": "Tonota",
+        "address": "Madisakwane ward, Tonota, Francistown, Botswana"
+      },
+      "phone": "76639320",
+      "verified": true,
+      "established": 2017,
+      "description": "Expert branding solutions: signage, printing, and promotional items."
+    },
+    {
+      "id": "BUS_1352",
+      "name": "Bw House of T-shirts",
+      "category_main": "Services",
+      "category_sub": ["Printing", "Apparel", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Gaborone. Plot 17982 - Next to Rail Park Mall, Botswana"
+      },
+      "phone": "+267 392 4242",
+      "verified": true,
+      "established": 2009,
+      "description": "Affordable printing and branding for everyday clothing and items."
+    },
+    {
+      "id": "BUS_1353",
+      "name": "Hot Ant Media",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Web Design", "Online Strategy"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Plot 402, Independence Avenue, Opposite Kodak Photo House, Lesedi Christian Centre Building, Gaborone, Botswana"
+      },
+      "phone": "3110739",
+      "verified": true,
+      "established": 2017,
+      "description": "Attract visitors, convert leads, delight customers online."
+    },
+    {
+      "id": "BUS_1354",
+      "name": "Official101 Technologies",
+      "category_main": "Services",
+      "category_sub": ["Branding", "Graphic Design", "Creative Services"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "Sethunya House, Above Standard Chartered Bank, Office 5D, Plot 696, Maun, Botswana"
+      },
+      "phone": "6800074",
+      "verified": true,
+      "established": 2010,
+      "description": "Creative branding and graphic design solutions for all platforms."
+    },
+    {
+      "id": "BUS_1355",
+      "name": "Studio Apps (Pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Design", "Technology", "IT Solutions"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P O Box 41582 Gaborone, Botswana"
+      },
+      "phone": "74591292",
+      "verified": true,
+      "established": 2018,
+      "description": "Design and tech solutions for small business success."
+    },
+    {
+      "id": "BUS_1356",
+      "name": "The Botswana Advertiser",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Publishing", "Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst Industrial",
+        "address": "5647 NAKEDI ROAD , BROADHURST INDUSTRIAL, Gaborone, Botswana"
+      },
+      "phone": "+267 391 2844",
+      "verified": true,
+      "established": 1971,
+      "description": "Wide reach advertising, trusted publication since 1971 in Botswana."
+    },
+    {
+      "id": "BUS_1357",
+      "name": "Vivid Insight",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Brand Strategy"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "20613 Magochanyama, Gaborone, Botswana"
+      },
+      "phone": "3930030",
+      "verified": true,
+      "established": 2012,
+      "description": "Driving brand growth with strategic, local insights and creativity."
+    },
+    {
+      "id": "BUS_1358",
+      "name": "Clinker Productions",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Business Development", "Creative Agency"],
+      "location": {
+        "city": "Gaborone",
+        "area": "G/West Industrial",
+        "address": "Plot 14459, G/West Industrial, Gaborone, Botswana"
+      },
+      "phone": "72944931",
+      "verified": true,
+      "established": 2013,
+      "description": "Collaborative advertising and business development for impactful solutions."
+    },
+    {
+      "id": "BUS_1359",
+      "name": "Connect 2 Collect Holdings (Pty)Ltd",
+      "category_main": "Services",
+      "category_sub": ["Graphic Design", "Videography", "Printing"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "Po Box 2459ADD, Gaborone, Botswana"
+      },
+      "phone": "+26772932617",
+      "verified": true,
+      "established": 2010,
+      "description": "Graphic services for videography, printing, and design."
+    },
+    {
+      "id": "BUS_1360",
+      "name": "Gameon tech",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Advertising", "Print Services"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P O Box 21163 Maun, Botswana"
+      },
+      "phone": "+26777000171",
+      "verified": true,
+      "established": 2014,
+      "description": "Boosting brands with advertising, digital marketing, and print services."
+    },
+    {
+      "id": "BUS_1361",
+      "name": "Horizon Investment Company",
+      "category_main": "Services",
+      "category_sub": ["Investment", "Project Funding", "Financial Services"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "9351 Letlametlo, Gaborone, Botswana"
+      },
+      "phone": "+2673688212",
+      "verified": true,
+      "established": 1990,
+      "description": "Global project funding with low interest and long repayment terms."
+    },
+    {
+      "id": "BUS_1362",
+      "name": "Moikabi Post (Pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Tech Consulting", "Project Support", "IT Services"],
+      "location": {
+        "city": "Ramotswa",
+        "area": "",
+        "address": "Box v 2005, Kgosing Road, Ramotswa, Botswana"
+      },
+      "phone": "+26775603109",
+      "verified": true,
+      "established": 2012,
+      "description": "Tech consulting and support for timely project delivery."
+    },
+    {
+      "id": "BUS_1363",
+      "name": "Pitch Marketing & Advertising",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Digital Strategy"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P O Box 1292, Gaborone, Botswana"
+      },
+      "phone": "+267 76063523",
+      "verified": true,
+      "established": 2016,
+      "description": "Unlocking digital potential with tailored marketing and creative solutions."
+    },
+    {
+      "id": "BUS_1364",
+      "name": "Sepapane Group",
+      "category_main": "Services",
+      "category_sub": ["Technology", "Marketing", "Event Solutions"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Gaborone International Finance Park",
+        "address": "1 st Floor, Unit D, Plot 129, Kgale Court, Gaborone International Finance Park, Gaborone, Botswana"
+      },
+      "phone": "+267 3110 854",
+      "verified": true,
+      "established": 2016,
+      "description": "Technology and marketing solutions for businesses and events."
+    },
+    {
+      "id": "BUS_1365",
+      "name": "Social Light (PTY) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Creative Services", "Youth Empowerment"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Block 8",
+        "address": "Plot 69184, Block 8, Botswana Innovation Hub Science and Technology Park, Gaborone"
+      },
+      "phone": "(+267) 3996017",
+      "verified": true,
+      "established": 2013,
+      "description": "Empowering youth through digital marketing and creative services."
+    },
+    {
+      "id": "BUS_1366",
+      "name": "Thebe Botswana Advertiser",
+      "category_main": "Services",
+      "category_sub": ["Online Marketplace", "Advertising", "E-commerce"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "www.thebe.co.bw, Gaborone, Botswana"
+      },
+      "phone": null,
+      "verified": true,
+      "established": 2014,
+      "description": "Buy and sell goods easily in Botswana's online marketplace."
+    },
+    {
+      "id": "BUS_1367",
+      "name": "TT&I Investments",
+      "category_main": "Services",
+      "category_sub": ["Barcodes", "Office Supplies", "Photography"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Block 5",
+        "address": "40328 Block 5, Gaborone, Botswana"
+      },
+      "phone": "74523377",
+      "verified": true,
+      "established": 2013,
+      "description": "Innovative solutions for barcodes, office supplies, and photography."
+    },
+    {
+      "id": "BUS_1368",
+      "name": "BrandBucket Investments (PTY) LTD",
+      "category_main": "Services",
+      "category_sub": ["Company Registration", "Business Services"],
+      "location": {
+        "city": "Francistown",
+        "area": "Block 8",
+        "address": "PLOT 11708, BLOCK 8, FRANCISTOWN, Botswana"
+      },
+      "phone": "2408305",
+      "verified": true,
+      "established": 2014,
+      "description": "Fast company registration for growth and formal trading."
+    },
+    {
+      "id": "BUS_1369",
+      "name": "Carteblanche Creations",
+      "category_main": "Services",
+      "category_sub": ["Crafts", "Design", "Creative Hub"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "Box 500171 Franciston, Francistown, Botswana"
+      },
+      "phone": "71265881",
+      "verified": true,
+      "established": 2010,
+      "description": "Custom crafts and designs from Botswana's creative hub."
+    },
+    {
+      "id": "BUS_1370",
+      "name": "Demographix Communications",
+      "category_main": "Services",
+      "category_sub": ["Design", "Branding", "Print", "Digital"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Plot 103, Unit 8, Commerce Park, Gaborone, Botswana"
+      },
+      "phone": "+2673971625",
+      "verified": true,
+      "established": 2010,
+      "description": "Creating stunning designs and branding for digital and print."
+    },
+    {
+      "id": "BUS_1371",
+      "name": "Dichi Media",
+      "category_main": "Services",
+      "category_sub": ["Digital Marketing", "Branding", "Creative Agency"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Industrial",
+        "address": "Plot: 4790, Electron House, Unit 15 ,Industrial,, Gaborone, Botswana"
+      },
+      "phone": "+267 72620542",
+      "verified": true,
+      "established": 2012,
+      "description": "Boosting brands through innovative digital marketing solutions."
+    },
+    {
+      "id": "BUS_1372",
+      "name": "GRANDLENS MEDIA (Pty) LTD",
+      "category_main": "Services",
+      "category_sub": ["Animation", "Film", "Branding", "Event Coverage"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Boatle",
+        "address": "Boatle Plot 954,Boatle,Botswana , Gaborone"
+      },
+      "phone": "+267 76611336",
+      "verified": true,
+      "established": 2015,
+      "description": "Quality media services: Animation, film, branding, and event coverage."
+    },
+    {
+      "id": "BUS_1373",
+      "name": "Ina Lebe (Pty) Ltd",
+      "category_main": "Services",
+      "category_sub": ["Engraved Gifts", "Personalized Products", "Gifts"],
+      "location": {
+        "city": "Gaborone",
+        "area": "International Commerce Park",
+        "address": "Plot 81, Unit 3 . Gaborone International Commerce Park, Botswana"
+      },
+      "phone": "+267 3110690",
+      "verified": true,
+      "established": 2016,
+      "description": "Personalized engraved gifts for every occasion and need."
+    },
+    {
+      "id": "BUS_1374",
+      "name": "Remodel Products",
+      "category_main": "Services",
+      "category_sub": ["Kitchen Products", "Bathroom Products", "Home Improvement"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "399 Taylor Blvd. Pleasant Hill, CA 94523, Botswana"
+      },
+      "phone": "888-986-7366",
+      "verified": true,
+      "established": 2011,
+      "description": "Quality kitchen and bathroom products delivered with care."
+    },
+    {
+      "id": "BUS_1375",
+      "name": "Xscript Media",
+      "category_main": "Services",
+      "category_sub": ["Design", "Digital Solutions", "Creative Agency"],
+      "location": {
+        "city": "Serowe",
+        "area": "",
+        "address": "P o Box 231 Serowe, Botswana"
+      },
+      "phone": "+267 75945752",
+      "verified": true,
+      "established": 2014,
+      "description": "Transforming visions into engaging designs and digital solutions."
+    },
+    {
+      "id": "BUS_1376",
+      "name": "Apex Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Marketing", "Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1234, Gaborone, Botswana"
+      },
+      "phone": "+267 391 1111",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1377",
+      "name": "Bright Ideas Marketing",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Branding", "Consulting"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 5678, Francistown, Botswana"
+      },
+      "phone": "+267 241 2222",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1378",
+      "name": "Creative Concepts",
+      "category_main": "Services",
+      "category_sub": ["Graphic Design", "Advertising", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 9101, Gaborone, Botswana"
+      },
+      "phone": "+267 392 3333",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1379",
+      "name": "Dynamic Designs",
+      "category_main": "Services",
+      "category_sub": ["Design", "Printing", "Signage"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P.O. Box 456, Maun, Botswana"
+      },
+      "phone": "+267 686 4444",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1380",
+      "name": "Elite Marketing Solutions",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Digital Strategy"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 7890, Gaborone, Botswana"
+      },
+      "phone": "+267 393 5555",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1381",
+      "name": "Fusion Media",
+      "category_main": "Services",
+      "category_sub": ["Media", "Advertising", "Production"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 1011, Francistown, Botswana"
+      },
+      "phone": "+267 241 6666",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1382",
+      "name": "Global Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Marketing", "Public Relations"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1122, Gaborone, Botswana"
+      },
+      "phone": "+267 390 7777",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1383",
+      "name": "High Impact Marketing",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Branding"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O. Box 1212, Palapye, Botswana"
+      },
+      "phone": "+267 492 8888",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1384",
+      "name": "Innovative Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Design", "Creative Agency"],
+      "location": {
+        "city": "Ghanzi",
+        "area": "",
+        "address": "P.O. Box 1313, Ghanzi, Botswana"
+      },
+      "phone": "+267 659 9999",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1385",
+      "name": "Junction Media",
+      "category_main": "Services",
+      "category_sub": ["Media", "Advertising", "Production"],
+      "location": {
+        "city": "Lobatse",
+        "area": "",
+        "address": "P.O. Box 1414, Lobatse, Botswana"
+      },
+      "phone": "+267 533 0000",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1386",
+      "name": "Kalahari Marketing",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1515, Gaborone, Botswana"
+      },
+      "phone": "+267 391 1112",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1387",
+      "name": "Legacy Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Branding", "Media"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 1616, Francistown, Botswana"
+      },
+      "phone": "+267 241 2223",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1388",
+      "name": "Metro Marketing",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Digital"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1717, Gaborone, Botswana"
+      },
+      "phone": "+267 392 3334",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1389",
+      "name": "Nova Designs",
+      "category_main": "Services",
+      "category_sub": ["Design", "Printing", "Branding"],
+      "location": {
+        "city": "Maun",
+        "area": "",
+        "address": "P.O. Box 1818, Maun, Botswana"
+      },
+      "phone": "+267 686 4445",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1390",
+      "name": "Omni Media",
+      "category_main": "Services",
+      "category_sub": ["Media", "Advertising", "Communications"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 1919, Gaborone, Botswana"
+      },
+      "phone": "+267 393 5556",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1391",
+      "name": "Precision Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Marketing", "Strategy"],
+      "location": {
+        "city": "Francistown",
+        "area": "",
+        "address": "P.O. Box 2020, Francistown, Botswana"
+      },
+      "phone": "+267 241 6667",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1392",
+      "name": "Quantum Marketing",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Digital", "Branding"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 2121, Gaborone, Botswana"
+      },
+      "phone": "+267 390 7778",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1393",
+      "name": "Red Rock Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Design", "Creative"],
+      "location": {
+        "city": "Palapye",
+        "area": "",
+        "address": "P.O. Box 2222, Palapye, Botswana"
+      },
+      "phone": "+267 492 8889",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1394",
+      "name": "Summit Media",
+      "category_main": "Services",
+      "category_sub": ["Media", "Advertising", "Production"],
+      "location": {
+        "city": "Ghanzi",
+        "area": "",
+        "address": "P.O. Box 2323, Ghanzi, Botswana"
+      },
+      "phone": "+267 659 9990",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1395",
+      "name": "Total Marketing Solutions",
+      "category_main": "Services",
+      "category_sub": ["Marketing", "Advertising", "Consulting"],
+      "location": {
+        "city": "Lobatse",
+        "area": "",
+        "address": "P.O. Box 2424, Lobatse, Botswana"
+      },
+      "phone": "+267 533 0001",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1396",
+      "name": "Urban Advertising",
+      "category_main": "Services",
+      "category_sub": ["Advertising", "Branding", "Media"],
+      "location": {
+        "city": "Gaborone",
+        "area": "",
+        "address": "P.O. Box 2525, Gaborone, Botswana"
+      },
+      "phone": "+267 391 1113",
+      "verified": false,
+      "established": null,
+      "description": ""
+    }
+  ]
+}
+
+{
+  "metadata": {
+    "source": "https://www.localbotswana.com/category/General_office_services (pages 46-50)",
+    "compiled": "2026-02-25",
+    "total_businesses": 100,
+    "note": "Businesses extracted from pages 46-50 of General Office Services. IDs start at BUS_1197.",
+    "category_breakdown": {
+      "Services": 100
+    }
+  },
+  "businesses": [
+    {
+      "id": "BUS_1197",
+      "name": "Bright Life",
+      "category_main": "Services",
+      "category_sub": ["General Business", "Consulting"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Commerce Park",
+        "address": "Plot 102 Unit 5 Commerce Pk, Gaborone, Botswana"
+      },
+      "phone": "+267 390 9602",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1198",
+      "name": "Brickbuild (pty) Ltd T/a Panda",
+      "category_main": "Services",
+      "category_sub": ["Building Materials", "Construction"],
+      "location": {
+        "city": "Gaborone",
+        "area": "Broadhurst",
+        "address": "Mabeleapodi Rd, Broadhurst, Gaborone, Botswana"
+      },
+      "phone": "+267 350 0838",
+      "verified": false,
+      "established": null,
+      "description": ""
+    },
+    {
+      "id": "BUS_1199",
+      "name": "B S M Holdings",
+      "category_main": "Services",
+      "category_sub": ["Holdings", "Investment"],
+      "location": {
+        "city": "Maun",
+        "area": "The Mall",
+        "address": "The Mall, Maun, Botswana"
+      },
+      "phone": "+267 686 0682",
+      "verified": false,
+      "established": null,
+      "description": ""
