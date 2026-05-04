@@ -1,0 +1,3877 @@
+{
+  "total": 484,
+  "businesses": [
+    {
+      "id": "BUS_0301",
+      "name": "SOS National Coordination Office",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3953220",
+      "verified": false
+    },
+    {
+      "id": "BUS_0302",
+      "name": "Surveys & Mapping Dept",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3957061",
+      "verified": false
+    },
+    {
+      "id": "BUS_0303",
+      "name": "USAID Southern Africa",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3924449",
+      "verified": false
+    },
+    {
+      "id": "BUS_0304",
+      "name": "Unified Revenue Service",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3638000",
+      "verified": false
+    },
+    {
+      "id": "BUS_0305",
+      "name": "Choppies Gaborone West",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3951973",
+      "verified": false
+    },
+    {
+      "id": "BUS_0306",
+      "name": "SADC Secretariat",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3167028",
+      "verified": false
+    },
+    {
+      "id": "BUS_0307",
+      "name": "Tsetsebjwe Mills",
+      "city": "Tsetsebjwe",
+      "category": "Food",
+      "phone": "+267 2646321",
+      "verified": false
+    },
+    {
+      "id": "BUS_0308",
+      "name": "Choppies Moshupa",
+      "city": "Moshupa",
+      "category": "Retail",
+      "phone": "+267 5449214",
+      "verified": false
+    },
+    {
+      "id": "BUS_0309",
+      "name": "Bizpack Technologies",
+      "city": "Selibe Phikwe",
+      "category": "Technology",
+      "phone": "+267 2622311",
+      "verified": false
+    },
+    {
+      "id": "BUS_0310",
+      "name": "Adima Plant Hire (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3913136",
+      "verified": false
+    },
+    {
+      "id": "BUS_0311",
+      "name": "AGB Botswana",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3972002",
+      "verified": false
+    },
+    {
+      "id": "BUS_0312",
+      "name": "Altoc Construction & Milling",
+      "city": "Tutume",
+      "category": "Construction",
+      "phone": "+267 2987821",
+      "verified": false
+    },
+    {
+      "id": "BUS_0313",
+      "name": "Altoc Phoneshop",
+      "city": "Tutume",
+      "category": "Retail",
+      "phone": "+267 2987001",
+      "verified": false
+    },
+    {
+      "id": "BUS_0314",
+      "name": "American Express",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3700160",
+      "verified": false
+    },
+    {
+      "id": "BUS_0315",
+      "name": "Anne-Stine Centre",
+      "city": "Molepolole",
+      "category": "Health",
+      "phone": "+267 5921127",
+      "verified": false
+    },
+    {
+      "id": "BUS_0316",
+      "name": "Anokhee Investments (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3164917",
+      "verified": false
+    },
+    {
+      "id": "BUS_0317",
+      "name": "Apostolic Burial Fund",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3973690",
+      "verified": false
+    },
+    {
+      "id": "BUS_0318",
+      "name": "Arbee Computers (Pty) Ltd",
+      "city": "Selibe Phikwe",
+      "category": "Technology",
+      "phone": "+267 2601052",
+      "verified": false
+    },
+    {
+      "id": "BUS_0319",
+      "name": "Archetype Projects",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3916240",
+      "verified": false
+    },
+    {
+      "id": "BUS_0320",
+      "name": "Ark Enterprises",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3936689",
+      "verified": false
+    },
+    {
+      "id": "BUS_0321",
+      "name": "ASA Enterprises (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3919195",
+      "verified": false
+    },
+    {
+      "id": "BUS_0322",
+      "name": "Asim's Dairy",
+      "city": "Molepolole",
+      "category": "Food",
+      "phone": "+267 5906064",
+      "verified": false
+    },
+    {
+      "id": "BUS_0323",
+      "name": "Associate Fund Administrators",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3650546",
+      "verified": false
+    },
+    {
+      "id": "BUS_0324",
+      "name": "Associated Insurance Brokers of Botswana (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3617300",
+      "verified": false
+    },
+    {
+      "id": "BUS_0325",
+      "name": "Asset Watch Botswana (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Security",
+      "phone": "+267 3180253",
+      "verified": false
+    },
+    {
+      "id": "BUS_0326",
+      "name": "Astra Panel Beaters",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3162584",
+      "verified": false
+    },
+    {
+      "id": "BUS_0327",
+      "name": "Asuna Panelbeaters (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3914387",
+      "verified": false
+    },
+    {
+      "id": "BUS_0328",
+      "name": "A Team Shopfitters (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3973446",
+      "verified": false
+    },
+    {
+      "id": "BUS_0329",
+      "name": "Atlas Holdings (Pty) Ltd",
+      "city": "Maun",
+      "category": "Services",
+      "phone": "+267 6862755",
+      "verified": false
+    },
+    {
+      "id": "BUS_0330",
+      "name": "Atlantic Holdings (Pty) Ltd",
+      "city": "Maun",
+      "category": "Services",
+      "phone": "+267 6860932",
+      "verified": false
+    },
+    {
+      "id": "BUS_0331",
+      "name": "Autohaus",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3973206",
+      "verified": false
+    },
+    {
+      "id": "BUS_0332",
+      "name": "Baambazangu Store",
+      "city": "Kasane",
+      "category": "Retail",
+      "phone": "+267 6250416",
+      "verified": false
+    },
+    {
+      "id": "BUS_0333",
+      "name": "Babish Rest and General Dealer",
+      "city": "Kalkfontein",
+      "category": "Retail",
+      "phone": "+267 6594011",
+      "verified": false
+    },
+    {
+      "id": "BUS_0334",
+      "name": "Bahasha Enterprises",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3903606",
+      "verified": false
+    },
+    {
+      "id": "BUS_0335",
+      "name": "Bakgatla Stores",
+      "city": "Mochudi",
+      "category": "Retail",
+      "phone": "+267 5777388",
+      "verified": false
+    },
+    {
+      "id": "BUS_0336",
+      "name": "Balolwami Mechanical & Civil Engineering Services",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3915685",
+      "verified": false
+    },
+    {
+      "id": "BUS_0337",
+      "name": "Bala Quantity Surveyors",
+      "city": "Francistown",
+      "category": "Construction",
+      "phone": "+267 2416748",
+      "verified": false
+    },
+    {
+      "id": "BUS_0338",
+      "name": "BA Motors",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3916516",
+      "verified": false
+    },
+    {
+      "id": "BUS_0339",
+      "name": "Bamalete Regent's Office",
+      "city": "Ramotswa",
+      "category": "Government",
+      "phone": "+267 5390213",
+      "verified": false
+    },
+    {
+      "id": "BUS_0340",
+      "name": "Bangwaketse Tribal Administration",
+      "city": "Kanye",
+      "category": "Government",
+      "phone": "+267 5440243",
+      "verified": false
+    },
+    {
+      "id": "BUS_0341",
+      "name": "Barolong Institute of Agriculture",
+      "city": "Pitsane",
+      "category": "Education",
+      "phone": "+267 5486275",
+      "verified": false
+    },
+    {
+      "id": "BUS_0342",
+      "name": "Barisma IT Solutions",
+      "city": "Gaborone",
+      "category": "Technology",
+      "phone": "+267 3956937",
+      "verified": false
+    },
+    {
+      "id": "BUS_0343",
+      "name": "Bargain Store / Ramotswa Building Supplies",
+      "city": "Ramotswa",
+      "category": "Retail",
+      "phone": "+267 5390205",
+      "verified": false
+    },
+    {
+      "id": "BUS_0344",
+      "name": "Barclays Gaborone Sun",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3184366",
+      "verified": false
+    },
+    {
+      "id": "BUS_0345",
+      "name": "Base Agencies",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3959578",
+      "verified": false
+    },
+    {
+      "id": "BUS_0346",
+      "name": "Basico Services",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3908008",
+      "verified": false
+    },
+    {
+      "id": "BUS_0347",
+      "name": "Bernina Sew and Knit",
+      "city": "Francistown",
+      "category": "Retail",
+      "phone": "+267 2415712",
+      "verified": false
+    },
+    {
+      "id": "BUS_0348",
+      "name": "Bereka Enterprises",
+      "city": "Jwaneng",
+      "category": "Retail",
+      "phone": "+267 5883041",
+      "verified": false
+    },
+    {
+      "id": "BUS_0349",
+      "name": "Best Technologies",
+      "city": "Gaborone",
+      "category": "Technology",
+      "phone": "+267 3975232",
+      "verified": false
+    },
+    {
+      "id": "BUS_0350",
+      "name": "Besix Botswana",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3906090",
+      "verified": false
+    },
+    {
+      "id": "BUS_0351",
+      "name": "Bible Society of Botswana",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3952030",
+      "verified": false
+    },
+    {
+      "id": "BUS_0352",
+      "name": "BIC Botswana (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3974907",
+      "verified": false
+    },
+    {
+      "id": "BUS_0353",
+      "name": "Bike & Bakkie Services / Cold Link Couriers",
+      "city": "Gaborone",
+      "category": "Transport",
+      "phone": "+267 3182688",
+      "verified": false
+    },
+    {
+      "id": "BUS_0354",
+      "name": "Birds & Game",
+      "city": "Francistown",
+      "category": "Retail",
+      "phone": "+267 2412277",
+      "verified": false
+    },
+    {
+      "id": "BUS_0355",
+      "name": "Blackmark Contractors (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3158414",
+      "verified": false
+    },
+    {
+      "id": "BUS_0356",
+      "name": "Blocks IT",
+      "city": "Gaborone",
+      "category": "Technology",
+      "phone": "+267 3901339",
+      "verified": false
+    },
+    {
+      "id": "BUS_0357",
+      "name": "Blueman Diesel Parts",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3922441",
+      "verified": false
+    },
+    {
+      "id": "BUS_0358",
+      "name": "B&M Garments",
+      "city": "Shashe",
+      "category": "Retail",
+      "phone": "+267 2484205",
+      "verified": false
+    },
+    {
+      "id": "BUS_0359",
+      "name": "Bobonong Brigades Development Trust",
+      "city": "Bobonong",
+      "category": "Education",
+      "phone": "+267 2619237",
+      "verified": false
+    },
+    {
+      "id": "BUS_0360",
+      "name": "Bobonong Multi-purpose Co-operative Society",
+      "city": "Bobonong",
+      "category": "Retail",
+      "phone": "+267 2619213",
+      "verified": false
+    },
+    {
+      "id": "BUS_0361",
+      "name": "Body Talk Panel Beaters",
+      "city": "Jwaneng",
+      "category": "Automotive",
+      "phone": "+267 5882156",
+      "verified": false
+    },
+    {
+      "id": "BUS_0362",
+      "name": "Body 'n Soul",
+      "city": "Gaborone",
+      "category": "Health",
+      "phone": "+267 3161501",
+      "verified": false
+    },
+    {
+      "id": "BUS_0363",
+      "name": "Boitekanelo / Western Union Money Transfer",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3904167",
+      "verified": false
+    },
+    {
+      "id": "BUS_0364",
+      "name": "Boikhutso Estates",
+      "city": "Selibe Phikwe",
+      "category": "Services",
+      "phone": "+267 2611441",
+      "verified": false
+    },
+    {
+      "id": "BUS_0365",
+      "name": "Bokomo Botswana",
+      "city": "Francistown",
+      "category": "Food",
+      "phone": "+267 2416033",
+      "verified": false
+    },
+    {
+      "id": "BUS_0366",
+      "name": "Bonkwadi Quarry Projects (Pty) Ltd",
+      "city": "Maun",
+      "category": "Construction",
+      "phone": "+267 6861484",
+      "verified": false
+    },
+    {
+      "id": "BUS_0367",
+      "name": "Bongapa Adhesives (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3908622",
+      "verified": false
+    },
+    {
+      "id": "BUS_0368",
+      "name": "Borakanelo Bar, Bottle Store and Restaurant",
+      "city": "Gaborone",
+      "category": "Food",
+      "phone": "+267 5748116",
+      "verified": false
+    },
+    {
+      "id": "BUS_0369",
+      "name": "Bosom Consultance",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3187232",
+      "verified": false
+    },
+    {
+      "id": "BUS_0370",
+      "name": "Botlhale Investment",
+      "city": "Francistown",
+      "category": "Finance",
+      "phone": "+267 2417770",
+      "verified": false
+    },
+    {
+      "id": "BUS_0371",
+      "name": "Bots Dental Laboratory",
+      "city": "Gaborone",
+      "category": "Health",
+      "phone": "+267 3931247",
+      "verified": false
+    },
+    {
+      "id": "BUS_0372",
+      "name": "Botswana Football Association (BFA)",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3900279",
+      "verified": false
+    },
+    {
+      "id": "BUS_0373",
+      "name": "Botswana Health Hub",
+      "city": "Gaborone",
+      "category": "Health",
+      "phone": "+267 3632689",
+      "verified": false
+    },
+    {
+      "id": "BUS_0374",
+      "name": "Botswana Horticultural Market",
+      "city": "Gaborone",
+      "category": "Agriculture",
+      "phone": "+267 3915157",
+      "verified": false
+    },
+    {
+      "id": "BUS_0375",
+      "name": "Botswana Public Officers' Medical Aid Scheme",
+      "city": "Gaborone",
+      "category": "Finance",
+      "phone": "+267 3951166",
+      "verified": false
+    },
+    {
+      "id": "BUS_0376",
+      "name": "Botswana Power Corporation Jwaneng",
+      "city": "Jwaneng",
+      "category": "Government",
+      "phone": "+267 5880251",
+      "verified": false
+    },
+    {
+      "id": "BUS_0377",
+      "name": "Botswana Power Corporation Ghanzi",
+      "city": "Ghanzi",
+      "category": "Government",
+      "phone": "+267 6597088",
+      "verified": false
+    },
+    {
+      "id": "BUS_0378",
+      "name": "Botswana Postal Services Tonota",
+      "city": "Tonota",
+      "category": "Government",
+      "phone": "+267 2484214",
+      "verified": false
+    },
+    {
+      "id": "BUS_0379",
+      "name": "Botswana Postal Services Ramotswa",
+      "city": "Ramotswa",
+      "category": "Government",
+      "phone": "+267 5390210",
+      "verified": false
+    },
+    {
+      "id": "BUS_0380",
+      "name": "Botswana Oxygen Company (Afrox)",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2412553",
+      "verified": false
+    },
+    {
+      "id": "BUS_0381",
+      "name": "Botswana Today",
+      "city": "Francistown",
+      "category": "Media",
+      "phone": "+267 2410165",
+      "verified": false
+    },
+    {
+      "id": "BUS_0382",
+      "name": "Botswana Kutlwano Magazine",
+      "city": "Gaborone",
+      "category": "Media",
+      "phone": "+267 3653599",
+      "verified": false
+    },
+    {
+      "id": "BUS_0383",
+      "name": "Botswana Cooperative Association",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3974045",
+      "verified": false
+    },
+    {
+      "id": "BUS_0384",
+      "name": "Botswana Housing Corporation",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3605108",
+      "verified": false
+    },
+    {
+      "id": "BUS_0385",
+      "name": "Botswana Girl Guides' Association",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3952076",
+      "verified": false
+    },
+    {
+      "id": "BUS_0386",
+      "name": "Botswana Distributing Co (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Transport",
+      "phone": "+267 3951003",
+      "verified": false
+    },
+    {
+      "id": "BUS_0387",
+      "name": "Botswana Council for Refugees",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3951831",
+      "verified": false
+    },
+    {
+      "id": "BUS_0388",
+      "name": "Botswana Confederation of Commerce Industry and Manpower",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2414622",
+      "verified": false
+    },
+    {
+      "id": "BUS_0389",
+      "name": "Brand Vision",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3953360",
+      "verified": false
+    },
+    {
+      "id": "BUS_0390",
+      "name": "Braby AC (Botswana) (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3973474",
+      "verified": false
+    },
+    {
+      "id": "BUS_0391",
+      "name": "Briggs & Associates",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3917005",
+      "verified": false
+    },
+    {
+      "id": "BUS_0392",
+      "name": "Broadhurst Auto Electrical",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3973416",
+      "verified": false
+    },
+    {
+      "id": "BUS_0393",
+      "name": "Buffalo Industrial Products",
+      "city": "Selibe Phikwe",
+      "category": "Services",
+      "phone": "+267 2611067",
+      "verified": false
+    },
+    {
+      "id": "BUS_0394",
+      "name": "BURS (VAT) - Botswana Unified Revenue Services Maun",
+      "city": "Maun",
+      "category": "Government",
+      "phone": "+267 6860321",
+      "verified": false
+    },
+    {
+      "id": "BUS_0395",
+      "name": "Business Precisions Services",
+      "city": "Palapye",
+      "category": "Services",
+      "phone": "+267 4924419",
+      "verified": false
+    },
+    {
+      "id": "BUS_0396",
+      "name": "Business Support Centre",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3700114",
+      "verified": false
+    },
+    {
+      "id": "BUS_0397",
+      "name": "Business Connection Botswana",
+      "city": "Molepolole",
+      "category": "Services",
+      "phone": "+267 5907325",
+      "verified": false
+    },
+    {
+      "id": "BUS_0398",
+      "name": "Bush Venture Trading",
+      "city": "Ghanzi",
+      "category": "Retail",
+      "phone": "+267 6596959",
+      "verified": false
+    },
+    {
+      "id": "BUS_0399",
+      "name": "Bush Telegraph",
+      "city": "Maun",
+      "category": "Media",
+      "phone": "+267 6860273",
+      "verified": false
+    },
+    {
+      "id": "BUS_0400",
+      "name": "Butterfly Gardens",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3930100",
+      "verified": false
+    },
+    {
+      "id": "BUS_0401",
+      "name": "BWR Quantity Surveyors",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3181581",
+      "verified": false
+    },
+    {
+      "id": "BUS_0402",
+      "name": "Byte Technologies",
+      "city": "Francistown",
+      "category": "Technology",
+      "phone": "+267 2418684",
+      "verified": false
+    },
+    {
+      "id": "BUS_0403",
+      "name": "CADvision (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Technology",
+      "phone": "+267 3186740",
+      "verified": false
+    },
+    {
+      "id": "BUS_0404",
+      "name": "Camphill Community Trust",
+      "city": "Otse",
+      "category": "Services",
+      "phone": "+267 5337593",
+      "verified": false
+    },
+    {
+      "id": "BUS_0405",
+      "name": "Career Diversity",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3900478",
+      "verified": false
+    },
+    {
+      "id": "BUS_0406",
+      "name": "Carfil Services (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3928282",
+      "verified": false
+    },
+    {
+      "id": "BUS_0407",
+      "name": "Carine Smet-Santens (Clinical & Developmental Psychologist)",
+      "city": "Gaborone",
+      "category": "Health",
+      "phone": "+267 3165045",
+      "verified": false
+    },
+    {
+      "id": "BUS_0408",
+      "name": "The Carpet Shop",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3905400",
+      "verified": false
+    },
+    {
+      "id": "BUS_0409",
+      "name": "Carbo Prestige",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3972096",
+      "verified": false
+    },
+    {
+      "id": "BUS_0410",
+      "name": "Car Tech Botswana",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3913665",
+      "verified": false
+    },
+    {
+      "id": "BUS_0411",
+      "name": "Castro Lubricants Supplies Botswana",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3182539",
+      "verified": false
+    },
+    {
+      "id": "BUS_0412",
+      "name": "Cash Bazaar Maun New Mall",
+      "city": "Maun",
+      "category": "Retail",
+      "phone": "+267 6861401",
+      "verified": false
+    },
+    {
+      "id": "BUS_0413",
+      "name": "Celito Automobiles (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3928193",
+      "verified": false
+    },
+    {
+      "id": "BUS_0414",
+      "name": "Cell Connects",
+      "city": "Gaborone",
+      "category": "Telecommunications",
+      "phone": "+267 3163601",
+      "verified": false
+    },
+    {
+      "id": "BUS_0415",
+      "name": "Central District Council Headquarters",
+      "city": "Serowe",
+      "category": "Government",
+      "phone": "+267 4630411",
+      "verified": false
+    },
+    {
+      "id": "BUS_0416",
+      "name": "Central District Council Tutume",
+      "city": "Tutume",
+      "category": "Government",
+      "phone": "+267 2987217",
+      "verified": false
+    },
+    {
+      "id": "BUS_0417",
+      "name": "Central Reservations National",
+      "city": "Gaborone",
+      "category": "Accommodation",
+      "phone": "+267 3953745",
+      "verified": false
+    },
+    {
+      "id": "BUS_0418",
+      "name": "Chan Technical Services",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3931160",
+      "verified": false
+    },
+    {
+      "id": "BUS_0419",
+      "name": "Chardama Enterprises (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3901245",
+      "verified": false
+    },
+    {
+      "id": "BUS_0420",
+      "name": "Charlie Collections",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3956927",
+      "verified": false
+    },
+    {
+      "id": "BUS_0421",
+      "name": "Charlton Electricals",
+      "city": "Orapa",
+      "category": "Services",
+      "phone": "+267 2971093",
+      "verified": false
+    },
+    {
+      "id": "BUS_0422",
+      "name": "Charlson Engineering",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3903911",
+      "verified": false
+    },
+    {
+      "id": "BUS_0423",
+      "name": "Chevron Group of Companies",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2441805",
+      "verified": false
+    },
+    {
+      "id": "BUS_0424",
+      "name": "Chinni Enterprises (Pty) Ltd",
+      "city": "Selibe Phikwe",
+      "category": "Retail",
+      "phone": "+267 2611305",
+      "verified": false
+    },
+    {
+      "id": "BUS_0425",
+      "name": "Chico's Panelbeaters",
+      "city": "Francistown",
+      "category": "Automotive",
+      "phone": "+267 2415420",
+      "verified": false
+    },
+    {
+      "id": "BUS_0426",
+      "name": "Chobe Brigades Development Trust",
+      "city": "Kasane",
+      "category": "Education",
+      "phone": "+267 625 0349",
+      "verified": false
+    },
+    {
+      "id": "BUS_0427",
+      "name": "Chobe Nissan",
+      "city": "Kasane",
+      "category": "Automotive",
+      "phone": "+267 6250673",
+      "verified": false
+    },
+    {
+      "id": "BUS_0428",
+      "name": "Choppies Station",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3170780",
+      "verified": false
+    },
+    {
+      "id": "BUS_0429",
+      "name": "Chobe Enterprises",
+      "city": "Kasane",
+      "category": "Retail",
+      "phone": "+267 6251400",
+      "verified": false
+    },
+    {
+      "id": "BUS_0430",
+      "name": "Chobe Cleaning Chemicals",
+      "city": "Maun",
+      "category": "Services",
+      "phone": "+267 6862154",
+      "verified": false
+    },
+    {
+      "id": "BUS_0431",
+      "name": "CIS Botswana (Pty) Ltd",
+      "city": "Selibe Phikwe",
+      "category": "Technology",
+      "phone": "+267 2610673",
+      "verified": false
+    },
+    {
+      "id": "BUS_0432",
+      "name": "CJ Panelbeaters",
+      "city": "Francistown",
+      "category": "Automotive",
+      "phone": "+267 2412034",
+      "verified": false
+    },
+    {
+      "id": "BUS_0433",
+      "name": "Clan Riddle Botswana (Pty) Ltd",
+      "city": "Palapye",
+      "category": "Services",
+      "phone": "+267 4920366",
+      "verified": false
+    },
+    {
+      "id": "BUS_0434",
+      "name": "Classic Fouram",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2418325",
+      "verified": false
+    },
+    {
+      "id": "BUS_0435",
+      "name": "Cleo Agencies / Peter Groves Airconditioning",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3975441",
+      "verified": false
+    },
+    {
+      "id": "BUS_0436",
+      "name": "Clouds Enterprises",
+      "city": "Serowe",
+      "category": "Services",
+      "phone": "+267 4635371",
+      "verified": false
+    },
+    {
+      "id": "BUS_0437",
+      "name": "C&N Motors",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3951658",
+      "verified": false
+    },
+    {
+      "id": "BUS_0438",
+      "name": "CNS Gym",
+      "city": "Palapye",
+      "category": "Health",
+      "phone": "+267 4922121",
+      "verified": false
+    },
+    {
+      "id": "BUS_0439",
+      "name": "Cobra Networks",
+      "city": "Maun",
+      "category": "Technology",
+      "phone": "+267 6861425",
+      "verified": false
+    },
+    {
+      "id": "BUS_0440",
+      "name": "Coin Botswana Jwaneng",
+      "city": "Jwaneng",
+      "category": "Security",
+      "phone": "+267 5880922",
+      "verified": false
+    },
+    {
+      "id": "BUS_0441",
+      "name": "Colour Place / U-Cano Canopies",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3908684",
+      "verified": false
+    },
+    {
+      "id": "BUS_0442",
+      "name": "Colt Naledi Motors",
+      "city": "Francistown",
+      "category": "Automotive",
+      "phone": "+267 2413602",
+      "verified": false
+    },
+    {
+      "id": "BUS_0443",
+      "name": "Compass Group Botswana",
+      "city": "Gaborone",
+      "category": "Food",
+      "phone": "+267 3953659",
+      "verified": false
+    },
+    {
+      "id": "BUS_0444",
+      "name": "Consumer Affairs Dept",
+      "city": "Selibe Phikwe",
+      "category": "Government",
+      "phone": "+267 2613111",
+      "verified": false
+    },
+    {
+      "id": "BUS_0445",
+      "name": "Construction Extras",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3187883",
+      "verified": false
+    },
+    {
+      "id": "BUS_0446",
+      "name": "Consolidated General Traders",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3184475",
+      "verified": false
+    },
+    {
+      "id": "BUS_0447",
+      "name": "Consolidated Enterprises",
+      "city": "Palapye",
+      "category": "Services",
+      "phone": "+267 4922968",
+      "verified": false
+    },
+    {
+      "id": "BUS_0448",
+      "name": "Cooperative Training Centre",
+      "city": "Gaborone",
+      "category": "Education",
+      "phone": "+267 392 8731",
+      "verified": false
+    },
+    {
+      "id": "BUS_0449",
+      "name": "The Hot Breadshop (Cosy Care Pty Ltd)",
+      "city": "Kasane",
+      "category": "Food",
+      "phone": "+267 6250419",
+      "verified": false
+    },
+    {
+      "id": "BUS_0450",
+      "name": "Cost Consult (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Construction",
+      "phone": "+267 3185125",
+      "verified": false
+    },
+    {
+      "id": "BUS_0451",
+      "name": "Cottage Furniture (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Furniture & Home",
+      "phone": "+267 390 0281",
+      "verified": false
+    },
+    {
+      "id": "BUS_0452",
+      "name": "Coventry Trading / Loan Star",
+      "city": "Maun",
+      "category": "Finance",
+      "phone": "+267 6861843",
+      "verified": false
+    },
+    {
+      "id": "BUS_0453",
+      "name": "Craft Signs (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3972786",
+      "verified": false
+    },
+    {
+      "id": "BUS_0454",
+      "name": "C Rand Distribution Botswana",
+      "city": "Gaborone",
+      "category": "Transport",
+      "phone": "+267 3910148",
+      "verified": false
+    },
+    {
+      "id": "BUS_0455",
+      "name": "Creative Minds",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3936249",
+      "verified": false
+    },
+    {
+      "id": "BUS_0456",
+      "name": "Crispen Industries (Pty) Ltd",
+      "city": "Ramotswa",
+      "category": "Services",
+      "phone": "+267 5390895",
+      "verified": false
+    },
+    {
+      "id": "BUS_0457",
+      "name": "Crotone Foods",
+      "city": "Gaborone",
+      "category": "Food",
+      "phone": "+267 3925000",
+      "verified": false
+    },
+    {
+      "id": "BUS_0458",
+      "name": "Crop Production & Forestry Dept",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3950598",
+      "verified": false
+    },
+    {
+      "id": "BUS_0459",
+      "name": "CSCEC (Pty) Ltd",
+      "city": "Tutume",
+      "category": "Construction",
+      "phone": "+267 2987353",
+      "verified": false
+    },
+    {
+      "id": "BUS_0460",
+      "name": "CTO Gantsi",
+      "city": "Ghanzi",
+      "category": "Government",
+      "phone": "+267 6597568",
+      "verified": false
+    },
+    {
+      "id": "BUS_0461",
+      "name": "CTO Francistown Plant Workshop",
+      "city": "Francistown",
+      "category": "Government",
+      "phone": "+267 241 3309",
+      "verified": true
+    },
+    {
+      "id": "BUS_0462",
+      "name": "Cyan Agencies",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2401809",
+      "verified": false
+    },
+    {
+      "id": "BUS_0463",
+      "name": "Dallas Bottle Store",
+      "city": "Francistown",
+      "category": "Food",
+      "phone": "+267 2414508",
+      "verified": false
+    },
+    {
+      "id": "BUS_0464",
+      "name": "Dalite Conditioning and Electrical Enterprises",
+      "city": "Maun",
+      "category": "Services",
+      "phone": "+267 6863132",
+      "verified": false
+    },
+    {
+      "id": "BUS_0465",
+      "name": "Daystar Wholesalers (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Retail",
+      "phone": "+267 3901574",
+      "verified": false
+    },
+    {
+      "id": "BUS_0466",
+      "name": "De Beers",
+      "city": "Gaborone",
+      "category": "Mining",
+      "phone": "+267 3615237",
+      "verified": false
+    },
+    {
+      "id": "BUS_0467",
+      "name": "Debswana Orapa",
+      "city": "Orapa",
+      "category": "Mining",
+      "phone": "+267 2971683",
+      "verified": false
+    },
+    {
+      "id": "BUS_0468",
+      "name": "Delta Investments",
+      "city": "Maun",
+      "category": "Finance",
+      "phone": "+267 6860937",
+      "verified": false
+    },
+    {
+      "id": "BUS_0469",
+      "name": "DEMS Unlimited (Pty) Ltd",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3900425",
+      "verified": false
+    },
+    {
+      "id": "BUS_0470",
+      "name": "Dent Doctor Panel Beaters",
+      "city": "Gaborone",
+      "category": "Automotive",
+      "phone": "+267 3939658",
+      "verified": false
+    },
+    {
+      "id": "BUS_0471",
+      "name": "Denkent Workshop",
+      "city": "Maun",
+      "category": "Automotive",
+      "phone": "+267 6863419",
+      "verified": false
+    },
+    {
+      "id": "BUS_0472",
+      "name": "Department of Cooperatives",
+      "city": "Molepolole",
+      "category": "Government",
+      "phone": "+267 5920954",
+      "verified": false
+    },
+    {
+      "id": "BUS_0473",
+      "name": "Department of National Archives",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3911820",
+      "verified": false
+    },
+    {
+      "id": "BUS_0474",
+      "name": "Dept of Local Government Services Management",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3973783",
+      "verified": false
+    },
+    {
+      "id": "BUS_0475",
+      "name": "Dept Social Services",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3973182",
+      "verified": false
+    },
+    {
+      "id": "BUS_0476",
+      "name": "Dept of Road Transport & Safety",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3905422",
+      "verified": false
+    },
+    {
+      "id": "BUS_0477",
+      "name": "Department of Water Affairs",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3900387",
+      "verified": false
+    },
+    {
+      "id": "BUS_0478",
+      "name": "Department of Telecommunication and Postal Services",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3900486",
+      "verified": false
+    },
+    {
+      "id": "BUS_0479",
+      "name": "Department of Meteorological Services",
+      "city": "Gaborone",
+      "category": "Government",
+      "phone": "+267 3956281",
+      "verified": false
+    },
+    {
+      "id": "BUS_0480",
+      "name": "Department of Geological Survey",
+      "city": "Lobatse",
+      "category": "Government",
+      "phone": "+267 5330428",
+      "verified": false
+    },
+    {
+      "id": "BUS_0481",
+      "name": "Destination South (Pty) Ltd",
+      "city": "Maun",
+      "category": "Accommodation",
+      "phone": "+267 6861875",
+      "verified": false
+    },
+    {
+      "id": "BUS_0482",
+      "name": "Development Partners Botswana",
+      "city": "Francistown",
+      "category": "Services",
+      "phone": "+267 2441473",
+      "verified": false
+    },
+    {
+      "id": "BUS_0483",
+      "name": "Development Initiative and Services",
+      "city": "Gaborone",
+      "category": "Services",
+      "phone": "+267 3163330",
+      "verified": false
+    },
+    {
+      "id": "BUS_0484",
+      "name": "Dibora Hospital",
+      "city": "Mochudi",
+      "category": "Health",
+      "phone": "+267 5777001",
+      "verified": false
+    },
+    {
+      "id": 9845,
+      "name": "DIJENG & SONS (PTY) LTD",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2403123",
+      "verified": false
+    },
+    {
+      "id": 9855,
+      "name": "DIRECTORATE OF PUBLIC SERVICES MANAGEMENT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3622600",
+      "verified": false
+    },
+    {
+      "id": 9853,
+      "name": "DIRECTOR OF AGRICULTURAL PLANNING & STATISTICS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3950576",
+      "verified": false
+    },
+    {
+      "id": 9852,
+      "name": "DIRECTOR MINISTRY MANAGEMENT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3656621",
+      "verified": false
+    },
+    {
+      "id": 9857,
+      "name": "DISABILITY HIV & AIDS TRUST (DHAT)",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3971774",
+      "verified": false
+    },
+    {
+      "id": 9858,
+      "name": "DISAJI PANEL BEATERS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2418989",
+      "verified": false
+    },
+    {
+      "id": 9865,
+      "name": "DISTRICT ADMINISTRATION OFFICE",
+      "city": "Tonota",
+      "category": "General Business",
+      "phone": "+267 2485978",
+      "verified": false
+    },
+    {
+      "id": 9876,
+      "name": "DISTRICT OFFICE",
+      "city": "Goodhope",
+      "category": "General Business",
+      "phone": "+267 5486250",
+      "verified": false
+    },
+    {
+      "id": 9873,
+      "name": "DISTRICT HEALTH TEAM (CLINICS)",
+      "city": "Kasane",
+      "category": "General Business",
+      "phone": "+267 6250347",
+      "verified": false
+    },
+    {
+      "id": 9872,
+      "name": "DISTRICT COUNCILS DEPUTY COUNCIL",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4630012",
+      "verified": false
+    },
+    {
+      "id": 9869,
+      "name": "DISTRICT AIDS COORDINATOR",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2610794",
+      "verified": false
+    },
+    {
+      "id": 9868,
+      "name": "DISTRICT AIDS COORDINATION",
+      "city": "Tsabong",
+      "category": "General Business",
+      "phone": "+267 6540247",
+      "verified": false
+    },
+    {
+      "id": 9866,
+      "name": "DISTRICT ADMINISTRATION OFFICER",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4630424",
+      "verified": false
+    },
+    {
+      "id": 9864,
+      "name": "DISTRICT ADMINISTRATION",
+      "city": "Masunga",
+      "category": "General Business",
+      "phone": "+267 2489333",
+      "verified": false
+    },
+    {
+      "id": 9863,
+      "name": "DISTANT DESIGNS",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6863700",
+      "verified": false
+    },
+    {
+      "id": 9860,
+      "name": "DISCOUNT CENTRE",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2613794",
+      "verified": false
+    },
+    {
+      "id": 9881,
+      "name": "DITSHUPO HALL",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3975555",
+      "verified": false
+    },
+    {
+      "id": 9886,
+      "name": "DIVISIONAL COMMANDER PRISON",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3900954",
+      "verified": false
+    },
+    {
+      "id": 9885,
+      "name": "DIVISION OF AGRICULTURAL PLANNING & STATISTICS - DIRECTOR",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3952665",
+      "verified": false
+    },
+    {
+      "id": 9887,
+      "name": "D'KAR MULTI SERVICES",
+      "city": "Ghanzi",
+      "category": "General Business",
+      "phone": "+267 6596774",
+      "verified": false
+    },
+    {
+      "id": 9888,
+      "name": "DMSAC MAHALAPYE",
+      "city": "Mahalapye",
+      "category": "General Business",
+      "phone": "+267 4714425",
+      "verified": false
+    },
+    {
+      "id": 9895,
+      "name": "DOTSON ENTERPRISES (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3718739",
+      "verified": false
+    },
+    {
+      "id": 9896,
+      "name": "DOUBLE VISION SHOPFITTERS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3957252",
+      "verified": false
+    },
+    {
+      "id": 9928,
+      "name": "DR KGOSIDIILE AND SONS",
+      "city": "Bobonong",
+      "category": "General Business",
+      "phone": "+267 2619243",
+      "verified": false
+    },
+    {
+      "id": 9751,
+      "name": "D R M SCHOOL OF NURSING",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5777267",
+      "verified": false
+    },
+    {
+      "id": 9970,
+      "name": "DR WN MASENYA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3161635",
+      "verified": false
+    },
+    {
+      "id": 9979,
+      "name": "DUMATAU TRADING T/A WASTE PAPER RECOVERY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3956769",
+      "verified": false
+    },
+    {
+      "id": 9981,
+      "name": "DUMELA SALES",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413413",
+      "verified": false
+    },
+    {
+      "id": 9984,
+      "name": "DUST/AL SIDE PTY LTD",
+      "city": "Orapa",
+      "category": "General Business",
+      "phone": "+267 2971076",
+      "verified": false
+    },
+    {
+      "id": 9990,
+      "name": "DYNAMO INVESTMENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3500482",
+      "verified": false
+    },
+    {
+      "id": 10015,
+      "name": "EASY-SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3975945",
+      "verified": false
+    },
+    {
+      "id": 10012,
+      "name": "EASY CASH CONVERTERS PAWNSHOP",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909557",
+      "verified": false
+    },
+    {
+      "id": 10017,
+      "name": "EBRAHIM STORE (PTY) LTD",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2414762",
+      "verified": false
+    },
+    {
+      "id": 10021,
+      "name": "ECO-INSULATION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3190837",
+      "verified": false
+    },
+    {
+      "id": 10024,
+      "name": "EDUCATION (MINISTRY OF)",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3914005",
+      "verified": false
+    },
+    {
+      "id": 10022,
+      "name": "EDUCATION, MINISTRY OF (DEPT OF VOCATIONAL & TRAINING)",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3972756",
+      "verified": false
+    },
+    {
+      "id": 10026,
+      "name": "EHAO HOLDINGS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413336",
+      "verified": false
+    },
+    {
+      "id": 10028,
+      "name": "EINSTEIN TECHNOLOGY (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3951466",
+      "verified": false
+    },
+    {
+      "id": 9995,
+      "name": "E & J PANELBEATERS (PTY) LTD",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6860702",
+      "verified": false
+    },
+    {
+      "id": 10030,
+      "name": "EKUSILENI CLINICAL LABORATORY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3916420",
+      "verified": false
+    },
+    {
+      "id": 10035,
+      "name": "ELECTRONIC AMUSEMENT (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3974999",
+      "verified": false
+    },
+    {
+      "id": 10034,
+      "name": "ELECTROLUX AGENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3919315",
+      "verified": false
+    },
+    {
+      "id": 10038,
+      "name": "ELLERINES FURNITURES",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5777304",
+      "verified": false
+    },
+    {
+      "id": 10040,
+      "name": "EMANG BASADI ASSOCIATION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909335",
+      "verified": false
+    },
+    {
+      "id": 10041,
+      "name": "EMBASSY OF BRAZIL",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3951061",
+      "verified": false
+    },
+    {
+      "id": 10042,
+      "name": "EMBASSY SCIENTIFIC GROUP (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922931",
+      "verified": false
+    },
+    {
+      "id": 10044,
+      "name": "EMERALD STAR (PTY) LTD",
+      "city": "Pandamatenga",
+      "category": "General Business",
+      "phone": "+267 6212010",
+      "verified": false
+    },
+    {
+      "id": 9997,
+      "name": "E M S (BOTSWANA POST)",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912004",
+      "verified": false
+    },
+    {
+      "id": 10046,
+      "name": "ENAMCOR (BOTSWANA) (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3956144",
+      "verified": false
+    },
+    {
+      "id": 10055,
+      "name": "ENVIROMENTAL SYSTEMS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3182934",
+      "verified": false
+    },
+    {
+      "id": 10060,
+      "name": "ERIDENE PROFESSIONAL",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2440865",
+      "verified": false
+    },
+    {
+      "id": 9999,
+      "name": "E S A C ENTERPRISES",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6864796",
+      "verified": false
+    },
+    {
+      "id": 10062,
+      "name": "ESIPP EU SADC INVESTMENT PROMOTION PROGRAMME",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3180120",
+      "verified": false
+    },
+    {
+      "id": 10063,
+      "name": "ESJAYD PANELBEATERS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3904272",
+      "verified": false
+    },
+    {
+      "id": 10000,
+      "name": "E S K E DISTRIBUTORS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3182786",
+      "verified": false
+    },
+    {
+      "id": 10066,
+      "name": "ESPORTES CONSULTANCY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3930780",
+      "verified": false
+    },
+    {
+      "id": 10068,
+      "name": "ESTIMA CONSULTING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3902528",
+      "verified": false
+    },
+    {
+      "id": 10071,
+      "name": "ETSHA CO-OP",
+      "city": "Etsha",
+      "category": "General Business",
+      "phone": "+267 6874583",
+      "verified": false
+    },
+    {
+      "id": 10072,
+      "name": "ETSHA CO-OPERATIVES",
+      "city": "Sepopa",
+      "category": "General Business",
+      "phone": "+267 6877018",
+      "verified": false
+    },
+    {
+      "id": 10075,
+      "name": "EUROPEAN COMMISSION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3914455",
+      "verified": false
+    },
+    {
+      "id": 10074,
+      "name": "EURO HOLDINGS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3927994",
+      "verified": false
+    },
+    {
+      "id": 10082,
+      "name": "EVERLITE SIGNS MANUFACTURERS BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3911621",
+      "verified": false
+    },
+    {
+      "id": 10085,
+      "name": "EXACT BYRE AND SPARES",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6865222",
+      "verified": false
+    },
+    {
+      "id": 10086,
+      "name": "EXCLUSIVE LINEN WORLD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912151",
+      "verified": false
+    },
+    {
+      "id": 10088,
+      "name": "EXECUTIVE APPROACH SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3914660",
+      "verified": false
+    },
+    {
+      "id": 10120,
+      "name": "FAME HOUSE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907711",
+      "verified": false
+    },
+    {
+      "id": 10130,
+      "name": "FARROW LAING AND PARTNERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3971459",
+      "verified": false
+    },
+    {
+      "id": 10125,
+      "name": "FAR EAST TRADE LINK (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3914296",
+      "verified": false
+    },
+    {
+      "id": 10131,
+      "name": "FASCINATING BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 5391818",
+      "verified": false
+    },
+    {
+      "id": 10147,
+      "name": "FERON INVESTMENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3181246",
+      "verified": false
+    },
+    {
+      "id": 10146,
+      "name": "FERMENTATION LOBATSE",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5333909",
+      "verified": false
+    },
+    {
+      "id": 10108,
+      "name": "F F F FITNESS CENTRE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3974897",
+      "verified": false
+    },
+    {
+      "id": 10151,
+      "name": "FILTRATION SOLUTIONS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3957019",
+      "verified": false
+    },
+    {
+      "id": 10153,
+      "name": "FIRELIGHT ENTERPRISES",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6862009",
+      "verified": false
+    },
+    {
+      "id": 10159,
+      "name": "FISHWORLD DISTRIBUTORS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3165266",
+      "verified": false
+    },
+    {
+      "id": 10160,
+      "name": "FIVE ROSES BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922707",
+      "verified": false
+    },
+    {
+      "id": 10161,
+      "name": "FIXED FOR LIFE TRAINERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3904909",
+      "verified": false
+    },
+    {
+      "id": 10163,
+      "name": "FLEEMING ASSETS MANAGEMENT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3959379",
+      "verified": false
+    },
+    {
+      "id": 10164,
+      "name": "FLING CONSTRUCTION",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2622588",
+      "verified": false
+    },
+    {
+      "id": 10169,
+      "name": "FLOWTITE BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909746",
+      "verified": false
+    },
+    {
+      "id": 10167,
+      "name": "FLORENTIATO INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3908305",
+      "verified": false
+    },
+    {
+      "id": 10177,
+      "name": "FOOT AND MOUTH DISEASE",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6860425",
+      "verified": false
+    },
+    {
+      "id": 10180,
+      "name": "FOREIGN AFFAIRS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3600800",
+      "verified": false
+    },
+    {
+      "id": 10181,
+      "name": "FOREST DEPARTMENT",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5440353",
+      "verified": false
+    },
+    {
+      "id": 10182,
+      "name": "FOREVER INDUSTRIAL SEWING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3181842",
+      "verified": false
+    },
+    {
+      "id": 10185,
+      "name": "FORTUNE TRACK INVESTMENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3975441",
+      "verified": false
+    },
+    {
+      "id": 10184,
+      "name": "FORKLIFT SERVICES BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3935798",
+      "verified": false
+    },
+    {
+      "id": 10186,
+      "name": "FOT HOLDINGS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3915163",
+      "verified": false
+    },
+    {
+      "id": 10194,
+      "name": "FOX SCREEN PRINTERS (PTY) LTD",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2414000",
+      "verified": false
+    },
+    {
+      "id": 10195,
+      "name": "FRANCISTOWN AIR BRAKES",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2441614",
+      "verified": false
+    },
+    {
+      "id": 10202,
+      "name": "FRANCISTOWN CITY COUNCIL - PERSONEL",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2412496",
+      "verified": false
+    },
+    {
+      "id": 10204,
+      "name": "FRANCISTOWN CITY COUNCIL - TECHNICIAN",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2410347",
+      "verified": false
+    },
+    {
+      "id": 10208,
+      "name": "FRANCISTOWN FIRE DEPARTMENT",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2415236",
+      "verified": false
+    },
+    {
+      "id": 10209,
+      "name": "FRANCISTOWN LIBRARY",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2412146",
+      "verified": false
+    },
+    {
+      "id": 10211,
+      "name": "FRANCISTOWN MILLING AND TRADING COMPANY (PTY) LTD",
+      "city": "Palapye",
+      "category": "General Business",
+      "phone": "+267 4920887",
+      "verified": false
+    },
+    {
+      "id": 10216,
+      "name": "FRANCISTOWN RECORDS CENTRE",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2418422",
+      "verified": false
+    },
+    {
+      "id": 10217,
+      "name": "FRANCISTOWN SOUTH CONSTITUENCY",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2401058",
+      "verified": false
+    },
+    {
+      "id": 10196,
+      "name": "FRANCISTOWN AIRPORT",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413420",
+      "verified": false
+    },
+    {
+      "id": 10215,
+      "name": "FRANCISTOWN QUARRIES",
+      "city": "Tati Siding",
+      "category": "General Business",
+      "phone": "+267 244 0104",
+      "verified": false
+    },
+    {
+      "id": 10221,
+      "name": "FREE START BATTERIES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3959629",
+      "verified": false
+    },
+    {
+      "id": 10220,
+      "name": "FREDRICH EBERT STIFTUNG",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3930821",
+      "verified": false
+    },
+    {
+      "id": 10228,
+      "name": "G A A M SOCIETY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3913726",
+      "verified": false
+    },
+    {
+      "id": 10242,
+      "name": "GABORONE AUTOMOTIVE PANELBEATERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3971686",
+      "verified": false
+    },
+    {
+      "id": 10252,
+      "name": "GABORONE CITY COUNCIL DEPOT - SNR ROADS ENGINEER",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3906953",
+      "verified": false
+    },
+    {
+      "id": 10255,
+      "name": "GABORONE CITY COUNCIL PARKS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3959139",
+      "verified": false
+    },
+    {
+      "id": 10266,
+      "name": "GABORONE CITY COUNCIL ROADS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3914127",
+      "verified": false
+    },
+    {
+      "id": 10271,
+      "name": "GABORONE ENGINEERING SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3936704",
+      "verified": false
+    },
+    {
+      "id": 10277,
+      "name": "GABORONE NORTH EQUESTRIAN CENTRE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909063",
+      "verified": false
+    },
+    {
+      "id": 10281,
+      "name": "GABORONE STABLES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3161539",
+      "verified": false
+    },
+    {
+      "id": 10285,
+      "name": "GABORONE WEST FITNESS CENTRE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3918625",
+      "verified": false
+    },
+    {
+      "id": 10284,
+      "name": "GABORONE VILLAGE POST OFFICE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3901929",
+      "verified": false
+    },
+    {
+      "id": 10279,
+      "name": "GABORONE PRIVATE HOSPITAL",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3685600",
+      "verified": false
+    },
+    {
+      "id": 10276,
+      "name": "GABORONE NORTH CONSTITUENCY OFFICE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3972167",
+      "verified": false
+    },
+    {
+      "id": 10256,
+      "name": "GABORONE CITY COUNCIL PRINCIPAL PHYSICAL PLANNER",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907949",
+      "verified": false
+    },
+    {
+      "id": 10254,
+      "name": "GABORONE CITY COUNCIL HEADQUARTERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3953521",
+      "verified": false
+    },
+    {
+      "id": 10251,
+      "name": "GABORONE CITY COUNCIL DEPOT - ROADS DESIGN CIVIL ENGINEER",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3908951",
+      "verified": false
+    },
+    {
+      "id": 10248,
+      "name": "GABORONE CITY COUNCIL COMMUNITY CENTRE TSHOLOFELO",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3957340",
+      "verified": false
+    },
+    {
+      "id": 10243,
+      "name": "GABORONE CENTRAL CONSTITUENCY OFFICE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3180573",
+      "verified": false
+    },
+    {
+      "id": 10287,
+      "name": "GADHAND BUSINESS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3971260",
+      "verified": false
+    },
+    {
+      "id": 10298,
+      "name": "GAMMON HOLDINGS T/A GAMMON ROOF TRUSSES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3187508",
+      "verified": false
+    },
+    {
+      "id": 10229,
+      "name": "G AND B ENTERPRISES",
+      "city": "Gweta",
+      "category": "General Business",
+      "phone": "+267 6212215",
+      "verified": false
+    },
+    {
+      "id": 10300,
+      "name": "GARDEN SERVICES (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3182191",
+      "verified": false
+    },
+    {
+      "id": 10230,
+      "name": "G B C - TV GABORONE BROADCASTING COMPANY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3957654",
+      "verified": false
+    },
+    {
+      "id": 10231,
+      "name": "G D S BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922989",
+      "verified": false
+    },
+    {
+      "id": 10308,
+      "name": "GENERAL OFFICE GEOLOGICAL SURVEYS - SWITCHBOARD",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5330327",
+      "verified": false
+    },
+    {
+      "id": 10310,
+      "name": "GENESIS ORTHODONTIST",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3500456",
+      "verified": false
+    },
+    {
+      "id": 10316,
+      "name": "GEOLOGICAL CONSULTANTS",
+      "city": "Tsetsebjwe",
+      "category": "General Business",
+      "phone": "+267 2646155",
+      "verified": false
+    },
+    {
+      "id": 10315,
+      "name": "GEO WORKS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3934442",
+      "verified": false
+    },
+    {
+      "id": 10320,
+      "name": "GESS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3918933",
+      "verified": false
+    },
+    {
+      "id": 10321,
+      "name": "GHANZI DISTRICT COUNCIL",
+      "city": "Ghanzi",
+      "category": "General Business",
+      "phone": "+267 6597387",
+      "verified": false
+    },
+    {
+      "id": 10232,
+      "name": "G H INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3906185",
+      "verified": false
+    },
+    {
+      "id": 10325,
+      "name": "GIBB (BOTSWANA)",
+      "city": "Molepolole",
+      "category": "General Business",
+      "phone": "+267 5920626",
+      "verified": false
+    },
+    {
+      "id": 10331,
+      "name": "GLENS AGENCY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3900205",
+      "verified": false
+    },
+    {
+      "id": 10336,
+      "name": "GLOBAL LOSS ADJUSTERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3936259",
+      "verified": false
+    },
+    {
+      "id": 10339,
+      "name": "GLOBAL RESOURCES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3910459",
+      "verified": false
+    },
+    {
+      "id": 10334,
+      "name": "GLOBAL ELECTRONICS",
+      "city": "Mahalapye",
+      "category": "General Business",
+      "phone": "+267 4710155",
+      "verified": false
+    },
+    {
+      "id": 10233,
+      "name": "G M R FREIGHTS (BOTS) (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3952484",
+      "verified": false
+    },
+    {
+      "id": 10235,
+      "name": "G N PANELBEATERS",
+      "city": "Palapye",
+      "category": "General Business",
+      "phone": "+267 4920789",
+      "verified": false
+    },
+    {
+      "id": 10345,
+      "name": "GOLDEN WHOLESALERS",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4634596",
+      "verified": false
+    },
+    {
+      "id": 10343,
+      "name": "GOLDDIGGER VENTURES T/A TALANA FARM PRODUCTS",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2645690",
+      "verified": false
+    },
+    {
+      "id": 10347,
+      "name": "GONDWANA VENTURES (PTY) LTD",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2402431",
+      "verified": false
+    },
+    {
+      "id": 10348,
+      "name": "GOO-LOWE CULTURAL & ECOLOGICAL TOURS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 71424488",
+      "verified": false
+    },
+    {
+      "id": 10349,
+      "name": "GOOD WAY MOTORS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3916065",
+      "verified": false
+    },
+    {
+      "id": 10361,
+      "name": "GRAPHITEC BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3953810",
+      "verified": false
+    },
+    {
+      "id": 10357,
+      "name": "GRAND INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3908417",
+      "verified": false
+    },
+    {
+      "id": 10356,
+      "name": "GRADAM HOLDINGS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3187305",
+      "verified": false
+    },
+    {
+      "id": 10372,
+      "name": "GREG BUTTLER SAFARIS",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6862605",
+      "verified": false
+    },
+    {
+      "id": 10365,
+      "name": "GREEN INDUSTRIES ENTERPRISES CORPORATION",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413963",
+      "verified": false
+    },
+    {
+      "id": 10362,
+      "name": "GREAT WALL MOTORS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3913113",
+      "verified": false
+    },
+    {
+      "id": 10377,
+      "name": "GRUNWALDS CONSTRUCTION (PTY) LTD",
+      "city": "Orapa",
+      "category": "General Business",
+      "phone": "+267 2970708",
+      "verified": false
+    },
+    {
+      "id": 10236,
+      "name": "G S P CEILINGS BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3938255",
+      "verified": false
+    },
+    {
+      "id": 10237,
+      "name": "G T M WELDING, PANELBEATERS AND SPRAY PAINTING",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5729325",
+      "verified": false
+    },
+    {
+      "id": 10380,
+      "name": "GTV CELL & DISTRIBUTION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3918068",
+      "verified": false
+    },
+    {
+      "id": 10238,
+      "name": "G T Z PROJECT ADMIN SERVICE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3956361",
+      "verified": false
+    },
+    {
+      "id": 10387,
+      "name": "GUMARE PRIVATE HOSPITAL",
+      "city": "Gumare",
+      "category": "General Business",
+      "phone": "+267 6874002",
+      "verified": false
+    },
+    {
+      "id": 10398,
+      "name": "HAAT CONSULTING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3974390",
+      "verified": false
+    },
+    {
+      "id": 10405,
+      "name": "HARROS AFRICA (PTY) LTD",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5480293",
+      "verified": false
+    },
+    {
+      "id": 10404,
+      "name": "HARNESS MANUFACTURING BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3933864",
+      "verified": false
+    },
+    {
+      "id": 10411,
+      "name": "HAZEL PRODUCTION SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3180043",
+      "verified": false
+    },
+    {
+      "id": 10412,
+      "name": "HEALTHWAY SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3971123",
+      "verified": false
+    },
+    {
+      "id": 10413,
+      "name": "HEHIR MES",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2610883",
+      "verified": false
+    },
+    {
+      "id": 10425,
+      "name": "HIGH COMMISSION OF INDIA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912240",
+      "verified": false
+    },
+    {
+      "id": 10432,
+      "name": "HILL VIEW STORE",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5334060",
+      "verified": false
+    },
+    {
+      "id": 10424,
+      "name": "HI-TECH PANELBEATERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3911441",
+      "verified": false
+    },
+    {
+      "id": 10394,
+      "name": "H & L INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3947493",
+      "verified": false
+    },
+    {
+      "id": 10395,
+      "name": "H N S TRADING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3500283",
+      "verified": false
+    },
+    {
+      "id": 10446,
+      "name": "HOME GAS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3926350",
+      "verified": false
+    },
+    {
+      "id": 10455,
+      "name": "HUGEGATE ENTERPRISES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3938828",
+      "verified": false
+    },
+    {
+      "id": 10462,
+      "name": "HYMALAYANI ENTERPRISES",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6865448",
+      "verified": false
+    },
+    {
+      "id": 10463,
+      "name": "HYTEC BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912879",
+      "verified": false
+    },
+    {
+      "id": 10472,
+      "name": "IAN TUCKER & COMPANY BOTSWANA",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5333609",
+      "verified": false
+    },
+    {
+      "id": 10473,
+      "name": "ICE BREAKERS (PTY) LTD",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6863086",
+      "verified": false
+    },
+    {
+      "id": 10478,
+      "name": "IDEN INVESTMENT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3924834",
+      "verified": false
+    },
+    {
+      "id": 10475,
+      "name": "IDEAL BUSINESS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2414595",
+      "verified": false
+    },
+    {
+      "id": 10487,
+      "name": "IMAZAMO CONSULTANT",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2417788",
+      "verified": false
+    },
+    {
+      "id": 10488,
+      "name": "IMPERIAL FLEET SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3924801",
+      "verified": false
+    },
+    {
+      "id": 10494,
+      "name": "IMZI MOTORS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3915789",
+      "verified": false
+    },
+    {
+      "id": 10502,
+      "name": "INDUSTRIAL AGENCIES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909698",
+      "verified": false
+    },
+    {
+      "id": 10503,
+      "name": "INDUSTRIAL ANALETICAL SERVICES SUPPLIES",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2416374",
+      "verified": false
+    },
+    {
+      "id": 10500,
+      "name": "INDIA HIGH COMMISSION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3972676",
+      "verified": false
+    },
+    {
+      "id": 10499,
+      "name": "INDEPENDENT TAVERNS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3975246",
+      "verified": false
+    },
+    {
+      "id": 10504,
+      "name": "INFORMATION & BROADCASTING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3653000",
+      "verified": false
+    },
+    {
+      "id": 10505,
+      "name": "INFORMATIX INDUSTRY SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3908997",
+      "verified": false
+    },
+    {
+      "id": 10506,
+      "name": "INPUTS BOTSWANA (PTY) LTD",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4634799",
+      "verified": false
+    },
+    {
+      "id": 10511,
+      "name": "INSYNC (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907483",
+      "verified": false
+    },
+    {
+      "id": 10516,
+      "name": "INTER-LINK MOTORS",
+      "city": "Palapye",
+      "category": "General Business",
+      "phone": "+267 4900207",
+      "verified": false
+    },
+    {
+      "id": 10520,
+      "name": "INTEREST RESEARCH BUREAU (BOTS)",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922300",
+      "verified": false
+    },
+    {
+      "id": 10526,
+      "name": "INTERTECH INDUSTRIES (PTY) LTD T/A B A P",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413311",
+      "verified": false
+    },
+    {
+      "id": 10524,
+      "name": "INTERPRIT GRAPHICS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3957994",
+      "verified": false
+    },
+    {
+      "id": 10523,
+      "name": "INTERLINK AGENTS & ASS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3930074",
+      "verified": false
+    },
+    {
+      "id": 10522,
+      "name": "INTERIOR DESIGNS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3902031",
+      "verified": false
+    },
+    {
+      "id": 10521,
+      "name": "INTERGRATED FIELD SERVICES",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2611829",
+      "verified": false
+    },
+    {
+      "id": 10519,
+      "name": "INTERCONTINENTAL MERCHANTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907523",
+      "verified": false
+    },
+    {
+      "id": 10513,
+      "name": "INTEGRATED DEVELOPMENT SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922389",
+      "verified": false
+    },
+    {
+      "id": 10528,
+      "name": "INVESTEC TREASURY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3900320",
+      "verified": false
+    },
+    {
+      "id": 10533,
+      "name": "ISAAC MAZONDE",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3973510",
+      "verified": false
+    },
+    {
+      "id": 10535,
+      "name": "ISLAND PANEL BEATERS & METAL FABRICATIONS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3953776",
+      "verified": false
+    },
+    {
+      "id": 10536,
+      "name": "ISSSY CASH CONVERTERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3909557",
+      "verified": false
+    },
+    {
+      "id": 10537,
+      "name": "ITALY TSWANA COMPATY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3182027",
+      "verified": false
+    },
+    {
+      "id": 10543,
+      "name": "ITSOSENG P S S",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3900713",
+      "verified": false
+    },
+    {
+      "id": 10544,
+      "name": "IVORY TOWER ENTERPRISES",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5300431",
+      "verified": false
+    },
+    {
+      "id": 10566,
+      "name": "JAPAN INTERNATIONAL COOPERATION AGENCY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912176",
+      "verified": false
+    },
+    {
+      "id": 10569,
+      "name": "JAVELIN SERVICE (PTY) LTD",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6860913",
+      "verified": false
+    },
+    {
+      "id": 10547,
+      "name": "J C MINING SERVICES T/A SEBSA HEATING & COOLING",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2615505",
+      "verified": false
+    },
+    {
+      "id": 10574,
+      "name": "JEMM COMPUTERS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2417073",
+      "verified": false
+    },
+    {
+      "id": 10576,
+      "name": "JESUS HARVESTERS MINISTRIES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3927340",
+      "verified": false
+    },
+    {
+      "id": 10579,
+      "name": "JET STATION",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3674790",
+      "verified": false
+    },
+    {
+      "id": 10577,
+      "name": "JET 3 FRANCISTOWN",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2410667",
+      "verified": false
+    },
+    {
+      "id": 10548,
+      "name": "J J MOTORS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3191522",
+      "verified": false
+    },
+    {
+      "id": 10590,
+      "name": "JOINT VENTURES",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4600590",
+      "verified": false
+    },
+    {
+      "id": 10593,
+      "name": "JOLLY BUSHMAN BOTSWANA",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2416624",
+      "verified": false
+    },
+    {
+      "id": 10596,
+      "name": "JOSNADLIZ (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3181450",
+      "verified": false
+    },
+    {
+      "id": 10557,
+      "name": "J & R SCREEN PRINTERS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2417608",
+      "verified": false
+    },
+    {
+      "id": 10556,
+      "name": "J R S VENTURES (PTY) LTD T/A HELPING HAND",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3181079",
+      "verified": false
+    },
+    {
+      "id": 10558,
+      "name": "J R T ENTERPRISES (PTY) LTD",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2613794",
+      "verified": false
+    },
+    {
+      "id": 10560,
+      "name": "J T B (BOTSWANA) (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3953891",
+      "verified": false
+    },
+    {
+      "id": 10562,
+      "name": "J T LUBRICANTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3937616",
+      "verified": false
+    },
+    {
+      "id": 10600,
+      "name": "JULESH MOTOR VEHICLE CONSULTANTS",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2414646",
+      "verified": false
+    },
+    {
+      "id": 10604,
+      "name": "JUNIOR MPHO INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3910460",
+      "verified": false
+    },
+    {
+      "id": 10603,
+      "name": "JUNIOR CHAMBER BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3932652",
+      "verified": false
+    },
+    {
+      "id": 10612,
+      "name": "JWANENG ELLERINES",
+      "city": "Jwaneng",
+      "category": "General Business",
+      "phone": "+267 5880055",
+      "verified": false
+    },
+    {
+      "id": 10611,
+      "name": "JWANENG COMMUNICATIONS PTY LTD",
+      "city": "Jwaneng",
+      "category": "General Business",
+      "phone": "+267 5880073",
+      "verified": false
+    },
+    {
+      "id": 10638,
+      "name": "KADRI INVESTMENT",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4637762",
+      "verified": false
+    },
+    {
+      "id": 10645,
+      "name": "KAGISO CUSTOMARY COURT",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2611119",
+      "verified": false
+    },
+    {
+      "id": 10642,
+      "name": "KAGISANO SOCIETY WOMENS SHELTER PROJECT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907659",
+      "verified": false
+    },
+    {
+      "id": 10655,
+      "name": "KALAHARI SALES BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3904080",
+      "verified": false
+    },
+    {
+      "id": 10653,
+      "name": "KALAHARI LUBRICANTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3901156",
+      "verified": false
+    },
+    {
+      "id": 10648,
+      "name": "KALA INVESTMENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912727",
+      "verified": false
+    },
+    {
+      "id": 10670,
+      "name": "KANYE DISTRICT COMMISSION",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5440067",
+      "verified": false
+    },
+    {
+      "id": 10675,
+      "name": "KANYE SUBORDINATE LAND BOARD",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5440679",
+      "verified": false
+    },
+    {
+      "id": 10669,
+      "name": "KANYE CHRISTIAN BOOKSHOP",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5441036",
+      "verified": false
+    },
+    {
+      "id": 10680,
+      "name": "KARINA CARPETS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3923231",
+      "verified": false
+    },
+    {
+      "id": 10676,
+      "name": "KARAKUBIS INVESTMENTS T/A WEST FOODS",
+      "city": "Ghanzi",
+      "category": "General Business",
+      "phone": "+267 6596162",
+      "verified": false
+    },
+    {
+      "id": 10681,
+      "name": "KASANE BUREAU DE CHANGE",
+      "city": "Kasane",
+      "category": "General Business",
+      "phone": "+267 6251609",
+      "verified": false
+    },
+    {
+      "id": 10688,
+      "name": "KAYJUL INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3959417",
+      "verified": false
+    },
+    {
+      "id": 10618,
+      "name": "K D C (KGATLENG DISTRICT COUNCIL)",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5777083",
+      "verified": false
+    },
+    {
+      "id": 10695,
+      "name": "KEITUMETSE STORE",
+      "city": "Otse",
+      "category": "General Business",
+      "phone": "+267 5337229",
+      "verified": false
+    },
+    {
+      "id": 10700,
+      "name": "KEMOL FEEDS",
+      "city": "Serowe",
+      "category": "General Business",
+      "phone": "+267 4600760",
+      "verified": false
+    },
+    {
+      "id": 10699,
+      "name": "KEMKLEAN (BOTSWANA) (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3924055",
+      "verified": false
+    },
+    {
+      "id": 10707,
+      "name": "KENWOOD AGENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3919315",
+      "verified": false
+    },
+    {
+      "id": 10711,
+      "name": "KETLOGETSWE & SONS BUILDING CONSTI",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5777320",
+      "verified": false
+    },
+    {
+      "id": 10718,
+      "name": "KGALAGADI LAND BOARD - DEPUTY BOARD SECRETARY",
+      "city": "Tsabong",
+      "category": "General Business",
+      "phone": "+267 6540197",
+      "verified": false
+    },
+    {
+      "id": 10721,
+      "name": "KGALAGADI LAND BOARD - SECRETARY",
+      "city": "Tsabong",
+      "category": "General Business",
+      "phone": "+267 6540213",
+      "verified": false
+    },
+    {
+      "id": 10722,
+      "name": "KGALAGADI SOUTH BRIGADE",
+      "city": "Tsabong",
+      "category": "General Business",
+      "phone": "+267 6540779",
+      "verified": false
+    },
+    {
+      "id": 10732,
+      "name": "KGATLENG DISTRICT COUNCIL ROADS DEPARTMENT",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5729086",
+      "verified": false
+    },
+    {
+      "id": 10733,
+      "name": "KGATLENG LAND BOARD (TREASURY DEPARTMENT)",
+      "city": "Mochudi",
+      "category": "General Business",
+      "phone": "+267 5777351",
+      "verified": false
+    },
+    {
+      "id": 10716,
+      "name": "KGALADY BEAUTY & BRAINS BOTIQUE",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5441826",
+      "verified": false
+    },
+    {
+      "id": 10620,
+      "name": "K G HOLDINGS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3903818",
+      "verified": false
+    },
+    {
+      "id": 10621,
+      "name": "K G M & ASSOCIATES (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3934715",
+      "verified": false
+    },
+    {
+      "id": 10739,
+      "name": "KGOMOTSO COUNSELLING CENTRE",
+      "city": "Tsabong",
+      "category": "General Business",
+      "phone": "+267 6540305",
+      "verified": false
+    },
+    {
+      "id": 10738,
+      "name": "KGOMOTSO CENTRE",
+      "city": "Molepolole",
+      "category": "General Business",
+      "phone": "+267 5920765",
+      "verified": false
+    },
+    {
+      "id": 10758,
+      "name": "KIN'S HAND",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3926255",
+      "verified": false
+    },
+    {
+      "id": 10625,
+      "name": "K K PRECISION ENGINEERING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3973772",
+      "verified": false
+    },
+    {
+      "id": 10762,
+      "name": "KOBOKWE EMBROIDERY & SCREEN PRINTING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3159616",
+      "verified": false
+    },
+    {
+      "id": 10763,
+      "name": "KOFIFI INVESTMENTS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3972170",
+      "verified": false
+    },
+    {
+      "id": 10764,
+      "name": "KOKELETSO (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3925027",
+      "verified": false
+    },
+    {
+      "id": 10770,
+      "name": "KOPANO STORE - RIVERWALK",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3700046",
+      "verified": false
+    },
+    {
+      "id": 10769,
+      "name": "KOPANO OFFICE & BUSINESS SERVICES T/A THE MIRROR",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3102229",
+      "verified": false
+    },
+    {
+      "id": 10774,
+      "name": "KOTHUBOTSHO INVESTMENT",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2418668",
+      "verified": false
+    },
+    {
+      "id": 10777,
+      "name": "KS SANOTO",
+      "city": "Sowa Town",
+      "category": "General Business",
+      "phone": "+267 6213944",
+      "verified": false
+    },
+    {
+      "id": 10632,
+      "name": "K S S R (PTY) LTD",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2613812",
+      "verified": false
+    },
+    {
+      "id": 10781,
+      "name": "KURU DKAR TRUST",
+      "city": "Ghanzi",
+      "category": "General Business",
+      "phone": "+267 6596574",
+      "verified": false
+    },
+    {
+      "id": 10788,
+      "name": "KWENA PROPERTY SERVICES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3903250",
+      "verified": false
+    },
+    {
+      "id": 10790,
+      "name": "KWENENG DISTRICT COUNCIL",
+      "city": "Molepolole",
+      "category": "General Business",
+      "phone": "+267 5920200",
+      "verified": false
+    },
+    {
+      "id": 10795,
+      "name": "KWENENG SOUTH EAST PARLIAMENTARY OFFICE",
+      "city": "Gabane",
+      "category": "General Business",
+      "phone": "+267 3947446",
+      "verified": false
+    },
+    {
+      "id": 10794,
+      "name": "KWENENG SOUTH CONSTITUENCY OFFICE",
+      "city": "Thamaga",
+      "category": "General Business",
+      "phone": "+267 5999233",
+      "verified": false
+    },
+    {
+      "id": 10820,
+      "name": "LABOUR AND HOME AFFAIRS, MINISTRY OF",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3907539",
+      "verified": false
+    },
+    {
+      "id": 10824,
+      "name": "LADY E SMART FASHIONS",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6860898",
+      "verified": false
+    },
+    {
+      "id": 10827,
+      "name": "LAFARGE GYPSUM",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3167732",
+      "verified": false
+    },
+    {
+      "id": 10798,
+      "name": "L A GEAR & TOOL COMPANY T/A PISTOL MACHINE SHOP",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3182947",
+      "verified": false
+    },
+    {
+      "id": 10832,
+      "name": "LANDSCAPE SOLUTIONS (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3121955",
+      "verified": false
+    },
+    {
+      "id": 10830,
+      "name": "LAND & LANDED BOTSWANA",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3922097",
+      "verified": false
+    },
+    {
+      "id": 10834,
+      "name": "LARLAND SALES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3901920",
+      "verified": false
+    },
+    {
+      "id": 10833,
+      "name": "LARLAND ARMATURE WINDERS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3924515",
+      "verified": false
+    },
+    {
+      "id": 10837,
+      "name": "LASER TECH",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3923121",
+      "verified": false
+    },
+    {
+      "id": 10799,
+      "name": "L A TECHNOLOGIES (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3938018",
+      "verified": false
+    },
+    {
+      "id": 10800,
+      "name": "L B A BOTSWANA (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3904941",
+      "verified": false
+    },
+    {
+      "id": 10801,
+      "name": "L & B INVESTMENTS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3928945",
+      "verified": false
+    },
+    {
+      "id": 10846,
+      "name": "LEA FRANCISTOWN (LOCAL ENTERPRISE AUTHORITY)",
+      "city": "Francistown",
+      "category": "General Business",
+      "phone": "+267 2413847",
+      "verified": false
+    },
+    {
+      "id": 10854,
+      "name": "LEGENG AGENCIES",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3903356",
+      "verified": false
+    },
+    {
+      "id": 10869,
+      "name": "LEPTURES (PTY) LTD",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3910502",
+      "verified": false
+    },
+    {
+      "id": 10872,
+      "name": "LESEDI ELECTRICAL BRIGADE",
+      "city": "Kanye",
+      "category": "General Business",
+      "phone": "+267 5440550",
+      "verified": false
+    },
+    {
+      "id": 10873,
+      "name": "LESEDI FUNERAL PARLOUR",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2600007",
+      "verified": false
+    },
+    {
+      "id": 10845,
+      "name": "LE STITCH",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3904482",
+      "verified": false
+    },
+    {
+      "id": 10882,
+      "name": "LETLHAKANE WATER AFFAIRS",
+      "city": "Letlhakane",
+      "category": "General Business",
+      "phone": "+267 2978247",
+      "verified": false
+    },
+    {
+      "id": 10893,
+      "name": "LETSOGO DEBT COLLECTORS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3939484",
+      "verified": false
+    },
+    {
+      "id": 10892,
+      "name": "LETSIBOGO DAM PROJECT",
+      "city": "Mmadinare",
+      "category": "General Business",
+      "phone": "+267 2617313",
+      "verified": false
+    },
+    {
+      "id": 10895,
+      "name": "LIFE PRIVATE HOSPITAL",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3912942",
+      "verified": false
+    },
+    {
+      "id": 10896,
+      "name": "LILGAR HOLDINGS (PTY) LTD T/A O'HAGAN'S GAME CITY",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3910956",
+      "verified": false
+    },
+    {
+      "id": 10900,
+      "name": "LINENS & LIVING",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3910987",
+      "verified": false
+    },
+    {
+      "id": 10902,
+      "name": "LIQUID DEALS (PTY) LTD T/A SERVICES FOR AFRICA",
+      "city": "Maun",
+      "category": "General Business",
+      "phone": "+267 6860663",
+      "verified": false
+    },
+    {
+      "id": 10903,
+      "name": "LITHOFLEX INKS",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3935340",
+      "verified": false
+    },
+    {
+      "id": 10906,
+      "name": "LITTLE PEOPLE BABY SHOP",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3902593",
+      "verified": false
+    },
+    {
+      "id": 10908,
+      "name": "LIVESTOCK ADVERSORY CENTRE",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2610703",
+      "verified": false
+    },
+    {
+      "id": 10812,
+      "name": "L N P INVESTMENTS",
+      "city": "Selebi-Phikwe",
+      "category": "General Business",
+      "phone": "+267 2601246",
+      "verified": false
+    },
+    {
+      "id": 10912,
+      "name": "LOBATSE BODY WORKS",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5332737",
+      "verified": false
+    },
+    {
+      "id": 10913,
+      "name": "LOBATSE BRIGADES CENTRE",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5330484",
+      "verified": false
+    },
+    {
+      "id": 10921,
+      "name": "LOBATSE POST OFFICE",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5330036",
+      "verified": false
+    },
+    {
+      "id": 10924,
+      "name": "LOBTRANSE",
+      "city": "Lobatse",
+      "category": "General Business",
+      "phone": "+267 5331348",
+      "verified": false
+    },
+    {
+      "id": 10641,
+      "name": "KAGISANO SOCIETY WOMEN SHELTER PROJECT",
+      "city": "Gaborone",
+      "category": "General Business",
+      "phone": "+267 3900516",
+      "verified": false
+    }
+  ]
+}

@@ -21,6 +21,25 @@
   <script src="scripts/HistoryTracker.js"></script>
   <script src="data/TapFo_Business_Database_V1.js"></script>
   <script src="data/Directory_Categories_V1.js"></script>
+  <script>
+    (function enforceOnboardingGate() {
+      try {
+        var path = (window.location.pathname || '').toLowerCase();
+        if (path.endsWith('onboarding.html')) return;
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('reset') === 'onboarding') return;
+
+        var raw = localStorage.getItem('tapfo_onboarding_v2');
+        var session = raw ? JSON.parse(raw) : null;
+        var complete = !!(session && session.completedAt);
+        if (!complete) {
+          window.location.replace('onboarding.html');
+        }
+      } catch (e) {
+        // Fail open to avoid blocking the app if storage is unavailable
+      }
+    })();
+  </script>
   <style>
     /* === FONTS === */
     @font-face {
@@ -271,18 +290,63 @@
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
+      background: var(--white);
     }
 
     /* ── BOTTOM NAV ── */
-    .bottom-nav {
-      flex-shrink: 0;
-      height: 56px;
-      background: var(--deep-navy);
+.bottom-nav {
       display: flex;
       align-items: center;
-      padding: 0 12px 0 16px;
-      gap: 0;
-      z-index: 20;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 16px;
+      background: var(--white);
+      border-top: 1px solid var(--grey-border);
+      z-index: 50;
+      flex-shrink: 0;
+    }
+
+    /* Universal Bottom Nav - BLUE (Directory + Promos only) */
+    .universal-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: var(--navy); /* BLUE background */
+      border-top: none;
+      z-index: 100;
+      padding: 0 16px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .universal-bottom-nav.visible {
+      display: flex;
+    }
+
+    /* Hide old bottom navs when universal is visible */
+    #page-directory .bottom-nav,
+    #page-promos .bottom-nav,
+    #page-search .bottom-nav {
+      display: none;
+    }
+
+    .universal-bottom-nav .ubn-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      height: 100%;
+      flex: 1; /* Equal spacing for all buttons */
+    }
+
+    .universal-bottom-nav .ubn-btn img {
+      filter: brightness(0) invert(1); /* Make icons white */
     }
 
     .bottom-nav .menu-btn {
@@ -712,15 +776,31 @@
       font-size: 18px;
       font-weight: 700;
       color: var(--navy);
-      flex: 1;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      text-align: left;
     }
 
     .ql-filter-row {
       display: flex;
       gap: 8px;
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
       overflow-x: auto;
-      padding: 10px 0;
+      padding: 0;
       -webkit-overflow-scrolling: touch;
+    }
+
+    #page-quicklinks .bottom-nav {
+      background: var(--deep-navy);
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    #page-quicklinks .bottom-nav .nav-link,
+    #page-quicklinks .bottom-nav .nav-dot {
+      color: var(--white);
+      opacity: 0.95;
     }
 
     .ql-filter-btn {
@@ -1686,10 +1766,14 @@
       flex-shrink: 0;
       height: 46px;
       background: #f6f6f6;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
+    }
+
+    .secondary-nav.visible {
+      display: flex;
     }
 
     .secondary-nav span {
@@ -2364,6 +2448,8 @@
    LOCATION FILTER PANEL
 ══════════════════════════════════════ */
     #page-location {
+      display: flex;
+      flex-direction: column;
       background: var(--white);
     }
 
@@ -2565,6 +2651,11 @@
       z-index: 100;
       transition: transform 0.3s ease;
       pointer-events: none;
+      display: none;
+    }
+
+    .promo-secondary-nav.visible {
+      display: block;
     }
 
     .promo-secondary-inner {
@@ -3193,6 +3284,7 @@
     .profile-body {
       flex: 1;
       overflow-y: auto;
+      background: var(--white);
     }
 
     .profile-section-card {
@@ -3236,12 +3328,57 @@
     }
 
     .interest-pill {
-      background: var(--navy);
-      color: var(--white);
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid var(--navy);
       border-radius: 8px;
       padding: 6px 14px;
       font-size: 13px;
       font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .interest-pill.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .interest-pill:active {
+      transform: scale(0.95);
+    }
+
+    .nest-btn {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background: var(--grey-light);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nest-btn:active {
+      background: var(--grey-border);
+    }
+
+    .nest-btn-icon {
+      font-size: 20px;
+      margin-right: 12px;
+    }
+
+    .nest-btn-text {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+    }
+
+    .nest-btn-count {
+      font-size: 13px;
+      color: var(--grey-text);
     }
 
     .education-item {
@@ -3845,21 +3982,28 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    /* ══ SEARCH PAGE — fully absolute layout ══ */
+    /* ══ SEARCH PAGE — flex layout (global system compatible) ══ */
 
     #page-search {
-      position: absolute !important;
-      inset: 0 !important;
-      display: block !important;
+      display: none;
+      /* Default hidden */
+      flex-direction: column;
       background: #ffffff;
       overflow: hidden;
+      padding-bottom: 56px; /* Space for universal-bottom-nav */
     }
 
+    #page-search.active {
+      display: flex !important;
+    }
+
+    /* Ensure correct flex order: header → results → bottom-bar */
+    #page-search #search-header { order: 1; flex-shrink: 0; }
+    #page-search #results-list { order: 2; }
+    #page-search #search-bottom-bar { order: 3; }
+
     #search-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      flex-shrink: 0;
       height: 56px;
       display: flex;
       align-items: center;
@@ -3906,24 +4050,17 @@
     }
 
     #results-list {
-      position: absolute !important;
-      top: 56px;
-      left: 0;
-      right: 0;
-      bottom: 148px;
+      flex: 1;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       background: #ffffff;
     }
 
     #search-bottom-bar {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 56px;
+      flex-shrink: 0;
       background: #ffffff;
       border-top: 1px solid #e8e8e8;
-      padding: 10px 16px 8px;
+      padding: 10px 16px;
       z-index: 2;
     }
 
@@ -3941,13 +4078,14 @@
     }
 
     #search-bottom-nav {
-      position: absolute !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      height: 56px !important;
-      justify-content: space-around !important;
-      padding: 0 10px !important;
+      flex-shrink: 0;
+      height: 56px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10px;
+      background: #ffffff;
+      border-top: 1px solid #e8e8e8;
       z-index: 3;
     }
   </style>
@@ -4033,10 +4171,10 @@
           </div> <!-- Close .home-scroll-area -->
         </div> <!-- Close #page-home -->
 
-        <!-- ══════════════════════════════════════
-     SEARCH PAGE
-══════════════════════════════════════ -->
-        <div class="page" id="page-search" style="display:block;overflow:hidden;">
+<!-- ══════════════════════════════════════
+      SEARCH PAGE
+      ══════════════════════════════════════ -->
+        <div class="page" id="page-search">
 
           <!-- TOP HEADER: "Searching" label + filter tabs -->
           <div id="search-header">
@@ -4065,6 +4203,7 @@
               oninput="performSearch(this.value)" />
             <div id="search-location-row">
               <button class="loc-btn" id="search-city-btn" onclick="openLocationFilter('city')">Gaborone</button>
+              <span style="color:var(--grey-text);margin:0 4px;">•</span>
               <button class="loc-btn" id="search-area-btn" onclick="openLocationFilter('area')">All Areas</button>
             </div>
           </div>
@@ -4141,7 +4280,7 @@
               <!-- Dynamic Content -->
             </div>
           </div>
-          <div class="secondary-nav">
+          <div class="secondary-nav" id="secondary-nav">
             <span id="dir-city-label">Gaborone</span>
             <span id="dir-area-label">All Areas</span>
           </div>
@@ -4356,7 +4495,7 @@
           <div class="profile-tabs-bar">
             <button class="profile-tab active" onclick="setProfileTab('interests',this)">Interests</button>
             <button class="profile-tab" onclick="setProfileTab('education',this)">Education</button>
-            <button class="profile-tab" onclick="setProfileTab('notes',this)">Notes</button>
+            <button class="profile-tab" onclick="setProfileTab('nest',this)">Nest</button>
             <button class="profile-tab" onclick="setProfileTab('wallet',this)">Wallet</button>
             <button class="profile-tab" onclick="setProfileTab('caps',this)">Caps</button>
           </div>
@@ -4590,12 +4729,12 @@
 ══════════════════════════════════════ -->
         <div id="overlay-menu">
           <div class="menu-header" onclick="closeMenu();showPage('profile')" style="cursor:pointer;">
-            <div class="menu-avatar"
-              style="width:70px; height:70px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:28px; font-weight:700; color:var(--navy);">
+            <div class="menu-avatar" onclick="event.stopPropagation();changeProfileImage()"
+              style="width:70px; height:70px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:28px; font-weight:700; color:var(--navy); cursor:pointer;">
               ?</div>
             <div class="menu-header-text">
-              <div class="menu-profile-name"
-                style="color:var(--white); font-size:20px; font-weight:700; margin-bottom:2px;">Your Profile</div>
+              <div class="menu-profile-name" onclick="event.stopPropagation();changeProfileName()"
+                style="color:var(--white); font-size:20px; font-weight:700; margin-bottom:2px; cursor:pointer;">Your Profile</div>
               <div class="menu-profile-handle" style="color:rgba(255,255,255,0.6); font-size:14px;">@handle</div>
               <div
                 style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.05em;">
@@ -4700,13 +4839,7 @@
           <!-- TOP LEVEL: header + filter row -->
           <div class="ql-top-bar">
             <div class="ql-header-row">
-              <button class="ql-back-btn" onclick="goBack()">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
-                  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-                </svg>
-              </button>
-              <span class="ql-title" id="ql-title">Quick
-                Links</span>
+              <span class="ql-title" id="ql-title">Quick Links</span>
 
               <!-- Quick Link Menu Row -->
               <div class="ql-filter-row" id="ql-filter-row">
@@ -4812,8 +4945,45 @@
           </nav>
         </div>
 
+      ITEMS PAGE
+      ══════════════════════════════════════ -->
+        <div class="page" id="page-items">
+          <div class="sums-top">
+            <button class="ql-back-btn" onclick="goBack()">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--navy)">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+              </svg>
+            </button>
+            <span style="font-size:18px;font-weight:700;color:var(--navy);flex:1;">Items</span>
+            <button class="sums-add-btn" onclick="showToast('Create Item coming soon')">+</button>
+          </div>
+
+          <div class="sums-body" id="items-body" style="flex:1;overflow-y:auto;">
+            <!-- filled by JS -->
+          </div>
+        </div>
+
       </div><!-- end #body-level -->
     </div><!-- end #app -->
+
+    <!-- Universal Bottom Nav (Directory + Promos + Search only) -->
+    <nav class="universal-bottom-nav" id="universal-bottom-nav">
+      <button class="ubn-btn" onclick="navigateToPage('home')">
+        <img src="assets/icons/Home_Button_white.png" alt="Home" style="width:24px;height:24px;">
+      </button>
+      <button class="ubn-btn" onclick="navigateToPage('search')">
+        <img src="assets/icons/Search_Button_white.png" alt="Search" style="width:24px;height:24px;">
+      </button>
+      <button class="ubn-btn" id="ubn-directory" onclick="navigateToPage('directory')">
+        <img src="assets/icons/Directory_Icon.svg" alt="Directory" style="width:24px;height:24px;">
+      </button>
+      <button class="ubn-btn" id="ubn-promos" onclick="navigateToPage('promos')">
+        <img src="assets/icons/Promo_Icon.svg" alt="Promos" style="width:24px;height:24px;">
+      </button>
+      <button class="ubn-btn" onclick="openMenu()">
+        <img src="assets/icons/Menu_Button_white.png" alt="Menu" style="width:24px;height:24px;">
+      </button>
+    </nav>
   </div><!-- end #app-shell -->
   <script>
     // ══════════════════════════════════════
@@ -4910,6 +5080,14 @@
 
       userProfile: {
         interests: ["Finance", "Health & Wellness", "Technology", "Real Estate", "Food & Beverage", "Sports", "Music", "Agriculture"],
+        // All available interests for users to toggle
+        availableInterests: [
+          "Finance", "Health & Wellness", "Technology", "Real Estate", "Food & Beverage", 
+          "Sports", "Music", "Agriculture", "Beauty & Grooming", "Education", "Transport",
+          "Shopping", "Entertainment", "Travel", "Fitness", "Fashion", "Home & Garden",
+          "Automotive", "Business Services", "Legal", "Marketing", "IT Services",
+          "Construction", "Healthcare", "Restaurants", "Hotels", "Media", "Government"
+        ],
         education: [{ institution: "University of Botswana", qualification: "Bachelor of Commerce (Finance)", year: "2018" }, { institution: "Botswana Accountancy College", qualification: "ACCA Level 2", year: "2020" }],
         notes: [
           { id: 1, title: "Grocery Price Watch — Gaborone West", date: "20 Feb 2026", items: 8, desc: "Tracking grocery prices across 3 stores." },
@@ -4930,6 +5108,7 @@
       currentCity: 'Gaborone',
       currentArea: 'All Areas',
       locFilter: 'city', // or 'area'
+      locationReturnPage: null,
       searchQuery: '',
       searchFilter: 'All',
       bizFavs: new Set([1]),
@@ -4954,10 +5133,52 @@
     };
 
     // ══════════════════════════════════════
+    // UNIVERSAL BOTTOM NAV
+    // ══════════════════════════════════════
+    const universalBottomNav = document.getElementById('universal-bottom-nav');
+    const ubnDirectory = document.getElementById('ubn-directory');
+    const ubnPromos = document.getElementById('ubn-promos');
+
+    function showUniversalBottomNav(pageId) {
+      if (!universalBottomNav) return;
+      
+      // Show on Directory, Promos, Search, Profile, Notes, Items, Sums, Location
+      if (pageId === 'directory' || pageId === 'promos' || pageId === 'search' || pageId === 'profile' || pageId === 'notes' || pageId === 'items' || pageId === 'sums' || pageId === 'location') {
+        universalBottomNav.classList.add('visible');
+        
+        // Update active state
+        if (pageId === 'directory') {
+          ubnDirectory.classList.add('active');
+          ubnPromos.classList.remove('active');
+        } else if (pageId === 'promos') {
+          ubnPromos.classList.add('active');
+          ubnDirectory.classList.remove('active');
+        } else {
+          // search/profile/notes/items/sums - clear both active states
+          ubnDirectory.classList.remove('active');
+          ubnPromos.classList.remove('active');
+        }
+      } else {
+        universalBottomNav.classList.remove('visible');
+      }
+    }
+
+    // ══════════════════════════════════════
     // PAGE NAVIGATION
     // ══════════════════════════════════════
     function showPage(pageId, subAction) {
       const prevPage = state.currentPage;
+
+      // FIX: If leaving location page to another page, immediately yank it off-screen
+      // so it cannot paint over the incoming page during the slide animation.
+      const locationEl = document.getElementById('page-location');
+      if (locationEl && locationEl.classList.contains('active') && pageId !== 'location') {
+        locationEl.style.transition = 'none';
+        locationEl.style.transform = 'translateY(100%)';
+        locationEl.classList.remove('active', 'exit-up');
+        requestAnimationFrame(() => { locationEl.style.transition = ''; locationEl.style.transform = ''; });
+      }
+
       if (prevPage === pageId && !subAction) return;
 
       // Handle special subActions
@@ -4970,6 +5191,14 @@
       const nextEl = document.getElementById('page-' + pageId);
 
       if (!nextEl) return;
+
+      // FIX: slide the previous page out
+      if (prevEl) {
+        prevEl.classList.add('exit-up');
+        setTimeout(() => {
+          prevEl.classList.remove('active', 'exit-up');
+        }, 320);
+      }
 
       // Initialise page content before showing
       initPage(pageId, subAction);
@@ -5122,6 +5351,15 @@
     }
 
     function goBack() {
+      // FIX: If leaving location page, immediately yank it off-screen
+      const locationEl = document.getElementById('page-location');
+      if (locationEl && locationEl.classList.contains('active')) {
+        locationEl.style.transition = 'none';
+        locationEl.style.transform = 'translateY(100%)';
+        locationEl.classList.remove('active', 'exit-up');
+        requestAnimationFrame(() => { locationEl.style.transition = ''; locationEl.style.transform = ''; });
+      }
+
       if (state.pageStack.length <= 1) {
         navigateToPage('home');
         return;
@@ -5139,6 +5377,11 @@
         setTimeout(() => {
           currentEl.classList.remove('active', 'exit-up');
         }, 320);
+      }
+
+      // Activate previous page
+      if (prevEl) {
+        prevEl.classList.add('active');
       }
 
       // Update Nav states
@@ -5194,6 +5437,17 @@
     }
 
     function navigateToPage(pageId) {
+      // FIX: If leaving location page to another page, immediately yank it off-screen
+      // so it cannot paint over the incoming page during the slide animation.
+      const locationEl = document.getElementById('page-location');
+      if (locationEl && locationEl.classList.contains('active') && pageId !== 'location') {
+        locationEl.style.transition = 'none';
+        locationEl.style.transform = 'translateY(100%)';
+        locationEl.classList.remove('active', 'exit-up');
+        // Re-enable transition after one frame so future animations work
+        requestAnimationFrame(() => { locationEl.style.transition = ''; locationEl.style.transform = ''; });
+      }
+
       if (pageId === 'events') {
         navigateToPage('promos');
         if (typeof switchPromoPanel === 'function') switchPromoPanel(1);
@@ -5236,6 +5490,9 @@
     }
 
     function initPage(pageId, subAction) {
+      // Show/hide universal bottom nav based on page
+      showUniversalBottomNav(pageId);
+      
       switch (pageId) {
         case 'directory': renderDirectory(); break;
         case 'business': renderBusinessProfile(state.currentBusiness); break;
@@ -5248,6 +5505,12 @@
         case 'trusted': renderTrustedPanel(); break;
         case 'sums': renderSums(); break;
         case 'items': renderItems(); break;
+        case 'search': 
+          // Initialize buttons to current state before searching
+          document.getElementById('search-city-btn').textContent = state.currentCity;
+          document.getElementById('search-area-btn').textContent = state.currentArea;
+          performSearch(''); 
+          break;
         case 'history': renderHistory(); break;
         case 'wonda': renderWonda(); break;
         case 'accounts': renderAccounts(); break;
@@ -5270,12 +5533,7 @@
     // SEARCH
     // ══════════════════════════════════════
     function openSearch() {
-      const searchEl = document.getElementById('page-search');
-      searchEl.classList.add('active');
-      document.getElementById('page-home').classList.remove('active');
-      document.getElementById('page-home').classList.add('slide-left');
-      state.pageStack.push('search');
-      state.currentPage = 'search';
+      navigateToPage('search');
       document.getElementById('search-input').value = '';
       performSearch('');
       setTimeout(() => document.getElementById('search-input').focus(), 100);
@@ -5571,6 +5829,11 @@
       state.currentDirCat = cat;
       state.currentDirTab = 'all';
       document.getElementById('cat-selector').classList.remove('open');
+      
+      // Show secondary-nav when category is selected
+      const secNav = document.getElementById('secondary-nav');
+      if (secNav) secNav.classList.add('visible');
+      
       renderDirectory();
     }
 
@@ -5582,12 +5845,18 @@
     function toggleAddActionPanel() {
       const panel = document.getElementById('add-action-panel');
       const overlay = document.getElementById('add-action-overlay');
-      if (panel.style.bottom === '0px') {
+      
+      // Use data attribute to track state instead of checking style.bottom
+      const isOpen = panel.dataset.open === 'true';
+      
+      if (isOpen) {
         panel.style.bottom = '-100%';
         overlay.style.display = 'none';
+        panel.dataset.open = 'false';
       } else {
         panel.style.bottom = '0px';
         overlay.style.display = 'block';
+        panel.dataset.open = 'true';
       }
     }
 
@@ -6096,6 +6365,10 @@
         document.getElementById('breadcrumb-sub-cat').textContent = 'All Adverts';
       }
 
+      // Show promo-secondary-nav when category is selected
+      const promoSecNav = document.getElementById('promo-secondary-nav');
+      if (promoSecNav) promoSecNav.classList.add('visible');
+
       renderCurrentPromoLevel();
     }
 
@@ -6327,16 +6600,41 @@
       renderProfileTab(tab);
     }
 
+    function toggleInterest(interest) {
+      const p = DB.userProfile;
+      if (!p.interests) p.interests = [];
+      
+      const idx = p.interests.indexOf(interest);
+      if (idx > -1) {
+        // Remove interest
+        p.interests.splice(idx, 1);
+        showToast(interest + ' removed');
+      } else {
+        // Add interest
+        p.interests.push(interest);
+        showToast(interest + ' added');
+      }
+      
+      // Re-render interests tab
+      renderProfileTab('interests');
+    }
+
     function renderProfileTab(tab) {
       const body = document.getElementById('profile-body');
       const p = DB.userProfile;
       const activeAcc = DB_ACCOUNTS.find(a => a.id === state.activeAccount);
 
       if (tab === 'interests') {
+        const userInterests = p.interests || [];
+        const allInterests = p.availableInterests || [];
+        
         body.innerHTML = `
       <div class="profile-section-card">
-        <div class="profile-section-header">Interests <button class="add-btn" onclick="showToast('Add interest coming soon')">+ Add</button></div>
-        <div class="interest-pills">${p.interests.map(i => `<span class="interest-pill">${i}</span>`).join('')}</div>
+        <div class="profile-section-header">Interests <span style="font-size:12px;font-weight:400;color:var(--grey-text)">Tap to toggle</span></div>
+        <div class="interest-pills">${allInterests.map(interest => {
+          const isActive = userInterests.includes(interest);
+          return `<span class="interest-pill ${isActive ? 'active' : ''}" onclick="toggleInterest('${interest}')">${interest}</span>`;
+        }).join('')}</div>
       </div>`;
       } else if (tab === 'education') {
         body.innerHTML = `
@@ -6349,20 +6647,31 @@
             <div class="edu-year">${e.year}</div>
           </div>`).join('')}
       </div>`;
-      } else if (tab === 'notes') {
+      } else if (tab === 'nest') {
+        const allItems = window.DB_ITEMS || [];
+        const userNotes = p.notes || [];
+        const allSums = window.DB_SUMS || [];
+
         body.innerHTML = `
       <div class="profile-section-card">
-        <div class="profile-section-header">Your Notes</div>
-        ${p.notes.map(n => `
-          <div class="note-card" style="margin:0;border-radius:0;box-shadow:none;" onclick="showPage('notes')">
-            <div class="note-card-header">
-              <div>
-                <div class="note-card-title">${n.title}</div>
-                <div class="note-card-date">${n.date}</div>
-              </div>
-              <div class="note-card-count">${n.items} items</div>
-            </div>
-          </div>`).join('')}
+        <div class="profile-section-header">Nest</div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:16px;">
+          <button class="nest-btn" onclick="showPage('items')">
+            <span class="nest-btn-icon">📦</span>
+            <span class="nest-btn-text">Items</span>
+            <span class="nest-btn-count">${allItems.length}</span>
+          </button>
+          <button class="nest-btn" onclick="showPage('notes')">
+            <span class="nest-btn-icon">📝</span>
+            <span class="nest-btn-text">Notes</span>
+            <span class="nest-btn-count">${userNotes.length}</span>
+          </button>
+          <button class="nest-btn" onclick="showPage('sums')">
+            <span class="nest-btn-icon">🧮</span>
+            <span class="nest-btn-text">Sums</span>
+            <span class="nest-btn-count">${allSums.length}</span>
+          </button>
+        </div>
       </div>`;
       } else if (tab === 'wallet') {
         const stats = window.PulseUpdater ? window.PulseUpdater.getPulseStats() : {};
@@ -6426,50 +6735,51 @@
     // ══════════════════════════════════════
     function renderNotes() {
       const body = document.getElementById('notes-body');
-      const p = DB.userProfile;
+      const notes = DB_NOTES || [];
 
-      body.innerHTML = `
-    <div style="padding:12px 16px 0;">
-      <button class="note-add-btn" onclick="showToast('Create Note coming soon')">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--grey-text)"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-        Create a Note
-      </button>
-    </div>
-    
-    ${p.notes.map(n => `
-      <div class="note-card" onclick="showToast('Opening note: ${n.title}')">
-        <div class="note-card-header">
-          <div>
-            <div class="note-card-title">${n.title}</div>
-            <div class="note-card-date">${n.date}</div>
+      if (!notes.length) {
+        body.innerHTML = `<div style="padding:48px;text-align:center;color:var(--grey-text);">No notes yet. Create one from a Sum.</div>`;
+        return;
+      }
+
+      body.innerHTML = notes.map(n => `
+        <div class="sum-card">
+          <div class="sum-card-header" onclick="toggleNoteItems(${n.id})">
+            <div class="sum-card-color" style="background:${n.color || '#6366f1'};"></div>
+            <div class="sum-card-info">
+              <div class="sum-card-title">${n.title}</div>
+              <div class="sum-card-meta">${n.date} · ${n.sumTitle || ''}</div>
+              <span class="sum-card-count">${n.itemCount} Items</span>
+            </div>
           </div>
-          <div class="note-card-count">${n.items} items</div>
-        </div>
-        <div style="padding:12px 16px 14px;">
-          <div style="font-size:13px;color:var(--body-text);">${n.desc}</div>
-        </div>
-      </div>`).join('')}
-    
-    <div style="padding:8px 16px 16px;">
-      <div class="note-level-btn" onclick="showToast('Create Item coming soon')">
-        <div style="flex-direction:column;display:flex;">
-          <div class="note-level-top" style="background:#00d69c;">Create Item</div>
-          <div class="note-level-bottom">Create an Item to add to your Note</div>
-        </div>
-      </div>
-      <div class="note-level-btn" onclick="showToast('View Items coming soon')">
-        <div style="flex-direction:column;display:flex;">
-          <div class="note-level-top" style="background:#04b484;">View Items</div>
-          <div class="note-level-bottom">View Items listed on TapFo</div>
-        </div>
-      </div>
-      <div class="note-level-btn" onclick="showToast('Create Note coming soon')">
-        <div style="flex-direction:column;display:flex;">
-          <div class="note-level-top" style="background:#097f5f;">Create A Note</div>
-          <div class="note-level-bottom">Create a Note to add Items to</div>
-        </div>
-      </div>
-    </div>`;
+          <div class="sum-notes-list" id="note-items-${n.id}">
+            ${renderNoteItemsList(n.id)}
+            <div style="padding:10px 16px;">
+              <button style="background:none;border:1px dashed var(--grey-border);border-radius:8px;padding:8px 16px;font-family:var(--font);font-size:13px;color:var(--grey-text);cursor:pointer;width:100%;" onclick="showToast('Add Item to this Note coming soon')">+ Add Item</button>
+            </div>
+          </div>
+        </div>`).join('');
+    }
+
+    function renderNoteItemsList(noteId) {
+      const items = DB_ITEMS.filter(i => i.noteId === noteId);
+      if (!items.length) return `<div style="padding:16px;font-size:13px;color:var(--grey-text);">No items in this note.</div>`;
+      return items.map(i => `
+        <div class="note-row" onclick="openItemDetail(${i.id})">
+          <div class="note-row-dot"></div>
+          <div class="note-row-title">${i.title}</div>
+          <div class="note-row-count">${i.type}</div>
+        </div>`).join('');
+    }
+
+    function toggleNoteItems(noteId) {
+      const el = document.getElementById('note-items-' + noteId);
+      if (el) el.classList.toggle('open');
+    }
+
+    function openItemDetail(itemId) {
+      const item = DB_ITEMS.find(i => i.id === itemId);
+      if (item) showToast('Item: ' + item.title);
     }
 
     // ══════════════════════════════════════
@@ -6524,6 +6834,8 @@
     // ══════════════════════════════════════
     function openLocationFilter(type) {
       state.locFilter = type;
+      // Capture return page BEFORE navigating to location page
+      state.locationReturnPage = state.currentPage;
 
       const titleEl = document.getElementById('loc-page-title');
       const subtitleEl = document.getElementById('loc-subtitle');
@@ -6552,30 +6864,51 @@
       }
 
       list.innerHTML = items.map(item => `
-    <div class="location-list-item" onclick="selectLocation('${item.name}')">
-      <div class="loc-indicator ${item.active ? 'active' : item.fav ? 'fav' : ''}"></div>
-      <span class="loc-name">${item.name}</span>
-      ${type === 'area' && item.fav ? '<span class="loc-star">⭐</span>' : ''}
-    </div>`).join('');
+        <div class="location-list-item" style="cursor:pointer;" onclick="selectLocation('${item.name}')">
+          <div class="loc-indicator ${item.active ? 'active' : item.fav ? 'fav' : ''}"></div>
+          <span class="loc-name">${item.name}</span>
+          ${type === 'area' && item.fav ? '<span class="loc-star">⭐</span>' : ''}
+        </div>`).join('');
+      // Ensure search buttons reflect current state after rendering
+      if (typeof refreshSearchLocationButtons === 'function') refreshSearchLocationButtons();
     }
 
     function selectLocation(name) {
+      // Update state first
       if (state.locFilter === 'city') {
         state.currentCity = name;
         state.currentArea = 'All Areas';
-        document.getElementById('home-city').textContent = name;
-        document.getElementById('home-area').textContent = 'All Areas';
       } else {
         state.currentArea = name;
-        document.getElementById('home-area').textContent = name;
       }
 
-      // Trigger re-renders
+      // ALWAYS update search buttons FIRST (resilient - handles missing elements)
+      var cityBtn = document.getElementById('search-city-btn');
+      var areaBtn = document.getElementById('search-area-btn');
+      if (cityBtn) cityBtn.textContent = state.currentCity;
+      if (areaBtn) areaBtn.textContent = state.currentArea;
+
+      // Trigger re-renders only if on those pages
       if (state.currentPage === 'directory') renderDirectory();
-      if (state.currentPage === 'search') performSearch(document.getElementById('search-input').value);
+      if (state.currentPage === 'search') performSearch('');
 
       showToast('Location set to ' + name);
-      goBack();
+
+      // Return to the page that opened the location picker
+      var returnPage = state.locationReturnPage;
+      state.locationReturnPage = null;
+      // Fallback: never return to 'location' page
+      if (returnPage === 'location' || !returnPage) {
+        returnPage = 'search';
+      }
+      showPage(returnPage);
+    }
+
+    function refreshSearchLocationButtons() {
+      var cityBtn = document.getElementById('search-city-btn');
+      var areaBtn = document.getElementById('search-area-btn');
+      if (cityBtn) cityBtn.textContent = state.currentCity;
+      if (areaBtn) areaBtn.textContent = state.currentArea;
     }
 
     // ══════════════════════════════════════
@@ -6913,6 +7246,18 @@
       { id: 7, noteId: 31, title: 'Dr Tlhowe — Physio Contact Card', type: 'html', desc: 'Full contact card saved from directory.', tags: ['physiotherapy', 'health', 'trusted'] },
     ];
 
+    window.DB_ITEMS = DB_ITEMS;
+    window.DB_SUMS = DB_SUMS;
+
+    // Create flat DB_NOTES from all Sums' notes
+    const DB_NOTES = [];
+    DB_SUMS.forEach(s => {
+      s.notes.forEach(n => {
+        DB_NOTES.push({ ...n, sumId: s.id, color: s.color, sumTitle: s.title });
+      });
+    });
+    window.DB_NOTES = DB_NOTES;
+
     let currentItemsFilter = 'All';
     let currentNoteId = null;
 
@@ -6939,14 +7284,36 @@
         return;
       }
       body.innerHTML = items.map(item => `
-            <div class="item-card" onclick="showToast('Opening item: ${item.title.substring(0, 30)}...')">
-              <span class="item-type-badge ${item.type}">${item.type.toUpperCase()}</span>
-              <div class="item-info">
-                <div class="item-title">${item.title}</div>
-                <div class="item-desc">${item.desc}</div>
-                <div class="item-tags">${item.tags.map(t => `<span class="item-tag">${t}</span>`).join('')}</div>
-              </div>
-            </div>`).join('');
+        <div class="sum-card">
+          <div class="sum-card-header" onclick="toggleItemDetail(${item.id})">
+            <div class="sum-card-color" style="background:${getItemTypeColor(item.type)};"></div>
+            <div class="sum-card-info">
+              <div class="sum-card-title">${item.title}</div>
+              <div class="sum-card-meta">${item.type.toUpperCase()} · ${item.desc.substring(0, 35)}${item.desc.length > 35 ? '...' : ''}</div>
+              <span class="sum-card-count">${item.tags.length} Tags</span>
+            </div>
+          </div>
+          <div class="sum-notes-list" id="item-detail-${item.id}">
+            <div style="padding:12px 16px;">
+              <div style="font-size:13px;margin-bottom:8px;color:var(--navy);"><strong>Type:</strong> ${item.type}</div>
+              <div style="font-size:13px;margin-bottom:12px;color:var(--body-text);"><strong>Description:</strong> ${item.desc}</div>
+              <div><strong>Tags:</strong> ${item.tags.map(t => `<span class="item-tag">${t}</span>`).join('')}</div>
+            </div>
+            <div style="padding:10px 16px;">
+              <button style="background:none;border:1px dashed var(--grey-border);border-radius:8px;padding:8px 16px;font-family:var(--font);font-size:13px;color:var(--grey-text);cursor:pointer;width:100%;" onclick="showToast('Edit Item coming soon')">Edit Item</button>
+            </div>
+          </div>
+        </div>`).join('');
+    }
+
+    function getItemTypeColor(type) {
+      const colors = { image: '#3b82f6', audio: '#ef4444', video: '#a855f7', html: '#22c55e' };
+      return colors[type] || '#6b7280';
+    }
+
+    function toggleItemDetail(itemId) {
+      const el = document.getElementById('item-detail-' + itemId);
+      if (el) el.classList.toggle('open');
     }
 
     function setItemsFilter(filter, btn) {
@@ -7198,6 +7565,21 @@
       if (menuAvatar) menuAvatar.textContent = (acc.name[0] || '?').toUpperCase();
     }
 
+    function changeProfileImage() {
+      showToast('Change profile image coming soon');
+    }
+
+    function changeProfileName() {
+      const acc = DB_ACCOUNTS.find(a => a.id === state.activeAccount);
+      if (!acc) return;
+      const newName = prompt('Enter your name:', acc.name);
+      if (newName && newName.trim()) {
+        acc.name = newName.trim();
+        updateMenuHeader();
+        showToast('Name updated to ' + acc.name);
+      }
+    }
+
     function closeAccountsAndGoHome() {
       goBack();
       navigateToPage('home');
@@ -7207,6 +7589,38 @@
 
     // Homepage Swipe already initialized above.
 
+  // Location API for reactive location UI
+  window.LocationAPI = {
+    selectLocation: function(name) {
+      if (state.locFilter === 'city') {
+        state.currentCity = name;
+        state.currentArea = 'All Areas';
+        var cityEl = document.getElementById('home-city');
+        var areaEl = document.getElementById('home-area');
+        if (cityEl) cityEl.textContent = name;
+        if (areaEl) areaEl.textContent = 'All Areas';
+      } else {
+        state.currentArea = name;
+        var areaEl = document.getElementById('home-area');
+        if (areaEl) areaEl.textContent = name;
+      }
+      var cityBtn = document.getElementById('search-city-btn');
+      var areaBtn = document.getElementById('search-area-btn');
+      if (cityBtn) cityBtn.textContent = state.currentCity;
+      if (areaBtn) areaBtn.textContent = state.currentArea;
+      if (state.currentPage === 'directory') renderDirectory();
+      if (state.currentPage === 'search') performSearch(document.getElementById('search-input').value);
+      showToast('Location set to ' + name);
+      goBack();
+    },
+    initUI: function() {
+      var cityBtn = document.getElementById('search-city-btn');
+      var areaBtn = document.getElementById('search-area-btn');
+      if (cityBtn) cityBtn.textContent = state.currentCity;
+      if (areaBtn) areaBtn.textContent = state.currentArea;
+    }
+  };
+
   </script>
   <!-- end #body-level -->
   <!-- end #app -->
@@ -7214,3 +7628,4 @@
 </body>
 
 </html>
+ 

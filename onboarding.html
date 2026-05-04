@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#123456">
+  <title>TapFo Onboarding</title>
+  <style>
+    :root {
+      --navy: #1a5276;
+      --deep-navy: #123456;
+      --white: #ffffff;
+      --grey-1: #f3f4f6;
+      --grey-2: #d1d5db;
+      --grey-3: #9ca3af;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --ok: #15803d;
+      --warn: #b45309;
+      --error: #dc2626;
+      --radius: 12px;
+      --font: 'PTSans', sans-serif;
+    }
+
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-Regular.ttf');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: 'PTSans';
+      src: url('assets/fonts/PTSans-Bold.ttf');
+      font-weight: 700;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      min-height: 100dvh;
+      font-family: var(--font);
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fa 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #app {
+      max-width: 520px;
+      margin: 0 auto;
+      min-height: 100dvh;
+      padding: 16px 16px 100px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 16px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: var(--deep-navy);
+      font-weight: 700;
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      font-size: 24px;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .close-btn:hover { background: var(--grey-1); }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius);
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(18, 52, 86, 0.06);
+      margin-bottom: 12px;
+    }
+
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accordion-btn {
+      width: 100%;
+      padding: 16px 14px;
+      border: none;
+      background: var(--white);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--grey-1);
+      transition: background 150ms;
+    }
+
+    .accordion-btn:hover { background: var(--grey-1); }
+    .accordion-btn:last-child { border-bottom: none; }
+
+    .accordion-btn::after {
+      content: '+';
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .accordion-btn.expanded::after {
+      content: '-';
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 14px;
+      background: #fafbfc;
+      border-top: 1px solid var(--grey-1);
+    }
+
+    .accordion-content.show { display: block; }
+
+    .sub-section {
+      margin-bottom: 12px;
+    }
+
+    .sub-btn {
+      width: 100%;
+      padding: 12px 10px;
+      border: 1px solid var(--grey-2);
+      background: var(--white);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .sub-btn::after {
+      content: '+';
+      font-size: 16px;
+      color: var(--navy);
+    }
+
+    .sub-btn.expanded::after {
+      content: '-';
+    }
+
+    .sub-content {
+      display: none;
+      padding: 12px;
+      background: var(--white);
+      border: 1px solid var(--grey-2);
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .sub-content.show { display: block; }
+
+    details {
+      border: 1px solid var(--grey-2);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    details:last-child { margin-bottom: 0; }
+
+    summary {
+      list-style: none;
+      padding: 12px 10px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 16px;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: '-';
+    }
+
+    .details-inner {
+      padding: 12px;
+      background: #fafbfc;
+      border-top: 1px solid var(--grey-1);
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group:last-child { margin-bottom: 0; }
+
+    /* removed form-label */
+
+    .form-input, .form-select {
+      width: 100%;
+      height: 42px;
+      border: 1px solid var(--grey-2);
+      border-radius: 8px;
+      padding: 0 12px;
+      font: inherit;
+      font-size: 14px;
+      background: var(--white);
+      color: var(--text);
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--navy);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .toggle-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      height: 42px;
+      border: 1px solid var(--grey-2);
+      background: var(--white);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .toggle-btn.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .add-btn {
+      width: 100%;
+      height: 42px;
+      border: 1px dashed var(--grey-2);
+      background: transparent;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid var(--grey-2);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .item-row input { flex: 1; }
+
+    .remove-btn {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: #fee2e2;
+      color: var(--error);
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border: 1px solid var(--grey-2);
+      background: var(--white);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .pill:hover { border-color: var(--grey-3); }
+
+    .pill.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--grey-1);
+      margin: 12px 0;
+    }
+
+    .divider-text {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .account-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .account-btn {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--grey-2);
+      background: var(--white);
+      border-radius: 10px;
+      font: inherit;
+      font-size: 13px;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .account-btn:hover {
+      background: var(--grey-1);
+    }
+
+    .account-btn span.type {
+      font-size: 11px;
+      color: var(--muted);
+      padding: 2px 8px;
+      background: var(--grey-1);
+      border-radius: 4px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      background: var(--white);
+      border-top: 1px solid var(--grey-1);
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      height: 44px;
+      padding: 0 16px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background: var(--grey-1);
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      flex: 1;
+    }
+
+    .preview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .preview-modal.show { display: flex; }
+
+    .preview-content {
+      width: 100%;
+      max-width: 520px;
+      max-height: 80vh;
+      background: var(--white);
+      border-radius: 20px 20px 0 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .preview-header h2 { font-size: 18px; color: var(--deep-navy); }
+
+    .preview-close {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: var(--grey-1);
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .preview-data {
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .preview-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--grey-1);
+    }
+
+    .preview-row .label { color: var(--muted); }
+    .preview-row .value { font-weight: 600; }
+
+    .under-dev {
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .profile-pic-wrap {
+      display: flex;
+      gap: 8px;
+    }
+
+    .profile-pic {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      background: var(--grey-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 24px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-pic input {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .biz-logo-wrap {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      background: var(--grey-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 24px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .biz-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .biz-logo-wrap input {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <h1>TapFo Onboarding</h1>
+      <button class="close-btn" onclick="skipOnboarding()">&times;</button>
+    </div>
+
+    <div class="card">
+      <div class="accordion-group">
+        <!-- TapFo User -->
+        <button class="accordion-btn" data-accordion="user" onclick="toggleAccordion(this)">TapFo User</button>
+        <div class="accordion-content" id="acc-user">
+          <!-- Identity -->
+          <button class="sub-btn" data-sub="identity" onclick="toggleSub(this)">Identity</button>
+          <div class="sub-content" id="sub-identity">
+            <div class="profile-pic-wrap" style="position:relative;width:70px;height:70px;">
+              <div class="profile-pic" id="profile-pic-display" style="position:absolute;inset:0;">+</div>
+              <input type="file" id="inp-profile-pic" accept="image/*" onchange="previewProfilePic(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-firstName" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-otherName" placeholder="Other name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-surname" placeholder="Surname">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-username" placeholder="@username">
+            </div>
+            <div class="form-group">
+              <input type="date" class="form-input" id="inp-dob" placeholder="Date of birth">
+            </div>
+            <div class="form-group">
+              <div class="toggle-group">
+                <button class="toggle-btn" data-gender="male" onclick="selectGender(this)">Male</button>
+                <button class="toggle-btn" data-gender="female" onclick="selectGender(this)">Female</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-nationality" placeholder="Nationality">
+            </div>
+          </div>
+
+          <!-- Contact & Location -->
+          <button class="sub-btn" data-sub="contact" onclick="toggleSub(this)">Contact & Location</button>
+          <div class="sub-content" id="sub-contact">
+            <div class="form-group">
+              <div id="mobile-numbers"></div>
+              <button class="add-btn" onclick="addMobileNumber()">+ Add Number</button>
+            </div>
+            <div class="form-group">
+              <div id="whatsapp-numbers"></div>
+              <button class="add-btn" onclick="addWhatsAppNumber()">+ Add Number</button>
+            </div>
+            <div class="form-group">
+              <select class="form-select" id="inp-city">
+                <option value="">Select city</option>
+                <option value="Gaborone">Gaborone</option>
+                <option value="Francistown">Francistown</option>
+                <option value="Molepolole">Molepolole</option>
+                <option value="Maun">Maun</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="form-select" id="inp-area">
+                <option value="">Select area</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-facebook" placeholder="Facebook URL" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-twitter" placeholder="Twitter/X" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-instagram" placeholder="Instagram" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-tiktok" placeholder="TikTok" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-snapchat" placeholder="SnapChat" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-linkedin" placeholder="LinkedIn" style="margin-bottom:8px">
+              <input type="text" class="form-input" id="inp-pinterest" placeholder="Pinterest">
+            </div>
+          </div>
+
+          <!-- Interests & Categories -->
+          <button class="sub-btn" data-sub="interests" onclick="toggleSub(this)">Interests & Categories</button>
+          <div class="sub-content" id="sub-interests">
+            <div class="form-group">
+              <div class="pill-group" id="user-interests-pills"></div>
+            </div>
+            <div class="form-group">
+              <div class="pill-group" id="biz-categories-pills"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Owner -->
+        <button class="accordion-btn" data-accordion="business" onclick="toggleAccordion(this)">Business Owner</button>
+        <div class="accordion-content" id="acc-business">
+          <!-- Business Identity -->
+          <button class="sub-btn" data-sub="biz-identity" onclick="toggleSub(this)">Business Identity</button>
+          <div class="sub-content" id="sub-biz-identity">
+            <div class="form-group">
+              <div id="business-list"></div>
+              <button class="add-btn" onclick="addBusiness()">+ Add Business</button>
+            </div>
+            <div class="form-group" style="position:relative;width:70px;height:70px;">
+              <div class="biz-logo-wrap" id="biz-logo-display" style="position:absolute;inset:0;">+</div>
+              <input type="file" id="inp-biz-logo" accept="image/*" onchange="previewBizLogo(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;">
+            </div>
+            <div class="form-group">
+              <div class="pill-group" id="biz-cat-pills"></div>
+            </div>
+            <div class="form-group">
+              <div id="biz-locations"></div>
+              <button class="add-btn" onclick="addBizLocation()">+ Add Location</button>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" id="inp-staff-search" placeholder="Search by number">
+            </div>
+          </div>
+
+          <!-- Promos -->
+          <button class="sub-btn" data-sub="promos" onclick="toggleSub(this)">Promos</button>
+          <div class="sub-content" id="sub-promos">
+            <details>
+              <summary>Items</summary>
+              <div class="details-inner">
+                <div id="biz-items"></div>
+                <button class="add-btn" onclick="addBizItem()">+ Add Item</button>
+              </div>
+            </details>
+            <details>
+              <summary>Notes</summary>
+              <div class="details-inner">
+                <div id="biz-notes"></div>
+                <button class="add-btn" onclick="addBizNote()">+ Add Note</button>
+              </div>
+            </details>
+            <details>
+              <summary>Sums</summary>
+              <div class="details-inner">
+                <div id="biz-sums"></div>
+                <button class="add-btn" onclick="addBizSum()">+ Add Sum</button>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Designer -->
+        <button class="accordion-btn" data-accordion="designer" onclick="toggleAccordion(this)">Designer</button>
+        <div class="accordion-content" id="acc-designer">
+          <button class="sub-btn" data-sub="designer-details" onclick="toggleSub(this)">Designer Details</button>
+          <div class="sub-content" id="sub-designer-details">
+            <div class="form-group">
+              <div class="toggle-group">
+                <button class="toggle-btn" data-specialty="logo" onclick="selectSpecialty(this)">Logo</button>
+                <button class="toggle-btn" data-specialty="ui" onclick="selectSpecialty(this)">UI</button>
+                <button class="toggle-btn" data-specialty="brand" onclick="selectSpecialty(this)">Brand</button>
+                <button class="toggle-btn" data-specialty="print" onclick="selectSpecialty(this)">Print</button>
+                <button class="toggle-btn" data-specialty="packaging" onclick="selectSpecialty(this)">Packaging</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="url" class="form-input" id="inp-portfolio" placeholder="Portfolio URL">
+            </div>
+          </div>
+        </div>
+
+        <!-- TapFo Devs -->
+        <button class="accordion-btn" data-accordion="devs" onclick="toggleAccordion(this)">TapFo Devs</button>
+        <div class="accordion-content" id="acc-devs">
+          <button class="sub-btn" data-sub="staff" onclick="toggleSub(this)">TapFo Staff</button>
+          <div class="sub-content" id="sub-staff">
+            <div class="under-dev">This section is still under development.</div>
+          </div>
+          <button class="sub-btn" data-sub="admin" onclick="toggleSub(this)">TapFo Admin</button>
+          <div class="sub-content" id="sub-admin">
+            <div class="under-dev">This section is still under development.</div>
+          </div>
+        </div>
+
+        <!-- Preview Accounts -->
+        <button class="accordion-btn" data-accordion="accounts" onclick="toggleAccordion(this)">Preview Accounts</button>
+        <div class="accordion-content" id="acc-accounts">
+          <div class="account-list" id="account-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button class="btn btn-secondary" onclick="skipOnboarding()">Skip</button>
+    <button class="btn btn-secondary" onclick="showPreview()">Preview</button>
+    <button class="btn btn-primary" onclick="completeOnboarding()">Complete</button>
+  </div>
+
+  <div class="preview-modal" id="preview-modal">
+    <div class="preview-content">
+      <div class="preview-header">
+        <h2>Your Information</h2>
+        <button class="preview-close" onclick="hidePreview()">&times;</button>
+      </div>
+      <div class="preview-data" id="preview-data"></div>
+    </div>
+  </div>
+
+  <script>
+    const USER_INTERESTS = [
+      "Finance","Health & Wellness","Technology","Real Estate","Food & Beverage",
+      "Sports","Music","Agriculture","Beauty & Grooming","Education",
+      "Transport","Shopping","Entertainment","Travel","Fitness","Fashion",
+      "Home & Garden","Automotive","Business Services","Legal","Marketing",
+      "IT Services","Construction","Healthcare","Restaurants","Hotels","Media","Government"
+    ];
+
+    const BIZ_CATEGORIES = [
+      "Groceries","Finance","Food & Beverage","Beauty & Grooming","Technology",
+      "Health & Wellness","Education","Construction","Automotive","Real Estate",
+      "Hotels","Restaurants","Transport","Entertainment","Sports"
+    ];
+
+    const ACCOUNTS = [
+      {id:'browser1',name:'Guest Browser',type:'Browser',desc:'View-only access'},
+      {id:'user1',name:'Mau Njeri',type:'User',desc:'3 months active'},
+      {id:'user2',name:'Tebogo Khumalo',type:'User',desc:'3 months active'},
+      {id:'biz_unval1',name:'Beverly Jansen',type:'Business (Unvalidated)',desc:'Awaiting validation'},
+      {id:'biz_val1',name:'Mosienyane & Partners',type:'Business (Validated)',desc:'Validated 1 week'},
+      {id:'biz_val2',name:'Tshwaragano Grocery',type:'Business (Validated)',desc:'Validated 3 months'},
+      {id:'designer1',name:'Kefilwe Motsepe',type:'Designer',desc:'Recently validated'},
+      {id:'designer2',name:'Aobakwe Ditlhokwa',type:'Designer',desc:'Seasoned designer'},
+      {id:'staff1',name:'Phenyo Gaolathe',type:'Staff',desc:'Staff Agent'},
+      {id:'admin1',name:'Admin TapFo',type:'Admin',desc:'Full system access'}
+    ];
+
+    const state = {
+      gender: null,
+      specialty: null,
+      selectedInterests: [],
+      selectedBizCats: [],
+      notes: [],
+      sums: []
+    };
+
+    function toggleAccordion(btn) {
+      const key = btn.dataset.accordion;
+      const isExpanding = !btn.classList.contains('expanded');
+      
+      document.querySelectorAll('.accordion-btn').forEach(b => {
+        b.classList.remove('expanded');
+      });
+      document.querySelectorAll('.accordion-content').forEach(c => {
+        c.classList.remove('show');
+      });
+      
+      if (isExpanding) {
+        btn.classList.add('expanded');
+        document.getElementById('acc-' + key).classList.add('show');
+      }
+    }
+
+    function toggleSub(btn) {
+      const key = btn.dataset.sub;
+      const isExpanding = !btn.classList.contains('expanded');
+      
+      document.querySelectorAll('.sub-btn').forEach(b => {
+        b.classList.remove('expanded');
+      });
+      document.querySelectorAll('.sub-content').forEach(c => {
+        c.classList.remove('show');
+      });
+      
+      if (isExpanding) {
+        btn.classList.add('expanded');
+        document.getElementById('sub-' + key).classList.add('show');
+      }
+    }
+
+    function selectGender(btn) {
+      document.querySelectorAll('.toggle-btn[data-gender]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.gender = btn.dataset.gender;
+    }
+
+    function selectSpecialty(btn) {
+      document.querySelectorAll('.toggle-btn[data-specialty]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.specialty = btn.dataset.specialty;
+    }
+
+    function previewProfilePic(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('profile-pic-display').innerHTML = '<img src="' + e.target.result + '">';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function previewBizLogo(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('biz-logo-display').innerHTML = '<img src="' + e.target.result + '">';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Dynamic list functions
+    function addMobileNumber() {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<select class="form-select" style="width:90px"><option value="BTC">BTC</option><option value="Mascom">Mascom</option><option value="Orange">Orange</option></select><input type="tel" class="form-input" placeholder="71 123 456"><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('mobile-numbers').appendChild(div);
+    }
+
+    function addWhatsAppNumber() {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<select class="form-select" style="width:90px"><option value="BTC">BTC</option><option value="Mascom">Mascom</option><option value="Orange">Orange</option></select><input type="tel" class="form-input" placeholder="71 123 456"><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('whatsapp-numbers').appendChild(div);
+    }
+
+    function addBusiness() {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<input type="text" class="form-input" placeholder="Business Name" style="flex:2"><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('business-list').appendChild(div);
+    }
+
+    function addBizLocation() {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<input type="text" class="form-input" placeholder="Location Title"><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('biz-locations').appendChild(div);
+    }
+
+    function addBizItem() {
+      const notes = state.notes.map(n => '<option value="'+n+'">'+n+'</option>').join('');
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<input type="text" class="form-input" placeholder="Item Title" style="flex:2"><select class="form-select" style="width:120px"><option value="">Assign to Note</option>'+notes+'</select><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('biz-items').appendChild(div);
+    }
+
+    function addBizNote() {
+      const sums = state.sums.map(s => '<option value="'+s+'">'+s+'</option>').join('');
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<input type="text" class="form-input" placeholder="Note Title" style="flex:2"><select class="form-select" style="width:120px"><option value="">Assign to Sum</option>'+sums+'</select><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('biz-notes').appendChild(div);
+    }
+
+    function addBizSum() {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.innerHTML = '<input type="text" class="form-input" placeholder="Sum Title" style="flex:2"><button class="remove-btn" onclick="this.parentElement.remove()">-</button>';
+      document.getElementById('biz-sums').appendChild(div);
+    }
+
+    function renderInterests() {
+      const container = document.getElementById('user-interests-pills');
+      container.innerHTML = USER_INTERESTS.map(i => '<button class="pill" data-interest="'+i+'" onclick="toggleInterest(this)">'+i+'</button>').join('');
+    }
+
+    function toggleInterest(el) {
+      el.classList.toggle('active');
+      const interest = el.dataset.interest;
+      if (el.classList.contains('active')) {
+        state.selectedInterests.push(interest);
+      } else {
+        state.selectedInterests = state.selectedInterests.filter(x => x !== interest);
+      }
+    }
+
+    function renderBizCategories() {
+      const container = document.getElementById('biz-categories-pills');
+      container.innerHTML = BIZ_CATEGORIES.map(i => '<button class="pill" data-bizcat="'+i+'" onclick="toggleBizCat(this)">'+i+'</button>').join('');
+
+      const bizCatPills = document.getElementById('biz-cat-pills');
+      bizCatPills.innerHTML = BIZ_CATEGORIES.map(i => '<button class="pill" data-bizcatmain="'+i+'" onclick="toggleBizCatMain(this)">'+i+'</button>').join('');
+    }
+
+    function toggleBizCat(el) {
+      el.classList.toggle('active');
+    }
+
+    function toggleBizCatMain(el) {
+      el.classList.toggle('active');
+    }
+
+    function renderAccounts() {
+      const container = document.getElementById('account-list');
+      container.innerHTML = ACCOUNTS.map(a => '<button class="account-btn" onclick="openAsAccount(\''+a.id+'\')"><span>'+a.name+'</span><span class="type">'+a.type+'</span></button>').join('');
+    }
+
+    function getFormData() {
+      return {
+        firstName: document.getElementById('inp-firstName').value,
+        otherName: document.getElementById('inp-otherName').value,
+        surname: document.getElementById('inp-surname').value,
+        username: document.getElementById('inp-username').value,
+        dob: document.getElementById('inp-dob').value,
+        gender: state.gender,
+        nationality: document.getElementById('inp-nationality').value,
+        city: document.getElementById('inp-city').value,
+        area: document.getElementById('inp-area').value,
+        interests: state.selectedInterests,
+        specialty: state.specialty
+      };
+    }
+
+    function showPreview() {
+      const data = getFormData();
+      const html = '<div class="preview-row"><span class="label">Name</span><span class="value">'+(data.firstName+' '+data.surname||'-')+'</span></div>'+
+        '<div class="preview-row"><span class="label">Username</span><span class="value">'+(data.username||'-')+'</span></div>'+
+        '<div class="preview-row"><span class="label">Gender</span><span class="value">'+(data.gender||'-')+'</span></div>'+
+        '<div class="preview-row"><span class="label">Location</span><span class="value">'+(data.city+' '+data.area||'-')+'</span></div>'+
+        '<div class="preview-row"><span class="label">Interests</span><span class="value">'+(data.interests.length||0)+' selected</span></div>'+
+        '<div class="preview-row"><span class="label">Specialty</span><span class="value">'+(data.specialty||'-')+'</span></div>';
+      document.getElementById('preview-data').innerHTML = html;
+      document.getElementById('preview-modal').classList.add('show');
+    }
+
+    function hidePreview() {
+      document.getElementById('preview-modal').classList.remove('show');
+    }
+
+    function skipOnboarding() {
+      window.location.href = 'index.html';
+    }
+
+    function openAsAccount(id) {
+      localStorage.setItem('tapfo_active_profile_v2', id);
+      window.location.href = 'index.html';
+    }
+
+    function completeOnboarding() {
+      const data = getFormData();
+      localStorage.setItem('tapfo_onboarding_data', JSON.stringify(data));
+      localStorage.setItem('tapfo_onboarding_v2', JSON.stringify({completedAt: new Date().toISOString()}));
+      window.location.href = 'index.html';
+    }
+
+    // Initialize
+    addMobileNumber();
+    addBusiness();
+    addBizItem();
+    addBizNote();
+    addBizSum();
+    renderInterests();
+    renderBizCategories();
+    renderAccounts();
+
+    document.getElementById('inp-city').addEventListener('change', function() {
+      const areaSel = document.getElementById('inp-area');
+      areaSel.innerHTML = '<option value="">Select area</option><option value="All Areas">All Areas</option>';
+    });
+  </script>
+</body>
+</html>
