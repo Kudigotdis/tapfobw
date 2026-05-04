@@ -969,6 +969,7 @@
     }
 
     function skipOnboarding() {
+      localStorage.setItem('tapfo_onboarding_v2', JSON.stringify({completedAt: new Date().toISOString()}));
       window.location.href = 'index.html';
     }
 
